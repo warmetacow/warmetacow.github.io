@@ -577,7 +577,32 @@ main{padding-left:max(22px,env(safe-area-inset-left));padding-right:max(22px,env
 .sel .eta{display:inline-block;margin-left:8px;font:700 11px Inter;padding:1px 7px;border-radius:5px;vertical-align:middle;white-space:nowrap}
 .sel .eta.ok{background:rgba(110,190,120,.14);color:#86c98e}.sel .eta.late{background:rgba(240,150,60,.14);color:#f0a35c}.sel .eta.part{background:rgba(240,200,80,.12);color:#e8c25a}.sel .eta.no{background:rgba(229,83,61,.12);color:#ec7a68}
 .sel .mv{display:inline-flex;flex-direction:column;gap:2px}.sel .mv button{all:unset;cursor:pointer;font-size:9px;line-height:1;padding:2px 6px;border-radius:4px;border:1px solid var(--line2,#2c3833);color:var(--mut)}.sel .mv button:hover:not([disabled]){color:var(--acc);border-color:var(--acc)}.sel .mv button[disabled]{opacity:.25;cursor:default}
-.bxai{margin-top:14px}.bxai .oai{display:grid;grid-template-columns:1.1fr 1fr;gap:18px;margin-top:10px}.bxai .ocol{display:flex;flex-direction:column;gap:6px;min-width:0}
+.bw{display:flex;flex-direction:column;gap:14px;max-width:1180px;margin:0 auto}
+.bcard{padding:16px 18px}.bch{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px}.bch>div{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}.bch b{font:800 17px Inter}.bch small{color:var(--dim);font-size:12.5px}
+.bn{flex:0 0 30px;height:30px;border-radius:50%;background:var(--acc);color:#111;display:grid;place-items:center;font:800 15px Inter}
+.bch .bxact{display:flex;gap:6px;flex-wrap:wrap;margin-left:auto}
+.bpick{display:grid;grid-template-columns:1fr 1.3fr 110px;gap:10px}.bpick label{display:flex;flex-direction:column;gap:4px;min-width:0}.bpick .inp{width:100%}
+.bdocrow{margin-top:10px}
+.bcty{margin-top:12px;border:1px solid var(--line,#26302b);border-radius:12px;padding:12px;background:#0f1513}.bcty-h{display:flex;align-items:center;gap:10px}.bcty-h .flag{width:34px;height:auto;border-radius:3px}.bcty-h b{font:800 16px Inter}.bcty-h small{display:block;color:var(--dim);font-size:12px}
+.bprod{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:10px}.bprod div{display:flex;align-items:center;gap:6px;padding:6px 8px;border-radius:8px;background:rgba(255,255,255,.03)}.bprod img{height:18px}.bprod b{font:800 14px Inter}.bprod small{color:var(--dim)}
+.bprov{margin-top:10px}.bprov summary,.bteam summary,.badd summary{cursor:pointer;font:700 13px Inter;color:var(--mut);padding:6px 0}.bprov .tbw{max-height:340px;overflow:auto;margin-top:6px}
+.ptab td,.ptab th{padding:5px 8px;font-size:12.5px;white-space:nowrap}.ptab th img{height:15px;vertical-align:middle}.ptab tr.pu td:first-child b{color:var(--acc)}.ptab .z{color:var(--dim)}.pcap{color:#f2a900}
+.hint2{display:block;color:var(--dim);font-size:11.5px;margin-top:6px;line-height:1.45}
+.stk{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:6px}.stk label{display:flex;align-items:center;gap:6px}.stk img{height:18px}.stk .inp{width:100%;min-width:0}
+.allies{margin-top:10px;display:flex;flex-direction:column;gap:6px}.ally{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.ally .flag{width:24px}.ally .shr{margin-left:auto;display:flex;align-items:center;gap:6px;font-size:12px;color:var(--dim)}
+.bteam{margin-top:10px}.bteam .tsec{margin:6px 0 0;border:0;padding:0;background:none}
+.badd{margin-top:12px}.badd .chips{margin:6px 0 10px}.badd .btiles{grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:8px}
+.road{display:flex;flex-direction:column;gap:12px;margin-top:12px}.rday{border:1px solid var(--line,#26302b);border-radius:12px;overflow:hidden}.rday.after{opacity:.75}
+.rdh{display:flex;align-items:center;gap:10px;padding:8px 12px;background:rgba(242,169,0,.08);border-bottom:1px solid var(--line,#26302b)}.rdh b{font:800 14px Inter}.rdh small{color:var(--dim);font-size:12px}.rdh small:last-child{margin-left:auto}
+.rr{display:flex;align-items:center;gap:10px;padding:8px 12px;border-bottom:1px dashed rgba(255,255,255,.06)}.rr:last-child{border-bottom:0}
+.rt{flex:0 0 46px;font:700 13px ui-monospace,Menlo,monospace;color:var(--acc)}.ri{flex:0 0 32px;width:32px;height:32px;object-fit:contain;border-radius:6px}.ri.e{display:grid;place-items:center;font-size:20px}
+.rm{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}.rm b{font:700 13.5px Inter}.rm small{color:var(--mut);font-size:12px;line-height:1.4}.rm small b{font-weight:700;color:var(--txt)}
+.rr.late .rt{color:#e5933d}.rr.late .rm b::after{content:" ⏳";}
+.rmf{margin-top:12px;display:flex;flex-wrap:wrap}
+.bexp>summary{display:flex;align-items:flex-start;gap:12px;cursor:pointer;list-style:none}.bexp>summary::-webkit-details-marker{display:none}.bexp>summary>div{display:flex;flex-direction:column;gap:2px}.bexp>summary b{font:800 17px Inter}.bexp>summary small{color:var(--dim);font-size:12.5px}
+.bexp[open]>summary{margin-bottom:14px}.bxgrid2{display:grid;grid-template-columns:1.3fr 1fr;gap:18px;align-items:start}.bexp .bxana{margin-top:16px}
+@media(max-width:820px){.bpick{grid-template-columns:1fr 1fr}.bpick label:nth-child(2){grid-column:1/-1;order:-1}.bprod,.stk{grid-template-columns:repeat(3,1fr)}.bxgrid2{grid-template-columns:1fr}.bch .bxact{width:100%;margin-left:0}.bch{flex-wrap:wrap}.rt{flex-basis:40px}.bcard{padding:14px 12px}}
+.bxai{}.bxai .oai{display:grid;grid-template-columns:1.1fr 1fr;gap:18px;margin-top:10px}.bxai .ocol{display:flex;flex-direction:column;gap:6px;min-width:0}
 .seg.overt{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}.seg.overt button{display:flex;flex-direction:column;align-items:flex-start;text-align:left;padding:8px 10px;line-height:1.3;white-space:normal}.seg.overt button small{color:var(--dim);font-size:11px;font-weight:400}
 .bxai .oh{color:var(--dim);font-size:11px}.bxai .orun{display:flex;align-items:center;gap:14px;margin-top:14px;flex-wrap:wrap}.bxai #orun{min-width:240px}#oprog{flex:1;min-width:220px}#oprog small{color:var(--mut);font-size:12px}
 .obar{height:6px;border-radius:4px;background:rgba(255,255,255,.08);overflow:hidden;margin-bottom:5px}.obar i{display:block;height:100%;background:var(--acc);transition:width .2s}
@@ -767,7 +792,7 @@ function shell(){
   $$('#lang button').forEach(b=>b.classList.toggle('on',b.dataset.l===LANG));
   $('#fcr').innerHTML=`${T('Créé par','Created by')} <b>unknown</b> · <a href="mailto:codexcow.handclasp425@passinbox.com">mail</a> · <a href="https://discord.com/invite/call-of-war-france-1035227552647745536" target="_blank" rel="noopener">Discord</a>`;
   $('#fmeta').innerHTML=T(`Données du jeu v${D.meta.version}, relevées le ${new Date(D.meta.exported).toLocaleDateString('fr-FR')} · site non officiel · images © Bytro Labs / Stillfront`,`Game data v${D.meta.version}, captured ${new Date(D.meta.exported).toLocaleDateString('en-US')} · unofficial fan site · images © Bytro Labs / Stillfront`);
-  const TABS=[['home','🏠',T('Accueil','Home')],['units','🎖',T('Unités','Units')],['build','🧮',T('Build','Build')],['combat','⚔️',T('Combat','Combat')],['generals','⭐',T('Généraux','Generals')],['research','🔬',T('Recherches','Research')],['compare','⚖️',T('Comparateur','Compare')],['countries','🌍',T('Pays','Countries')],['maps','🗺️',T('Cartes','Maps')],['buildings','🏭',T('Bâtiments','Buildings')],['videos','▶️',T('Vidéos','Videos')]];
+  const TABS=[['home','🏠',T('Accueil','Home')],['units','🎖',T('Unités','Units')],['combat','⚔️',T('Combat','Combat')],['generals','⭐',T('Généraux','Generals')],['research','🔬',T('Recherches','Research')],['compare','⚖️',T('Comparateur','Compare')],['countries','🌍',T('Pays','Countries')],['maps','🗺️',T('Cartes','Maps')],['buildings','🏭',T('Bâtiments','Buildings')],['videos','▶️',T('Vidéos','Videos')]];
   $('#tabs').innerHTML=TABS.map(([k,ic,n])=>`<a href="#/${k}" data-k="${k}"><span class="ti">${ic}</span>${n}</a>`).join('');
   buildIndex();
 }
@@ -778,7 +803,7 @@ function route(keepScroll){
   const tab=h[0]||'home';
   $$('#tabs a').forEach(a=>a.classList.toggle('on',a.dataset.k===(tab==='map'?'maps':tab)));
   closeModal();
-  ({home:viewHome,units:viewUnits,compare:viewCompare,build:viewBuild,combat:viewCombat,videos:viewVideos,home:viewHome,research:viewResearch,buildings:viewBuildings,maps:viewMaps,map:()=>{},countries:viewCountries,ranks:viewRanks,generals:viewGenerals,awards:viewAwards}[tab]||viewHome)(h);
+  ({home:viewHome,units:viewUnits,compare:viewCompare,build:()=>{history.replaceState(null,'','#/home');viewHome()},combat:viewCombat,videos:viewVideos,home:viewHome,research:viewResearch,buildings:viewBuildings,maps:viewMaps,map:()=>{},countries:viewCountries,ranks:viewRanks,generals:viewGenerals,awards:viewAwards}[tab]||viewHome)(h);
   if(h[0]==='unit'&&h[1]){viewUnits();openUnit(decodeURIComponent(h[1]),h[2]?+h[2]:null)}
   if(h[0]==='building'&&h[1]){viewBuildings();openBuilding(decodeURIComponent(h[1]))}
   if(h[0]==='map'&&h[1]){viewMap(+h[1])}
@@ -862,11 +887,11 @@ function viewHome(){
     <div class="eyebrow">${T('Call of War · base de données à jour','Call of War · up-to-date database')}</div>
     <div style="margin-top:10px">${logo(84)}</div>
     
-    <div class="row"><a class="btn pri" href="#/units">${T('Explorer les unités','Explore units')}</a><a class="btn" href="#/build">${T('Planifier un build','Plan a build')}</a><a class="btn" href="#/countries">${T('Pays par carte','Countries by map')}</a><a class="btn disc-btn" href="https://discord.com/invite/call-of-war-france-1035227552647745536" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.3 4.4A19.6 19.6 0 0 0 15.4 3l-.6 1.3a18 18 0 0 0-5.5 0L8.7 3a19.5 19.5 0 0 0-4.9 1.5C.7 9.1-.2 13.6.3 18.1a19.7 19.7 0 0 0 6 3l1.3-2.1a12.7 12.7 0 0 1-2-.9l.5-.4a14 14 0 0 0 12 0l.5.4c-.6.4-1.3.7-2 .9l1.3 2.1a19.6 19.6 0 0 0 6-3c.5-5.2-.9-9.7-3.6-13.7ZM8.7 15.3c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Zm6.6 0c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Z"/></svg> ${T('Rejoindre le Discord','Join the Discord')}</a></div>
+    <div class="row"><a class="btn pri" href="#/units">${T('Explorer les unités','Explore units')}</a><a class="btn" href="#/countries">${T('Pays par carte','Countries by map')}</a><a class="btn disc-btn" href="https://discord.com/invite/call-of-war-france-1035227552647745536" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.3 4.4A19.6 19.6 0 0 0 15.4 3l-.6 1.3a18 18 0 0 0-5.5 0L8.7 3a19.5 19.5 0 0 0-4.9 1.5C.7 9.1-.2 13.6.3 18.1a19.7 19.7 0 0 0 6 3l1.3-2.1a12.7 12.7 0 0 1-2-.9l.5-.4a14 14 0 0 0 12 0l.5.4c-.6.4-1.3.7-2 .9l1.3 2.1a19.6 19.6 0 0 0 6-3c.5-5.2-.9-9.7-3.6-13.7ZM8.7 15.3c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Zm6.6 0c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Z"/></svg> ${T('Rejoindre le Discord','Join the Discord')}</a></div>
     <div class="frc" style="margin-top:16px">${T('Propulsé par la communauté française de Call of War','Powered by the French Call of War community')}</div>
   </section>
   <h2 class="sh">${T('Outils compétitifs','Competitive tools')}</h2>
-  <div class="tools">${[['#/build','🧮',T('Planificateur de build','Build planner'),T('Recherches, unités, bâtiments, moral et économie heure par heure.','Research, units, buildings, morale and hour-by-hour economy.')],['#/combat','⚔️',T('Simulateur de combat','Combat simulator'),T('Clique tes unités, choisis le terrain : chances de victoire sur 300 combats.','Two armies, terrain, bunkers, morale: win chances over 300 runs.')],['#/research','🔬',T('Arbre de recherche','Research tree'),T('Chaque unité sur sa ligne, jour par jour, avec les flèches de prérequis.','Every unit on its own row, day by day, with prerequisite arrows.')],['#/generals','⭐',T('Généraux','Generals'),T('Les 12 généraux en cartes, leurs compétences rang par rang et leurs délais.','The 12 generals as cards, their skills rank by rank and their cooldowns.')]].map(([h,i,n,d])=>`<a class="tool" href="${h}"><span class="ic">${i}</span><b>${n}</b><small>${d}</small></a>`).join('')}</div>
+  <div class="tools">${[['#/combat','⚔️',T('Simulateur de combat','Combat simulator'),T('Clique tes unités, choisis le terrain : chances de victoire sur 300 combats.','Two armies, terrain, bunkers, morale: win chances over 300 runs.')],['#/research','🔬',T('Arbre de recherche','Research tree'),T('Chaque unité sur sa ligne, jour par jour, avec les flèches de prérequis.','Every unit on its own row, day by day, with prerequisite arrows.')],['#/generals','⭐',T('Généraux','Generals'),T('Les 12 généraux en cartes, leurs compétences rang par rang et leurs délais.','The 12 generals as cards, their skills rank by rank and their cooldowns.')]].map(([h,i,n,d])=>`<a class="tool" href="${h}"><span class="ic">${i}</span><b>${n}</b><small>${d}</small></a>`).join('')}</div>
   <h2 class="sh">${T('Dernières vidéos de la communauté','Latest community videos')} <a href="#/videos" style="font:600 13px Inter;color:var(--acc);text-decoration:none;margin-left:10px;text-transform:none;letter-spacing:0">${T('Toutes les vidéos →','All videos →')}</a></h2>
   <div id="hvid"><div class="empty">${T('Chargement…','Loading…')}</div></div>
   <h2 class="sh">${T('Profil général des doctrines','Overall doctrine profile')}</h2>
@@ -1105,7 +1130,8 @@ function viewBuild(h){
   const prod={},stock0={};ecoC.forEach((c,i)=>{const f=shareOf(c,i)/100;Object.entries(c.prod||{}).forEach(([k,v])=>{if(k!=='22')prod[k]=(prod[k]||0)+v*f});Object.entries(cdat(c).st||{}).forEach(([k,v])=>stock0[k]=(stock0[k]||0)+(+v||0)*f)});
   const wb0=E.wb!=null?+E.wb:(ecoC[0]&&ecoC[0].start&&ecoC[0].start['22'])||0;
   const TEAM=teamRun(B,esc_);
-  const CTX=hasEco?(TEAM&&TEAM.m[B.ti]?TEAM.m[B.ti].ctx:{countries:ecoC,me:ecoC[0],prod,wb0,stock0}):null;st.bctx=CTX;
+  const myProvs=hasEco?provsOf(esc_,ecoC[0]):null;
+  const CTX=hasEco?(TEAM&&TEAM.m[B.ti]?TEAM.m[B.ti].ctx:{countries:ecoC,me:ecoC[0],prod,wb0,stock0,provs:myProvs}):null;st.bctx=CTX;
   const hs=hasEco?(TEAM&&TEAM.m[B.ti]?TEAM.m[B.ti].hs:simHourly(B,CTX)):null;
   const mAvg=hs?hs.mAvg:(E.mor0??CB.mor0??70);
   const snapNow=JSON.stringify(B);
@@ -1126,106 +1152,131 @@ function viewBuild(h){
   const resRows=RK.map(k=>{const c=grand[k]||0;const d=need[k];const isW=worst&&worst[0]===k&&hasEco&&c>0;const pct=hasEco&&isFinite(d)&&worst&&isFinite(worst[1])&&worst[1]>0?Math.min(100,d/worst[1]*100):0;
     return `<div class="rrow${isW?' worst':''}"><img src="${img('resources/'+k+'_s1.png')}" alt=""><span class="nm">${esc(RES()[k])}</span><b>${fmt(c)}</b>${hasEco?`<span class="rbar"><i style="width:${pct}%"></i></span><span class="d">${!c?'—':isFinite(d)?fmt(d,1)+' '+T('j','d'):'∞'}</span>`:''}</div>`}).join('');
   const sel=B.units.map(([k,t,q],i)=>{const u=UK[k];if(!u)return '';const l=u.levels.find(x=>x.tier===t)||u.levels[0];return `<div class="sel">${B.units.length>1?`<span class="pri">${i+1}</span>`:''}<img src="${uPor(u,l)}" alt=""><div class="nm"><b>${esc(unitName(u,l))}</b>${etaTag(hs&&hs.gU[i],q)}<small>${fmt(Object.values(l.c).reduce((a,b)=>a+b,0)*q)} res. · ⏱ ${dur(pTime(l,Math.max(1,finalFac(B,l)))/sp)} ${T('l’unité','each')} · ${(()=>{const fb=facB(l);const f=finalFac(B,l);const nF=((B.eco||{}).haveFac!==false?1:0)+B.blds.filter(x=>x[0]===fb.key&&x[1]===1).reduce((a,x)=>a+x[2],0);return fb?(f?`${nF>1?nF+' × ':''}${esc(bN(fb))} ${T('niv. max','max lvl')} ${f}`:`<span style="color:var(--red,#e5533d)">⚠ ${T('nécessite','needs')} ${esc(bN(fb))}</span>`):''})()}</small></div><div class="ctl"><span class="lbl">${T('Niv.','Lvl')}</span>${stepper('ul="'+i+'" data-d',t,l.tier)}<span class="lbl">×</span>${stepper('uq="'+i+'" data-d',q)}${E.prio==='s'&&B.units.length>1?`<span class="lbl" title="${T('Dans l’ordre exact, ce type ne démarre qu’après les N premières unités de la file','In exact order, this type only starts after the first N units of the queue')}">⤷ ${T('après','after')}</span>${stepper('ua="'+i+'" data-d',+(B.units[i][3]||0),(+(B.units[i][3]||0))+' '+T('u.','u.'))}`:''}${B.units.length>1?mv('u',i,B.units.length):''}<button class="x" data-udel="${i}" aria-label="${T('Retirer','Remove')}">✕</button></div></div>`}).join('');
-  const selB=B.blds.map(([k,lvl,q],i)=>{const b=D.buildings.find(x=>x.key===k);if(!b)return '';const L=b.levels.find(x=>x.lvl===lvl)||b.levels[0];return `<div class="sel">${B.blds.length>1?`<span class="pri">${i+1}</span>`:''}<img src="${img(L.icon||b.icon)}" alt="" onerror="this.style.opacity=.2"><div class="nm"><b>${esc(bN(b))} ${T('niv.','lvl')} ${lvl}</b>${etaTag(hs&&hs.gB[i],q)}<small>${fmt(Object.values(L.c).reduce((a,b2)=>a+b2,0)*q)} res. · ⏱ ${dur(L.bt/sp)}</small>${(()=>{const g=hasEco?bldGain(b,L,ecoC):null;if(!g)return '';const parts=Object.entries(g.g).map(([k,v])=>`+${fmt(v*q)} ${esc(RES()[k])}`);if(g.mor)parts.push(`+${g.mor} ${T('pts de moral / jour dans','morale pts / day in')} ${q} ${T('ville(s)','city(ies)')}`);return parts.length?`<small style="display:block;color:#86b26a">${parts.join(' · ')}${g.tot?' '+T('par jour','per day'):''}${g.pay?` · ${T('rentabilisé en','pays back in')} ${fmt(g.pay,1)} ${T('j','d')}`:''}</small>`:''})()}</div><div class="ctl"><span class="lbl">${T('Niv.','Lvl')}</span>${stepper('bl="'+i+'" data-d',lvl)}<span class="lbl">×</span>${stepper('bq="'+i+'" data-d',q)}${E.prio==='s'?`<span class="lbl" title="${T('Dans l’ordre exact, ce bâtiment passe après les N premières unités de ta file','In exact order, this building comes after the first N units of your queue')}">⤷ ${T('après','after')}</span>${stepper('ba="'+i+'" data-d',+(B.blds[i][3]||0),(+(B.blds[i][3]||0))+' '+T('u.','u.'))}`:''}${B.blds.length>1?mv('b',i,B.blds.length):''}<button class="x" data-bdel="${i}" aria-label="${T('Retirer','Remove')}">✕</button></div></div>`}).join('');
+  const selB=B.blds.map(([k,lvl,q],i)=>{const b=D.buildings.find(x=>x.key===k);if(!b)return '';const L=b.levels.find(x=>x.lvl===lvl)||b.levels[0];return `<div class="sel">${B.blds.length>1?`<span class="pri">${i+1}</span>`:''}<img src="${img(L.icon||b.icon)}" alt="" onerror="this.style.opacity=.2"><div class="nm"><b>${esc(bN(b))} ${T('niv.','lvl')} ${lvl}</b>${etaTag(hs&&hs.gB[i],q)}<small>${fmt(Object.values(L.c).reduce((a,b2)=>a+b2,0)*q)} res. · ⏱ ${dur(L.bt/sp)}</small>${(()=>{const g=hasEco?bldGain(b,L,ecoC,myProvs):null;if(!g)return '';const parts=Object.entries(g.g).map(([k,v])=>`+${fmt(v*q)} ${esc(RES()[k])}`);if(g.mor)parts.push(`+${g.mor} ${T('pts de moral / jour dans','morale pts / day in')} ${q} ${T('ville(s)','city(ies)')}`);return parts.length?`<small style="display:block;color:#86b26a">${parts.join(' · ')}${g.tot?' '+T('par jour','per day'):''}${g.pay?` · ${T('rentabilisé en','pays back in')} ${fmt(g.pay,1)} ${T('j','d')}`:''}</small>`:''})()}</div><div class="ctl"><span class="lbl">${T('Niv.','Lvl')}</span>${stepper('bl="'+i+'" data-d',lvl)}<span class="lbl">×</span>${stepper('bq="'+i+'" data-d',q)}${E.prio==='s'?`<span class="lbl" title="${T('Dans l’ordre exact, ce bâtiment passe après les N premières unités de ta file','In exact order, this building comes after the first N units of your queue')}">⤷ ${T('après','after')}</span>${stepper('ba="'+i+'" data-d',+(B.blds[i][3]||0),(+(B.blds[i][3]||0))+' '+T('u.','u.'))}`:''}${B.blds.length>1?mv('b',i,B.blds.length):''}<button class="x" data-bdel="${i}" aria-label="${T('Retirer','Remove')}">✕</button></div></div>`}).join('');
   const span=Math.max(sim.finish,sim.DAY*2),days=Math.ceil(span/sim.DAY),stepD=days>30?5:days>14?2:1;
   const gantt=sim.plan.length?`<div class="gantt"><div class="axis">${Array.from({length:Math.floor(days/stepD)+1},(_,i)=>i*stepD).map(d=>`<span style="left:${d*sim.DAY/span*100}%">${T('J','D')}${d+1}</span>`).join('')}</div>${Array.from({length:B.slots},(_,si)=>`<div class="row"><div class="lab">${T('Slot','Slot')} ${si+1}</div><div class="trk">${sim.plan.filter(p=>p.slot===si).map(p=>{const r=RID[p.id];return (p.wait?`<div class="gb w" style="left:${p.wait[0]/span*100}%;width:${(p.wait[1]-p.wait[0])/span*100}%"></div>`:'')+`<div class="gb" style="left:${p.start/span*100}%;width:${Math.max(.8,(p.end-p.start)/span*100)}%" title="${esc(rN(r))}${r.utier?' '+r.utier:''} · ${tAt(p.start,sim.DAY)} → ${tAt(p.end,sim.DAY)}">${esc(rN(r))}${r.utier?' '+r.utier:''}</div>`}).join('')}</div></div>`).join('')}</div>`:'';
   const docR=D.research.filter(r=>r.doc===B.doc&&!B.res.includes(r.id)).sort((a,b)=>SET_ORDER[a.set]-SET_ORDER[b.set]||a.day-b.day||a.ord-b.ord);
-  app.innerHTML=hero(T('Compétitif','Competitive'),T('Planificateur de <em>build</em>','Build <em>planner</em>'),T('Choisis ton pays, puis pioche tes unités et tes bâtiments dans le catalogue. Les recherches nécessaires s’ajoutent seules, et ton plan, ses délais et ton économie se recalculent à chaque clic.','Pick your country, then add units and buildings from the catalogue. Required research is added automatically, and your plan, its timings and your economy update on every click.'))+`
-  <div class="bx">
-   <div class="bxbar panel">
-    <div class="brow"><select class="inp" id="esc" aria-label="${T('Carte','Map')}">${LIVE.map(m=>`<option value="${m.id}" ${esc_&&m.id===esc_.id?'selected':''}>${esc(m.name)}</option>`).join('')}</select>
-    ${ecoC[0]?`<span class="bxcty"><img class="flag" src="${img('flags/'+esc_.map+'/small_'+ecoC[0].id+'.png')}" alt=""><b>${esc(cN(ecoC[0]))}</b><small>${DOC(ecoC[0].doc)} · ${fmt(totR(ecoC[0]))} ${T('res./j','res./day')}</small></span>`:''}
-    <select class="inp" id="ec" aria-label="${T('Pays','Country')}"><option value="">${ecoC.length?T('Changer de pays…','Change country…'):T('Choisir mon pays…','Pick my country…')}</option>${esc_&&esc_.data?esc_.data.countries.filter(c=>c.play&&!B.team.some(m=>m.cid===c.id)).sort((a,b)=>cN(a).localeCompare(cN(b))).map(c=>`<option value="${c.id}">${esc(cN(c))} · ${DOC(c.doc)} · ${fmt(totR(c))} ${T('res./j','res./day')}</option>`).join(''):''}</select></div>
-    <div class="brow" style="margin-top:10px"><span class="lbl">${T('Doctrine','Doctrine')}</span><div class="seg" id="bdoc">${[1,2,3,4,0].map(k=>`<button data-v="${k}" class="${B.doc===k?'on':''}" ${lockDoc!=null&&k!==B.doc?'disabled':''}><i style="background:${DOC_C[k]}"></i>${DOC(k)}</button>`).join('')}</div>${lockDoc!=null?`<span class="lbl" style="color:var(--acc)">🔒 ${T('celle de ton pays','your country’s')}</span>`:''}</div>
-    <label class="bxsp"><span class="lbl">${T('Vitesse','Speed')}</span><select class="inp" id="bspeed">${[1,2,4,6,8,12].map(n=>`<option value="${n}" ${n===sp?'selected':''}>×${n}</option>`).join('')}</select></label>
-    <div class="brow bxact">${(st.bh||[]).length?`<button class="btn" id="bundo" title="Ctrl+Z">↶ ${T('Annuler','Undo')}</button>`:''}<button class="btn" id="bshare">🔗 ${T('Partager','Share')}</button><button class="btn" id="breset">${T('Tout effacer','Clear all')}</button></div>
-   </div>
-   ${teamHTML(B,esc_,TEAM)}
-   <div class="bxkpi panel">${headline}
-      ${hs?(()=>{const G=hs.goal;const sn=hs.snaps.find(x=>x.d===G)||hs.snaps[hs.snaps.length-1];const nu=B.units.reduce((a,x)=>a+x[2],0),nb=B.blds.reduce((a,x)=>a+x[2],0);
+  const goalBox=hs?(()=>{const G=hs.goal;const sn=hs.snaps.find(x=>x.d===G)||hs.snaps[hs.snaps.length-1];const nu=B.units.reduce((a,x)=>a+x[2],0),nb=B.blds.reduce((a,x)=>a+x[2],0);
         return `<div class="goal"><div class="brow" style="justify-content:space-between"><span class="lbl">${T('Objectif','Goal')}</span><span class="stp"><button data-goal="-1">−</button><b>${T('fin J','end D')}${G}</b><button data-goal="1">+</button></span></div>
         ${sn?`<div class="gk"><span>${T('Moral','Morale')} <b>${Math.round(sn.m)} %</b></span>${(()=>{const c=k=>hs.events.filter(e=>e.k===k&&e.t<=G+1e-9).length;return `<span>🎖 <b>${c('u')}/${nu}</b></span><span>🏭 <b>${c('b')}/${nb}</b></span><span>🔬 <b>${c('r')}/${B.res.length}</b></span>`})()}</div>
         <div class="gt">${RK.map(k=>`<div><img src="${img('resources/'+k+'_s1.png')}" alt="" title="${esc(RES()[k])}"><b class="${sn.stock[k]<0?'neg':''}">${fmt(sn.stock[k])}</b><small class="${sn.prod[k]<0?'neg':''}">${sn.prod[k]>=0?'+':''}${fmt(sn.prod[k])}/${T('j','d')}</small></div>`).join('')}</div>
-        <div style="color:var(--dim);font-size:11px;margin-top:4px">${T(`Stock et production nette (après entretien) à la fin du jour ${G}.`,`Stock and net production (after upkeep) at the end of day ${G}.`)}</div>`:''}</div>`})():''}
-      ${hasEco&&worst&&isFinite(worst[1])&&worst[1]>0?`<div class="tip">💡 ${T('Ressource la plus limitante','Most limiting resource')} : <b>${esc(RES()[worst[0]])}</b> — ${fmt(worst[1],1)} ${T('jours de production pour tout payer.','days of production to pay for it all.')}</div>`:''}
-      ${hs&&hs.wait.length?`<div class="warns">${hs.wait.slice(0,4).map(w=>`<div>⏳ <b>${esc(w.lab)}</b> ${w.need?(w.f?T('attend une usine','waits for a factory')+' : ':T('attend','waits for')+' ')+esc(w.need):T('attend','waits for')+' '+w.res.map(k=>esc(RES()[k])).join(', ')} ${T('dès','from')} ${tAt(w.t*sim.DAY,sim.DAY)}</div>`).join('')}</div>`:''}
-   </div>
-   ${optPanel(B,hasEco,hs,x=>tAt(x*sim.DAY,sim.DAY))}
-   <div class="bxgrid">
-    <section class="panel bxcat" id="bxcat" data-tab="${st.btab||'u'}">
-     <div class="bxh"><b>🧰 ${T('Catalogue','Catalogue')}</b><small>${T('clique pour ajouter à ton plan','click to add to your plan')}</small></div>
-     <div class="bxtabs" id="btabs"><button data-v="u">🎖 ${T('Unités','Units')}</button><button data-v="b">🏭 ${T('Bâtiments','Buildings')}</button><button data-v="r">🔬 ${T('Recherches','Research')} <small>${B.res.length}</small></button></div>
-     <div class="bxp" data-cp="u">
+        <div style="color:var(--dim);font-size:11px;margin-top:4px">${T(`Stock et production nette (après entretien) à la fin du jour ${G}.`,`Stock and net production (after upkeep) at the end of day ${G}.`)}</div>`:''}</div>`})():'';
+  const me0=ecoC[0];const flagI=c=>`<img class="flag" src="${img('flags/'+esc_.map+'/small_'+c.id+'.png')}" alt="" onerror="this.style.visibility='hidden'">`;
+  const resIco=k=>`<img src="${img('resources/'+k+'_s1.png')}" alt="" title="${esc(RES()[k])}">`;
+  // ① la partie : carte, pays, ses provinces réelles
+  const provRows=myProvs?myProvs.slice().sort((a,b)=>(b.cap-a.cap)||(b.urb-a.urb)||(RK.reduce((s,k)=>s+(b.prod[k]||0),0)-RK.reduce((s,k)=>s+(a.prod[k]||0),0))).map(p=>{const tot=RK.reduce((s,k)=>s+(p.prod[k]||0),0);
+    return `<tr class="${p.urb?'pu':''}"><td><b>${esc(p.n)}</b>${p.cap?' <span class="pcap" title="'+T('Capitale','Capital')+'">★</span>':''}</td><td>${p.urb?'🏙 '+T('Ville','City'):'🌾 '+T('Campagne','Countryside')}${p.coast?' · ⚓':''}</td>${RK.map(k=>`<td class="n">${p.prod[k]?fmt(p.prod[k]):'<span class="z">·</span>'}</td>`).join('')}<td class="n"><b>${fmt(tot)}</b></td></tr>`}).join(''):'';
+  const stockIn=me0?`<div class="stk">${RK.map(k=>`<label>${resIco(k)}<input class="inp" type="number" min="0" step="500" value="${((cdat(me0).st)||{})[k]||0}" data-cst="${me0.id}:${k}" aria-label="${esc(RES()[k])}"></label>`).join('')}</div>`:'';
+  const allyCards=ecoC.slice(1).map((c,i)=>`<div class="ally">${flagI(c)}<b>${esc(cN(c))}</b><label class="shr">${T('Part envoyée','Share sent')}<select class="inp" data-csh="${c.id}">${[100,75,50,25,0].map(v=>`<option value="${v}" ${v===shareOf(c,i+1)?'selected':''}>${v} %</option>`).join('')}</select></label><button class="x" data-edel="${c.id}" aria-label="${T('Retirer','Remove')}">✕</button></div>`).join('');
+  const step1=`<section class="panel bcard" id="bs1">
+    <div class="bch"><span class="bn">1</span><div><b>${T('Ta partie','Your match')}</b><small>${T('la carte et ton pays : sa production et ses provinces de départ viennent des fichiers du jeu','the map and your country: its starting production and provinces come from the game files')}</small></div>
+      <div class="bxact">${(st.bh||[]).length?`<button class="btn" id="bundo" title="Ctrl+Z">↶ ${T('Annuler','Undo')}</button>`:''}<button class="btn" id="bshare">🔗 ${T('Partager','Share')}</button><button class="btn" id="breset">${T('Tout effacer','Clear all')}</button></div></div>
+    <div class="bpick">
+      <label><span class="lbl">${T('Carte','Map')}</span><select class="inp" id="esc">${LIVE.map(m=>`<option value="${m.id}" ${esc_&&m.id===esc_.id?'selected':''}>${esc(m.name)}</option>`).join('')}</select></label>
+      <label><span class="lbl">${T('Pays','Country')}</span><select class="inp" id="ec"><option value="">${me0?esc(cN(me0))+' — '+T('changer…','change…'):T('Choisir mon pays…','Pick my country…')}</option>${esc_&&esc_.data?esc_.data.countries.filter(c=>c.play&&!B.team.some(m=>m.cid===c.id)).sort((a,b)=>cN(a).localeCompare(cN(b))).map(c=>`<option value="${c.id}">${esc(cN(c))} · ${c.urban} ${T('villes','cities')} · ${fmt(totR(c))} ${T('res./j','res./day')}</option>`).join(''):''}</select></label>
+      <label class="bsm"><span class="lbl">${T('Vitesse','Speed')}</span><select class="inp" id="bspeed">${[1,2,4,6,8,12].map(n=>`<option value="${n}" ${n===sp?'selected':''}>×${n}</option>`).join('')}</select></label>
+    </div>
+    <div class="brow bdocrow"><span class="lbl">${T('Doctrine','Doctrine')}</span><div class="seg" id="bdoc">${[1,2,3,4,0].map(k=>`<button data-v="${k}" class="${B.doc===k?'on':''}" ${lockDoc!=null&&k!==B.doc?'disabled':''}><i style="background:${DOC_C[k]}"></i>${DOC(k)}</button>`).join('')}</div>${lockDoc!=null?`<span class="lbl" style="color:var(--acc)">🔒 ${T('celle de ton pays','your country’s')}</span>`:''}</div>
+    ${me0?`<div class="bcty">
+      <div class="bcty-h">${flagI(me0)}<div><b>${esc(cN(me0))}</b><small>${DOC(me0.doc)} · ${me0.urban} ${T('villes','cities')} · ${me0.n} ${T('provinces','provinces')}${me0.cap?' · ★ '+esc(me0.cap):''} · ${me0.vp} VP · 💎 ${fmt(wb0)}</small></div></div>
+      <div class="bprod">${RK.map(k=>`<div>${resIco(k)}<b>${fmt((me0.prod||{})[k]||0)}</b><small>/${T('j','d')}</small></div>`).join('')}</div>
+      ${myProvs?`<details class="bprov"><summary>📍 ${T('Mes provinces au départ','My starting provinces')} (${myProvs.filter(p=>p.urb).length} ${T('villes','cities')} · ${myProvs.length-myProvs.filter(p=>p.urb).length} ${T('campagnes','countryside')})</summary>
+        <div class="tbw"><table class="t ptab"><thead><tr><th>${T('Province','Province')}</th><th>${T('Type','Type')}</th>${RK.map(k=>`<th class="n">${resIco(k)}</th>`).join('')}<th class="n">${T('Total / j','Total / day')}</th></tr></thead><tbody>${provRows}</tbody></table></div>
+        <small class="hint2">${T('Production de chaque province à 100 % de moral, tirée de la carte. Le planificateur place chaque bâtiment dans la province où il rapporte le plus.','Production of each province at 100% morale, from the map. The planner puts each building in the province where it yields the most.')}</small></details>`:''}
+      <details class="bprov" ${Object.values((cdat(me0).st)||{}).some(v=>v>0)?'open':''}><summary>📦 ${T('Partie déjà commencée ? Recopie ton stock actuel','Match already started? Copy your current stock')}</summary>${stockIn}<small class="hint2">${T('Le jeu ne publie pas le stock de départ : laisse 0 pour une nouvelle partie, ou recopie tes ressources pour planifier depuis aujourd’hui.','The game does not publish the starting stock: leave 0 for a new match, or copy your resources to plan from today.')}</small></details>
+      ${allyCards?`<div class="allies"><span class="lbl">${T('Alliés qui t’envoient des ressources','Allies sending you resources')}</span>${allyCards}</div>`:''}
+    </div>`:`<div class="tip">💡 ${T('Choisis la carte de ta partie puis ton pays : tout le calcul part de sa production réelle, province par province.','Pick your match’s map then your country: the whole calculation starts from its real production, province by province.')}</div>`}
+    ${me0?`<details class="bteam" ${B.team.length>1?'open':''}><summary>👥 ${T('Jouer en équipe','Play as a team')}${B.team.length>1?' · '+B.team.length+' '+T('joueurs','players'):''}</summary>${teamHTML(B,esc_,TEAM)}</details>`:''}
+  </section>`;
+  // ② l'armée voulue
+  const step2=`<section class="panel bcard" id="bs2">
+    <div class="bch"><span class="bn">2</span><div><b>${T('Ton armée','Your army')}</b><small>${T('les unités que tu veux : l’optimiseur garde leurs types (et leurs proportions si tu le demandes)','the units you want: the optimiser keeps their types (and their proportions if you ask)')}</small></div></div>
+    ${sel?`<div class="sels">${sel}</div>`:`<div class="bxempty"><b>${T('Aucune unité pour l’instant','No units yet')}</b><span>${T('Clique sur les unités ci-dessous pour les ajouter.','Click the units below to add them.')}</span></div>`}
+    <details class="badd" ${!B.units.length||st.addOpen?'open':''} id="badd"><summary>➕ ${T('Ajouter des unités','Add units')}</summary>
       <div class="chips" id="bcat">${[1,2,7,3,4,5].map(k=>`<span class="chip ${cat===k?'on':''}" data-v="${k}">${SET_ICON[k]} ${SETS(k)}</span>`).join('')}</div>
       <div class="btiles">${docU.map(tileU).join('')||`<div class="empty">—</div>`}</div>
-     </div>
-     <div class="bxp" data-cp="b">
-      <div class="brow" style="margin-bottom:10px"><label class="chip ${E.haveFac!==false?'on':''}" id="ehave">🏭 ${T('Je possède déjà 1 usine niv. 1 de chaque type','I already own 1 level-1 factory of each type')}</label><span style="color:var(--dim);font-size:12px">${T('Chaque usine produit une unité à la fois : plus d’usines du même type = plus d’unités en parallèle, et chaque niveau divise leur temps par deux.','Each factory builds one unit at a time: more factories of the same type = more units in parallel, and each level halves their time.')}</span></div>
-      <div class="btiles small">${D.buildings.filter(b=>b.key!=='capitol').map(b=>{const g=hasEco?bldGain(b,b.levels[0],ecoC.slice(0,1)):null;const lab=g?(g.tot?`+${fmt(g.tot)} ${T('res./j','res./day')}`:g.mor?`+${g.mor} ${T('moral','morale')}`:''):'';return `<button class="btile" data-addb="${esc(b.key)}"><img loading="lazy" src="${img(b.icon)}" alt="" onerror="this.style.opacity=.2"><b>${esc(bN(b))}</b>${lab?`<small style="color:#86b26a">${lab}</small>`:''}</button>`}).join('')}</div>
-     </div>
-     <div class="bxp" data-cp="r"><div class="hint" style="margin:0 0 10px">${T('Les recherches nécessaires à tes unités sont ajoutées et ordonnées automatiquement. Tu peux en ajouter d’autres à la main.','Research needed by your units is added and ordered automatically. You can add others by hand.')}</div>
-      ${sim.plan.length?`<div class="rlist">${sim.plan.map(p=>{const r=RID[p.id];const man=B.resMan.includes(p.id);return `<span class="rpill" title="${tAt(p.start,sim.DAY)} → ${tAt(p.end,sim.DAY)}"><img src="${resImg(r)}" alt="" onerror="this.style.opacity=.2">${esc(rN(r))}${r.utier?' '+r.utier:''}<small>${T('J','D')}${Math.floor(p.start/sim.DAY)+1}</small>${man?`<button data-rdel="${p.id}" aria-label="✕">✕</button>`:''}</span>`}).join('')}</div>`:`<div style="color:var(--dim);font-size:13px">${T('Aucune pour l’instant.','None yet.')}</div>`}
-      <details style="margin-top:10px"><summary class="lbl" style="cursor:pointer">${T('Ajouter une recherche à la main','Add a research manually')}</summary><div class="brow" style="margin-top:8px"><select class="inp" id="bres" style="flex:1">${docR.map(r=>`<option value="${r.id}">${SET_ICON[r.set]||''} ${esc(rN(r))}${r.utier?' '+r.utier:''} · ${T('J','D')}${r.day}</option>`).join('')}</select><button class="btn pri" id="baddr">${T('Ajouter','Add')}</button></div></details>
-     </div>
-    </section>
-    <section class="panel bxplan">
-     <div class="bxh"><b>📋 ${T('Mon plan','My plan')}</b><small>${uCount} ${T('unités','units')} · ${B.blds.reduce((a,x)=>a+x[2],0)} ${T('bâtiments','buildings')} · ${B.res.length} ${T('recherches','research')}</small></div>
-     ${empty?`<div class="bxempty"><b>${T('Ton plan est vide','Your plan is empty')}</b><span>① ${ecoC.length?'✓ '+T('pays choisi','country picked'):T('Choisis ton pays en haut','Pick your country at the top')}</span><span>② ${T('Ajoute des unités depuis le catalogue','Add units from the catalogue')}</span><span>③ ${T('Ajoute des bâtiments si tu veux','Add buildings if you want')}</span></div>`:''}
-     ${!empty&&!ecoC.length?`<div class="tip">💡 ${T('Choisis ton pays en haut pour connaître les délais réels et ce qui te manque.','Pick your country at the top to see real timings and what you are missing.')}</div>`:''}
-      ${sel?`<div class="sels"><div class="lbl" style="margin:12px 0 6px">${T('Ton armée','Your army')} · ${uCount} ${T('unités','units')}${B.units.length>1?` · <span style="text-transform:none;letter-spacing:0;color:var(--dim)">${T('ordre = priorité, ▲▼ pour changer','order = priority, ▲▼ to change')}</span>`:''}</div>${sel}</div>`:''}
-      ${selB?`<div class="sels" style="margin-top:12px">${B.blds.length>1?`<div class="lbl" style="margin:0 0 6px;text-transform:none;letter-spacing:0;color:var(--dim)">${T('Ordre = priorité de construction, ▲▼ pour changer','Order = build priority, ▲▼ to change')}</div>`:''}${selB}</div>`:''}
-     ${B.res.length?`<div class="bxres-sum">🔬 ${B.res.length} ${T('recherches ajoutées automatiquement','research added automatically')}${sim.plan.length?' · '+T('dernière terminée','last done')+' '+tAt(Math.max(...sim.plan.map(p=>p.end)),sim.DAY):''} · <a href="#" id="bgores">${T('voir','see')}</a></div>`:''}
+    </details>
+  </section>`;
+  // ④ la feuille de route : quoi, où et quand
+  const hm=d=>{const x=Math.round(d*1440),dd=Math.floor(x/1440)+1,h=Math.floor((x%1440)/60),mi=x%60;return {d:dd,t:String(h).padStart(2,'0')+':'+String(mi).padStart(2,'0')}};
+  const rmF=st.rmf||'all';
+  const road=(()=>{if(!hs||empty)return '';const G=hs.goal;const ev=hs.events.slice().sort((a,b)=>a.s-b.s||a.t-b.t);const days={};
+    const BYK=k=>D.buildings.find(b=>b.key===k);
+    ev.forEach(e=>{if(rmF!=='all'&&e.k!==rmF)return;const d=hm(e.s).d;(days[d]=days[d]||[]).push(e)});
+    const row=e=>{const a=hm(e.s),z=hm(e.t);const fin=z.d!==a.d?T('J','D')+z.d+' '+z.t:z.t;const late=e.t>G+1e-9;
+      if(e.k==='b'){const b=BYK(e.bk);const L=b&&b.levels.find(x=>x.lvl===e.lv);return `<div class="rr b${late?' late':''}"><span class="rt">${a.t}</span><img class="ri" src="${img((L&&L.icon)||(b&&b.icon)||'')}" alt="" onerror="this.style.opacity=.2"><div class="rm"><b>${e.up?T('Améliorer','Upgrade'):T('Construire','Build')} ${esc(e.lab.replace(/ \d+$/,''))} ${T('niv.','lvl')} ${e.lv}</b><small>${e.where?`📍 <b>${esc(e.where)}</b> ${e.urb===false?'('+T('campagne','countryside')+')':''} · `:''}${T('prêt','ready')} ${fin}</small></div></div>`}
+      if(e.k==='r')return `<div class="rr r${late?' late':''}"><span class="rt">${a.t}</span><span class="ri e">🔬</span><div class="rm"><b>${T('Rechercher','Research')} ${esc(e.lab)}</b><small>${T('terminée','done')} ${fin}</small></div></div>`;
+      return '';};
+    const urows=list=>{const g={};list.filter(e=>e.k==='u').forEach(e=>{const k=e.lab+'|'+(e.where||'')+'|'+(e.fk||'');(g[k]=g[k]||[]).push(e)});
+      return Object.values(g).map(L=>{const e=L[0];const u=UK[e.uk];const late=L.some(x=>x.t>G+1e-9);const fb=e.fk&&BYK(e.fk);
+        return `<div class="rr u${late?' late':''}"><span class="rt">${hm(e.s).t}</span><img class="ri" src="${u?uPor(u,e.l):''}" alt="" onerror="this.style.opacity=.2"><div class="rm"><b>${T('Produire','Produce')} ${esc(e.lab)} ×${L.length}</b><small>${e.where?`📍 <b>${esc(e.where)}</b> · `:''}${fb?esc(bN(fb))+' '+T('niv.','lvl')+' '+e.f+' · ':''}${T('lancées à','started at')} ${L.map(x=>hm(x.s).t).join(', ')} · ${T('dernière prête','last ready')} ${(()=>{const z=hm(Math.max(...L.map(x=>x.t)));return z.d!==hm(e.s).d?T('J','D')+z.d+' '+z.t:z.t})()}</small></div></div>`}).join('')};
+    const dayKeys=Object.keys(days).map(Number).sort((a,b)=>a-b);
+    const body=dayKeys.map(d=>{const L=days[d];const nonU=L.filter(e=>e.k!=='u').map(row).join('');return `<div class="rday${d>G?' after':''}"><div class="rdh"><b>${T('Jour','Day')} ${d}</b>${d>G?`<small>${T('après ton objectif','after your goal')}</small>`:''}<small>${L.filter(e=>e.k==='b').length?L.filter(e=>e.k==='b').length+' 🏗 ':''}${L.filter(e=>e.k==='u').length?L.filter(e=>e.k==='u').length+' 🎖 ':''}${L.filter(e=>e.k==='r').length?L.filter(e=>e.k==='r').length+' 🔬':''}</small></div>${nonU}${urows(L)}</div>`}).join('');
+    const left=hs.atGoal?hs.atGoal.left:hs.left;
+    return `<section class="panel bcard" id="bside">
+      <div class="bch"><span class="bn">4</span><div><b>${T('Feuille de route','Roadmap')}</b><small>${T('quoi lancer, où et à quelle heure : suis-la dans ta partie','what to start, where and at what time: follow it in your match')}</small></div></div>
+      <div class="bxkpi">${headline}${goalBox}</div>
+      ${hs.wait.length?`<div class="warns">${hs.wait.slice(0,4).map(w=>`<div>⏳ <b>${esc(w.lab)}</b> ${w.need?(w.f?T('attend une usine','waits for a factory')+' : ':T('attend','waits for')+' ')+esc(w.need):T('attend','waits for')+' '+w.res.map(k=>esc(RES()[k])).join(', ')} ${T('dès','from')} ${tAt(w.t*sim.DAY,sim.DAY)}</div>`).join('')}</div>`:''}
+      <div class="seg rmf" id="brmf">${[['all',T('Tout','All')],['b','🏗 '+T('Bâtiments','Buildings')],['u','🎖 '+T('Unités','Units')],['r','🔬 '+T('Recherches','Research')]].map(([v,n])=>`<button data-v="${v}" class="${rmF===v?'on':''}">${n}</button>`).join('')}</div>
+      <div class="road">${body||`<div class="hint">${T('Rien à lancer.','Nothing to start.')}</div>`}</div>
+      ${left?`<div class="tip">⏳ ${left} ${T(`élément(s) pas terminés à la fin du J${G} : ils apparaissent en orange.`,`item(s) not finished by the end of D${G}: they show in orange.`)}</div>`:''}
+    </section>`})();
+  // ⑤ mode expert : le plan à la main, les coûts, l'économie, les réglages
+  const expert=`<details class="panel bcard bexp" id="bexp" ${st.expOpen?'open':''}><summary><span class="bn">5</span><div><b>${T('Mode expert','Expert mode')}</b><small>${T('modifier le plan à la main, coûts, graphiques, obligations, réglages','edit the plan by hand, costs, charts, War Bonds, settings')}</small></div></summary>
+    <div class="bxgrid2">
+     <section class="bxcat" id="bxcat" data-tab="${st.btab==='r'?'r':'b'}">
+      <div class="bxtabs" id="btabs"><button data-v="b">🏭 ${T('Bâtiments','Buildings')}</button><button data-v="r">🔬 ${T('Recherches','Research')} <small>${B.res.length}</small></button></div>
+      <div class="bxp" data-cp="b">
+       <div class="brow" style="margin-bottom:10px"><label class="chip ${E.haveFac!==false?'on':''}" id="ehave">🏭 ${T('Je possède déjà 1 usine niv. 1 de chaque type (dans ma capitale)','I already own 1 level-1 factory of each type (in my capital)')}</label></div>
+       <div class="btiles small">${D.buildings.filter(b=>b.key!=='capitol').map(b=>{const g=hasEco?bldGain(b,b.levels[0],ecoC.slice(0,1),myProvs):null;const lab=g?(g.tot?`+${fmt(g.tot)} ${T('res./j','res./day')}${g.where?' · '+esc(g.where):''}`:g.mor?`+${g.mor} ${T('moral','morale')}`:''):'';return `<button class="btile" data-addb="${esc(b.key)}"><img loading="lazy" src="${img(b.icon)}" alt="" onerror="this.style.opacity=.2"><b>${esc(bN(b))}</b>${lab?`<small style="color:#86b26a">${lab}</small>`:''}</button>`}).join('')}</div>
+       ${selB?`<div class="sels" style="margin-top:12px"><div class="lbl" style="margin:0 0 6px">${T('Bâtiments du plan','Buildings in the plan')}${B.blds.length>1?' · '+T('ordre = priorité','order = priority'):''}</div>${selB}</div>`:''}
+      </div>
+      <div class="bxp" data-cp="r"><div class="hint" style="margin:0 0 10px">${T('Les recherches nécessaires à tes unités sont ajoutées et ordonnées automatiquement. Tu peux en ajouter d’autres à la main.','Research needed by your units is added and ordered automatically. You can add others by hand.')}</div>
+       ${sim.plan.length?`<div class="rlist">${sim.plan.map(p=>{const r=RID[p.id];const man=B.resMan.includes(p.id);return `<span class="rpill"><img src="${resImg(r)}" alt="" onerror="this.style.opacity=.2">${esc(rN(r))}${r.utier?' '+r.utier:''}${man?`<button data-rdel="${p.id}" aria-label="✕">✕</button>`:''}</span>`}).join('')}</div>`:`<div style="color:var(--dim);font-size:13px">${T('Aucune pour l’instant.','None yet.')}</div>`}
+       <div class="brow" style="margin-top:8px"><select class="inp" id="bres" style="flex:1">${docR.map(r=>`<option value="${r.id}">${SET_ICON[r.set]||''} ${esc(rN(r))}${r.utier?' '+r.utier:''} · ${T('J','D')}${r.day}</option>`).join('')}</select><button class="btn pri" id="baddr">${T('Ajouter','Add')}</button></div>
+      </div>
       ${hs&&!empty?`<div class="bopt"><div class="lbl">${T('Quand plusieurs éléments attendent des ressources','When several items wait for resources')}</div><div class="seg" id="bprio" style="margin-top:6px"><button data-v="u" class="${(E.prio||'u')==='u'?'on':''}">🎖 ${T('Unités d’abord','Units first')}</button><button data-v="b" class="${E.prio==='b'?'on':''}">🏭 ${T('Bâtiments d’abord','Buildings first')}</button><button data-v="s" class="${E.prio==='s'?'on':''}">🧮 ${T('Ordre exact','Exact order')}</button></div>
-        <div style="color:var(--dim);font-size:11.5px;margin-top:6px">${E.prio==='s'?T('Une seule file : tes unités sont entrelacées selon leurs proportions, chaque bâtiment passe après le nombre d’unités indiqué (⤷), et le premier élément prêt mais trop cher garde pour lui les ressources qu’il attend (les suivants n’utilisent que le surplus). C’est le mode utilisé par l’optimiseur.','A single queue: your units are interleaved by proportion, each building comes after the number of units shown (⤷), and the first item that is ready but too expensive keeps the resources it is waiting for (the next ones only use the surplus). This is the mode the optimiser uses.'):T('Ce qui ne peut pas être payé est sauté : le reste continue avec les ressources disponibles.','What cannot be paid is skipped: the rest goes on with the resources available.')}</div></div>`:''}
-    </section>
-    <aside class="bxres" id="bside">
-     <div class="panel">
+        <div style="color:var(--dim);font-size:11.5px;margin-top:6px">${E.prio==='s'?T('Une seule file : unités entrelacées selon leurs proportions, chaque bâtiment après le nombre d’unités indiqué (⤷) ; le premier élément prêt mais trop cher garde les ressources qu’il attend. C’est le mode de l’optimiseur.','A single queue: units interleaved by proportion, each building after the number of units shown (⤷); the first item that is ready but too expensive keeps the resources it waits for. This is the optimiser’s mode.'):T('Ce qui ne peut pas être payé est sauté : le reste continue avec les ressources disponibles.','What cannot be paid is skipped: the rest goes on with the resources available.')}</div></div>`:''}
+     </section>
+     <aside class="bxres">
       <div class="lbl" style="margin:0 0 6px">${T('Coût total du build','Total build cost')}</div>
       <div class="rtab">${resRows}</div>
       ${!empty?`<div class="bmeta"><span>🎖 ${uCount} ${T('unités','units')}</span><span>❤ ${fmt(B.units.reduce((a,[k,t,q])=>{const u=UK[k];const l=u&&(u.levels.find(x=>x.tier===t)||u.levels[0]);return a+(l?stat(l,'hp')*q:0)},0))} ${T('PV au total','total HP')}</span><span>⏱ ${dur(uTime)} ${T('de production','of production')}</span><span>💸 ${fmt(Object.values(uUp).reduce((a,b)=>a+b,0))} ${T('d’entretien / j','upkeep / day')}</span></div>`:''}
-     </div>
-     ${ecoC.length?`<details class="panel bxeco" ${ecoC.every(c=>!Object.values((cdat(c).st)||{}).some(v=>v>0))?'open':''}><summary class="lbl" style="cursor:pointer">🌍 ${T('Économie de départ · production et stock','Starting economy · production and stock')}</summary>`:''}
-      ${ecoC.length?`<div class="ccards">${ecoC.map((c,i)=>{const d=cdat(c);const pot=c.pot||{};return `<div class="ccard${i?' ally':''}"><div class="cch"><img class="flag" src="${img('flags/'+esc_.map+'/small_'+c.id+'.png')}" alt=""><div><b>${esc(cN(c))}</b><small>${i===0?T('moi','me'):T('allié','ally')} · ${DOC(c.doc)} · ${c.urban} ${T('villes','cities')} / ${c.n} ${T('provinces','provinces')} · ${c.vp} VP</small></div>${i?`<label class="shr">${T('Part qu’il t’envoie','Share sent to you')}<select class="inp" data-csh="${c.id}">${[100,75,50,25,0].map(v=>`<option value="${v}" ${v===shareOf(c,i)?'selected':''}>${v} %</option>`).join('')}</select></label>`:''}<button class="x" data-edel="${c.id}" aria-label="${T('Retirer','Remove')}">✕</button></div>
-        <div class="cct"><span></span>${RK.map(k=>`<span class="h" title="${esc(RES()[k])}"><img src="${img('resources/'+k+'_s1.png')}" alt="">${esc(RES()[k])}</span>`).join('')}
-          <span class="rl" title="${T('Production quotidienne des villes, à 100 % de moral (seules les villes produisent dans CoW 1.5)','Daily production of cities at 100% morale (only cities produce in CoW 1.5)')}">${T('Production / j','Production / day')}</span>${RK.map(k=>`<b>${fmt((c.prod||{})[k]||0)}</b>`).join('')}
-          <span class="rl" title="${T('Production des provinces rurales, débloquée par Industrie locale et Poste de recrutement','Rural province production, unlocked by Local Industry and Recruiting Station')}">${T('Potentiel rural','Rural potential')}</span>${RK.map(k=>`<small>+${fmt(Math.max(0,(pot[k]||0)-((c.prod||{})[k]||0)))}</small>`).join('')}
-          <span class="rl">${T('Stock actuel','Current stock')}</span>${RK.map(k=>`<input class="inp" type="number" min="0" step="500" value="${(d.st||{})[k]||0}" data-cst="${c.id}:${k}" aria-label="${esc(RES()[k])}">`).join('')}
-        </div></div>`}).join('')}
-        ${ecoC.length>1?`<div class="ctot"><span class="lbl">${T('Total utilisé par le calcul','Total used by the calculation')}</span><div class="cct"><span></span>${RK.map(k=>`<span class="h"><img src="${img('resources/'+k+'_s1.png')}" alt=""></span>`).join('')}<span class="rl">${T('Production / j','Production / day')}</span>${RK.map(k=>`<b>${fmt(prod[k]||0)}</b>`).join('')}<span class="rl">${T('Stock','Stock')}</span>${RK.map(k=>`<b>${fmt(stock0[k]||0)}</b>`).join('')}</div></div>`:''}
-        <div style="color:var(--dim);font-size:11.5px">${T('Production de départ tirée des fichiers du jeu. Le stock de départ n’est pas publié par le jeu : recopie ton stock (et celui de tes alliés) depuis la partie, 0 si tu ne le connais pas. Les bâtiments que tu ajoutes sont construits dans tes villes à toi ; un allié n’envoie que la part choisie de sa production et de son stock.','Starting production comes from the game files. The starting stock is not published by the game: copy your stock (and your allies’) from the match, 0 if unknown. Buildings you add are built in your own cities; an ally only sends the chosen share of its production and stock.')}</div></div>`:''}
-     ${ecoC.length?`</details>`:''}
-      ${ecoC.length?`<details class="wbp panel" ${E.wbH||E.wbM?'open':''}><summary class="lbl" style="cursor:pointer">💎 ${T('Obligations de guerre','War Bonds')} · ${fmt(wb0)}${hs&&hs.wbUsed?' · '+fmt(hs.wbUsed)+' '+T('dépensées','spent'):''}</summary>
+      ${hasEco&&worst&&isFinite(worst[1])&&worst[1]>0?`<div class="tip">💡 ${T('Ressource la plus limitante','Most limiting resource')} : <b>${esc(RES()[worst[0]])}</b> — ${fmt(worst[1],1)} ${T('jours de production pour tout payer.','days of production to pay for it all.')}</div>`:''}
+      ${ecoC.length?`<details class="wbp" ${E.wbH||E.wbM?'open':''} style="margin-top:12px"><summary class="lbl" style="cursor:pointer">💎 ${T('Obligations de guerre','War Bonds')} · ${fmt(wb0)}${hs&&hs.wbUsed?' · '+fmt(hs.wbUsed)+' '+T('dépensées','spent'):''}</summary>
         <div class="sets" style="margin-top:8px">
-          <label>${T('Ton stock d\u2019obligations','Your War Bonds')}<input class="inp" type="number" min="0" step="1000" value="${wb0}" id="ewb"><small style="color:var(--dim)">${T('pré-rempli avec le stock de départ de la carte (20 000 ou 30 000 selon la carte)','pre-filled with the map starting stock (20,000 or 30,000 depending on the map)')}</small></label>
-          <label>${T('Prix d\u20191 h d\u2019accélération','Price of 1 h speed-up')}<input class="inp" type="number" min="0" step="10" value="${E.wbH||''}" placeholder="${T('à recopier du jeu','copy from game')}" id="ewbh"></label>
-          <label>${T('Prix d\u20191 point de moral','Price of 1 morale point')}<input class="inp" type="number" min="0" step="10" value="${E.wbM||''}" placeholder="${T('à recopier du jeu','copy from game')}" id="ewbm"></label>
+          <label>${T('Ton stock d’obligations','Your War Bonds')}<input class="inp" type="number" min="0" step="1000" value="${wb0}" id="ewb"></label>
+          <label>${T('Prix d’1 h d’accélération','Price of 1 h speed-up')}<input class="inp" type="number" min="0" step="10" value="${E.wbH||''}" placeholder="${T('à recopier du jeu','copy from game')}" id="ewbh"></label>
+          <label>${T('Prix d’1 point de moral','Price of 1 morale point')}<input class="inp" type="number" min="0" step="10" value="${E.wbM||''}" placeholder="${T('à recopier du jeu','copy from game')}" id="ewbm"></label>
         </div>
         <div class="brow" style="margin-top:8px">${[['r',T('Accélérer les recherches','Rush research')],['u',T('Accélérer les unités','Rush units')],['b',T('Accélérer les bâtiments','Rush buildings')]].map(([k,n])=>`<label class="chip ${(E.rush||{})[k]?'on':''}" data-rush="${k}">⚡ ${n}</label>`).join('')}<label class="chip ${E.boost?'on':''}" id="eboost">📣 ${T('Moral à 100 % dès le départ','Morale to 100% from the start')}</label></div>
-        <div style="color:var(--dim);font-size:11.5px;margin-top:6px">${T('Bytro calcule le prix des accélérations et du moral dans le jeu, sans le publier : recopie les prix affichés en jeu. Le simulateur dépense alors tes obligations dans l\u2019ordre où les éléments démarrent, tant qu\u2019il en reste.','Bytro computes speed-up and morale prices in the game without publishing them: copy the prices shown in game. The simulator then spends your War Bonds in the order items start, while you have enough.')}</div>
+        <div style="color:var(--dim);font-size:11.5px;margin-top:6px">${T('Bytro ne publie pas le prix des accélérations et du moral : recopie les prix affichés en jeu.','Bytro does not publish speed-up and morale prices: copy the prices shown in game.')}</div>
       </details>`:''}
-    <details class="panel" style="margin-top:12px"><summary class="lbl" style="cursor:pointer">⚙ ${T('Réglages','Settings')}</summary>
-      <div class="sets">
+      <details style="margin-top:12px"><summary class="lbl" style="cursor:pointer">⚙ ${T('Réglages','Settings')}</summary>
+       <div class="sets">
         <label>${T('Emplacements de recherche','Research slots')}<select class="inp" id="bslots">${[1,2,3,4].map(n=>`<option ${n===B.slots?'selected':''}>${n}</option>`).join('')}</select></label>
         <label>${T('Moral de départ','Starting morale')}<select class="inp" id="emor0">${[100,90,80,70,60,50,40,30].map(n=>`<option value="${n}" ${n===(E.mor0??CB.mor0??70)?'selected':''}>${n} %${n===(CB.mor0??70)?' ('+T('jeu','game')+')':''}</option>`).join('')}</select></label>
         <label>${T('Moral visé','Target morale')}<select class="inp" id="emorT">${[100,90,80,70,60,50].map(n=>`<option value="${n}" ${n===(E.morT??100)?'selected':''}>${n} %</option>`).join('')}</select></label>
-        <label>${T('Rattrapage / jour','Catch-up / day')}<select class="inp" id="emorR">${[5,10,15,20,30,50].map(n=>`<option value="${n}" ${n===(E.morR??15)?'selected':''}>${n} % ${T('de l\u2019écart','of the gap')}</option>`).join('')}</select></label>
+        <label>${T('Rattrapage / jour','Catch-up / day')}<select class="inp" id="emorR">${[5,10,15,20,30,50].map(n=>`<option value="${n}" ${n===(E.morR??15)?'selected':''}>${n} % ${T('de l’écart','of the gap')}</option>`).join('')}</select></label>
         <label>${T('Chantiers simultanés','Simultaneous builds')}<select class="inp" id="esites"><option value="0" ${!E.sites?'selected':''}>${T('1 par province (jeu)','1 per province (game)')}</option>${[1,2,3,4,5,6,8,10].map(n=>`<option value="${n}" ${E.sites===n?'selected':''}>${n}</option>`).join('')}</select></label>
-      </div>
-    </details>
-    </aside>
-   </div>
-   ${!empty?`<div class="bmob" id="bmob"><div><b>${finishT==null?T('Pas tout fini','Not all done'):'✓ '+tAt(finishT,sim.DAY)}</b><br><small>${hs?(hs.wait.length?'⚠ '+hs.wait.length+' '+T('blocage(s)','stall(s)'):T('aucun manque','no shortage')):T('choisis ton pays','pick your country')} · ${fmt(Object.values(grand).reduce((a,b)=>a+b,0))} res.</small></div><span class="btn pri" style="pointer-events:none">${T('Voir le résultat','See result')} ↓</span></div>`:''}
-   ${hs&&!empty?`<div class="panel bxana" id="bxana" data-tab="${st.bana||'prod'}"><div class="bxtabs" id="banat"><button data-v="prod">🏭 ${T('Production & bâtiments','Production & buildings')}</button><button data-v="stk">📉 ${T('Stocks & moral','Stock & morale')}</button><button data-v="cal">📅 ${T('Calendrier des recherches','Research timeline')}</button><button data-v="tl">▶ ${T('Timelapse','Timelapse')}</button></div>`:''}
-   ${hs&&!empty?`<div class="bxpn" data-ap="cal">${gantt||`<div class="hint">${T('Aucune recherche nécessaire pour ce plan.','No research needed for this plan.')}</div>`}</div>`:''}
-    ${hs&&!empty?`<section class="bxpn" data-ap="prod" id="prodsec">${prodPanel(hs,E)}</section>
-    <section class="bxpn" data-ap="tl" id="tlsec">
+       </div>
+      </details>
+     </aside>
+    </div>
+    ${hs&&!empty?`<div class="bxana" id="bxana" data-tab="${st.bana||'prod'}"><div class="bxtabs" id="banat"><button data-v="prod">🏭 ${T('Production & bâtiments','Production & buildings')}</button><button data-v="stk">📉 ${T('Stocks & moral','Stock & morale')}</button><button data-v="cal">📅 ${T('Calendrier des recherches','Research timeline')}</button><button data-v="tl">▶ ${T('Timelapse','Timelapse')}</button></div>
+     <div class="bxpn" data-ap="cal">${gantt||`<div class="hint">${T('Aucune recherche nécessaire pour ce plan.','No research needed for this plan.')}</div>`}</div>
+     <section class="bxpn" data-ap="prod" id="prodsec">${prodPanel(hs,E)}</section>
+     <section class="bxpn" data-ap="tl" id="tlsec">
       <div class="tlbar"><button class="btn pri" id="tlplay">▶</button><div class="tlspd seg" id="tlspd">${[1,2,4,8].map(v=>`<button data-v="${v}" class="${v===2?'on':''}">×${v}</button>`).join('')}</div><b id="tld" class="tlclock"></b></div>
       <div class="tlscrub" id="tlscrub"><div class="tlticks" id="tlticks"></div><input type="range" id="tlr" min="0" max="${Math.round(Math.max(hs.goal,hs.finish||0,1)*24)}" step="0.25" value="0"></div>
-      <div id="tlv" class="tlv"></div></section>`:''}
-    ${hs&&!empty?`<div class="bxpn" data-ap="stk">${lineChart(RK.map(k=>({n:RES()[k],c:RES_C[k],pts:hs.series[k]})),{h:200,xl:v=>T('J','D')+(Math.round(v)+1)})}
-      <div class="lbl" style="margin:12px 0 6px">${T('Moral des provinces','Province morale')}</div>${lineChart([{n:T('Moral','Morale'),c:'#f2a900',pts:hs.morS}],{h:130,ymax:100,yl:v=>Math.round(v)+'%',xl:v=>T('J','D')+(Math.round(v)+1)})}
-      <p style="color:var(--dim);font-size:11.5px;margin:6px 0 0;line-height:1.5">${T(`Tout est lié : le moral part de ${Math.round(hs.morS[0][1])} % (valeur du jeu en début de partie) et se rapproche chaque jour du moral visé ; les Bureaux de la propagande l\u2019augmentent. Le moral multiplie la production de ressources, et en dessous de 80 % il rallonge la production des unités et la construction des bâtiments (courbes officielles du jeu). Les bâtiments terminés ajoutent leurs bonus, les unités terminées leur entretien. La vitesse de remontée du moral n\u2019est pas publiée par Bytro : elle est réglable.`,`Everything is linked: morale starts at ${Math.round(hs.morS[0][1])}% (game value at game start) and moves toward the target morale every day; Propaganda Offices raise it. Morale multiplies resource production, and under 80% it slows unit production and building construction (official game curves). Finished buildings add their bonuses, finished units their upkeep. Bytro does not publish how fast morale recovers: it is adjustable.`)}</p></div>`:''}
-   ${hs&&!empty?`</div>`:''}
+      <div id="tlv" class="tlv"></div></section>
+     <div class="bxpn" data-ap="stk">${lineChart(RK.map(k=>({n:RES()[k],c:RES_C[k],pts:hs.series[k]})),{h:200,xl:v=>T('J','D')+(Math.round(v)+1)})}
+      <div class="lbl" style="margin:12px 0 6px">${T('Moral des provinces','Province morale')}</div>${lineChart([{n:T('Moral','Morale'),c:'#f2a900',pts:hs.morS}],{h:130,ymax:100,yl:v=>Math.round(v)+'%',xl:v=>T('J','D')+(Math.round(v)+1)})}</div>
+    </div>`:''}
+  </details>`;
+  app.innerHTML=hero(T('Compétitif','Competitive'),T('Planificateur de <em>build</em>','Build <em>planner</em>'),T('① ta partie, ② ton armée, ③ l’optimiseur calcule le meilleur plan, ④ tu suis la feuille de route : quoi construire, où et à quelle heure.','① your match, ② your army, ③ the optimiser computes the best plan, ④ you follow the roadmap: what to build, where and at what time.'))+`
+  <div class="bw">${step1}${step2}${optPanel(B,hasEco,hs,x=>tAt(x*sim.DAY,sim.DAY))}${road}${expert}
+   ${!empty&&hs?`<div class="bmob" id="bmob"><div><b>${finishT==null?T('Pas tout fini','Not all done'):'✓ '+tAt(finishT,sim.DAY)}</b><br><small>${hs.wait.length?'⚠ '+hs.wait.length+' '+T('blocage(s)','stall(s)'):T('aucun manque','no shortage')}</small></div><span class="btn pri" style="pointer-events:none">${T('Feuille de route','Roadmap')} ↓</span></div>`:''}
   </div>`;
   const B2=B,rr=()=>{(st.bh=st.bh||[]).push(snapNow);if(st.bh.length>40)st.bh.shift();st.optMsg='';BUILD.save();viewBuild()};
   $('#bdoc').onclick=e=>{const b=e.target.closest('button');if(!b||b.disabled)return;switchDoc(B2,+b.dataset.v);rr()};
@@ -1273,7 +1324,10 @@ function viewBuild(h){
   $$('[data-csh]').forEach(i=>i.onchange=()=>{const cid=i.dataset.csh;B2.eco.cd=B2.eco.cd||{};const d=B2.eco.cd[cid]=B2.eco.cd[cid]||{};d.sh=+i.value;rr()});
   $('#breset').onclick=()=>{const eco=B2.eco;BUILD.reset();const nb=BUILD.get();nb.eco=eco;nb.resMan=[];BUILD.save();viewBuild()};
   if(hs&&$('#tlr'))timelapse(hs,B,RK);
-  if($('#bmob'))$('#bmob').onclick=()=>$('#bside').scrollIntoView({behavior:'smooth',block:'start'});
+  if($('#bmob'))$('#bmob').onclick=()=>{const t=$('#bside')||$('#bs3');if(t)t.scrollIntoView({behavior:'smooth',block:'start'})};
+  if($('#brmf'))$('#brmf').onclick=e=>{const b=e.target.closest('button');if(b){st.rmf=b.dataset.v;viewBuild()}};
+  if($('#badd'))$('#badd').addEventListener('toggle',e=>{st.addOpen=e.target.open});
+  if($('#bexp'))$('#bexp').addEventListener('toggle',e=>{st.expOpen=e.target.open});
   $('#bshare').onclick=()=>{const s=btoa(unescape(encodeURIComponent(JSON.stringify(B2)))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');const url=location.href.split('#')[0]+'#/build/'+s;try{navigator.clipboard.writeText(url)}catch(e){};$('#bshare').textContent='✓ '+T('Lien copié','Link copied')};
 }
 
@@ -1525,7 +1579,7 @@ function bindTree(L){
 /* ---------- équipe : un plan par joueur, bilan au jour visé, compensations ---------- */
 function teamRun(B,sc){
   if(!sc||!sc.data||!B.team||!B.team.length)return null;const E=B.eco;const G=Math.max(1,E.goal||5);const RK=RES_ORDER.filter(k=>k!=='22');
-  const ctxOf=(mb,flow)=>{const c=sc.data.countries.find(x=>x.id===mb.cid);if(!c)return null;const prod={};Object.entries(c.prod||{}).forEach(([k,v])=>{if(k!=='22')prod[k]=v});const st=((E.cd||{})[c.id]||{}).st||{};const wb0=mb.eco&&mb.eco.wb!=null?+mb.eco.wb:(c.start&&c.start['22'])||0;return {c,ctx:{countries:[c],me:c,prod,stock0:st,wb0,flow}}};
+  const ctxOf=(mb,flow)=>{const c=sc.data.countries.find(x=>x.id===mb.cid);if(!c)return null;const prod={};Object.entries(c.prod||{}).forEach(([k,v])=>{if(k!=='22')prod[k]=v});const st=((E.cd||{})[c.id]||{}).st||{};const wb0=mb.eco&&mb.eco.wb!=null?+mb.eco.wb:(c.start&&c.start['22'])||0;return {c,ctx:{countries:[c],me:c,prod,stock0:st,wb0,flow,provs:provsOf(sc,c)}}};
   const pseudo=(mb,i)=>{if(i===B.ti)return B;const eco=Object.assign({},E,{cs:[mb.cid]});BUILD.ECOF.forEach(f=>{delete eco[f];if(mb.eco&&f in mb.eco)eco[f]=mb.eco[f]});return Object.assign({},B,{units:mb.units||[],blds:mb.blds||[],res:mb.res||[],resMan:mb.resMan||[],doc:mb.doc||B.doc,eco})};
   const runAll=flows=>B.team.map((mb,i)=>{const o=ctxOf(mb,flows&&flows[i]);if(!o)return null;const hs=simHourly(pseudo(mb,i),o.ctx);const g=hs.atGoal||{stock:hs.stock,rem:{},done:hs.finish!=null,left:hs.left};
     const bal={};RK.forEach(k=>{bal[k]=g.done?(g.stock[k]||0):(g.stock[k]||0)-(g.rem[k]||0)});const empty=!(mb.units||[]).length&&!(mb.blds||[]).length&&!(mb.res||[]).length;
@@ -1567,6 +1621,15 @@ function teamHTML(B,sc,TM){
     <div class="tchips">${chips}${add}</div>${body}</section>`;
 }
 function bTer(b){const f=(b&&b.forbid)||[];return f.includes(14)?'r':f.some(x=>x>=10&&x<=13)?'u':'a'}
+const PROVC={};
+function provsOf(sc,c){
+  // provinces de départ d'un pays sur une carte (données embarquées de la carte, sans la géométrie)
+  if(!sc||!c)return null;const sid=sc.id;let m=PROVC[sid];
+  if(m===undefined){m=null;try{const el=document.getElementById('md'+sid);if(el){const d=JSON.parse(el.textContent);m={P:d.P,caps:d.caps||{}}}}catch(e){}PROVC[sid]=m}
+  if(!m)return null;const K=['1','3','4','5','20'];const capLoc=m.caps[c.id];
+  const L=m.P.filter(p=>p[2]===c.id).map(p=>{const prod={};K.forEach((k,j)=>{if(p[8][j])prod[k]=p[8][j]});return {id:p[0],n:p[1],urb:p[3]===14,t:p[3],vp:p[4],pop:p[5],coast:!!p[6],prod,cap:capLoc!=null?p[0]===capLoc:false}});
+  if(L.length&&!L.some(p=>p.cap)){const cp=L.find(p=>p.n===c.cap)||L.filter(p=>p.urb).sort((a,b)=>b.pop-a.pop)[0];if(cp)cp.cap=true}
+  return L.length?L:null}
 function simHourly(B,ctx){
   // Simulation heure par heure. Tout est lié : moral (évolue chaque jour), production, bâtiments, entretien, temps de production.
   const E=B.eco;const STEP=1/24;const GOAL=Math.max(1,E.goal||5);const MAXD=Math.max(GOAL+1,E.days||30);
@@ -1590,12 +1653,19 @@ function simHourly(B,ctx){
   if(E.prio==='s'&&uq.length>1){const by={};uq.forEach(x=>(by[x.gi]=by[x.gi]||[]).push(x));const gs=Object.keys(by).map(g=>({g,q:by[g].length,n:0,a:+((B.units[g]||[])[3])||0}));if(gs.length>1){const out=[];for(let i=0;i<uq.length;i++){let bg=null,bv=1e18;const L=gs.filter(g=>g.n<g.q&&g.a<=i);const C=L.length?L:[gs.filter(g=>g.n<g.q).sort((x,y)=>x.a-y.a)[0]];for(const g of C){const v=(g.n+0.5)/g.q;if(v<bv-1e-12){bv=v;bg=g}}out.push(by[bg.g][bg.n++])}out.forEach((x,i)=>x.o=i);uq.splice(0,uq.length,...out)}}
   if(E.prio==='s'){const need={};uq.forEach(x=>(x.l.rr||[]).forEach(id=>{if(need[id]==null||x.o<need[id])need[id]=x.o}));for(let i=order.length-1;i>=0;i--){const id=order[i];if(need[id]==null)continue;RID[id].req.forEach(y=>{if(need[y]==null||need[id]<need[y])need[y]=need[id]})}
     rq.forEach((n,i)=>n.o=(need[n.id]!=null?need[n.id]:1e9)-0.75+i*1e-6);rq.sort((a,b)=>a.o-b.o)}
-  const rS=Array(B.slots).fill(null),bS=Array(E.sites?Math.max(1,E.sites):Math.max(1,nU+nR)).fill(null);
+  const rS=Array(B.slots).fill(null),bS=Array(E.sites?Math.max(1,E.sites):Math.max(1,(ctx.provs&&ctx.provs.length)||nU+nR)).fill(null);
   // bâtiments existants par type et niveau (une ville = un bâtiment de chaque type) ; un niveau N s'obtient en améliorant un niveau N-1 terminé
   const built={},resv={},onU={};const bk=(o,k,l)=>((o[k]=o[k]||{})[l]||0);const badd=(o,k,l,v)=>{(o[k]=o[k]||{})[l]=bk(o,k,l)+v};const bTot=k=>Object.values(built[k]||{}).reduce((a,v)=>a+v,0)+Object.values(resv['new'+k]||{}).reduce((a,v)=>a+v,0);
   // usines : chaque usine produit une unité à la fois ; son niveau divise le temps de production
   const FAC=new Set(['barracks','ordnance_foundry','tank_plant','aircraft_factory','harbour','secret_lab']);const facs={};
-  if(E.haveFac!==false)FAC.forEach(k=>{facs[k]=[{lvl:1,busy:null}];badd(built,k,1,1)});
+  // provinces réelles du pays sur la carte choisie : chaque bâtiment est placé dans la meilleure province libre
+  const PV=(ctx.provs&&ctx.provs.length)?ctx.provs:null;const PL=PV?PV.map(()=>({})):null,pBusy=PV?PV.map(()=>false):null;
+  const pTot=p=>RES_ORDER.reduce((a,k)=>a+((p.prod||{})[k]||0),0);const allTot=PV?Math.max(1,PV.reduce((a,p)=>a+pTot(p),0)):1;
+  const pCap=PV?Math.max(0,PV.findIndex(p=>p.cap)):0;
+  const pFit=(b,i)=>{const p=PV[i],t=bTer(b);if(t==='u'&&!p.urb)return false;if(t==='r'&&p.urb)return false;if((b.key==='harbour'||b.key==='local_port')&&!p.coast)return false;return true};
+  const pScore=(b,L,P,i)=>{const p=PV[i];if(FAC.has(b.key))return (i===pCap?1e9:0)+pTot(p)+(p.pop||0)/1e3;if(b.key==='propaganda_office')return (((L.f||{})['5']||0)-(((P&&P.f)||{})['5']||0))*pTot(p);
+    const pb=L.pb||{},pp=(P&&P.pb)||{};let g=0;RES_ORDER.forEach(k=>{g+=((pb[k]||0)-(pp[k]||0))*((p.prod||{})[k]||0)});return g||pTot(p)*1e-6};
+  if(E.haveFac!==false)FAC.forEach(k=>{if(PV){const b=D.buildings.find(x=>x.key===k);let i=b&&pFit(b,pCap)?pCap:PV.findIndex((_,j)=>b&&pFit(b,j));if(i<0)return;PL[i][k]=1;facs[k]=[{lvl:1,busy:null,p:i}]}else facs[k]=[{lvl:1,busy:null}];badd(built,k,1,1)});
   const uRun=[];
   const done=new Set(),events=[],wait={};const series={};RES_ORDER.forEach(k=>series[k]=[[0,stock[k]]]);
   const can=c=>Object.entries(c||{}).every(([k,v])=>(stock[k]||0)>=v-1e-9);
@@ -1603,18 +1673,19 @@ function simHourly(B,ctx){
   const pay=c=>Object.entries(c||{}).forEach(([k,v])=>stock[k]=(stock[k]||0)-v);
   const noteWait=(key,lab,c,t)=>{if(!wait[key])wait[key]={lab,res:lack(c),t}};
   const finishB=(it)=>{if(it.P){badd(built,it.b.key,it.P.lvl,-1);badd(resv,it.b.key,it.P.lvl,-1)}else badd(resv,'new'+it.b.key,1,-1);badd(built,it.b.key,it.L.lvl,1);
-    if(FAC.has(it.b.key)){const L=facs[it.b.key]=facs[it.b.key]||[];const up=L.filter(f=>f.lvl===it.L.lvl-1).sort((a,b)=>(a.busy?1:0)-(b.busy?1:0))[0];if(up&&it.L.lvl>1)up.lvl=it.L.lvl;else L.push({lvl:it.L.lvl,busy:null})}
-    const urb=it.ur!=null?it.ur:bTer(it.b)!=='r';const pb=it.L.pb||{},pp=(it.P&&it.P.pb)||{};const gg={};RES_ORDER.forEach(k=>{const d=(pb[k]||0)-(pp[k]||0);if(d){const v=d*(urb?avgU[k]:avgR[k]);bon[k]+=v;if(v)gg[k]=v}});
-    {const mo=it.b.key==='propaganda_office'?(((it.L.f||{})['5']||0)-(((it.P&&it.P.f)||{})['5']||0)):0;bgl.push({t,lab:bN(it.b)+' '+it.L.lvl,key:it.b.key,g:gg,mor:mo,cost:Object.values(it.L.c||{}).reduce((a,v)=>a+v,0)})}
-    if(it.b.key==='propaganda_office'&&urb){const v=((it.L.f||{})['5']||0)-(((it.P&&it.P.f)||{})['5']||0);prop+=v/nU}};
+    if(PV&&it.pi!=null){PL[it.pi][it.b.key]=it.L.lvl;pBusy[it.pi]=false}
+    if(FAC.has(it.b.key)){const L=facs[it.b.key]=facs[it.b.key]||[];const up=PV&&it.pi!=null?L.find(f=>f.p===it.pi):L.filter(f=>f.lvl===it.L.lvl-1).sort((a,b)=>(a.busy?1:0)-(b.busy?1:0))[0];if(up&&it.L.lvl>1)up.lvl=it.L.lvl;else L.push({lvl:it.L.lvl,busy:null,p:it.pi})}
+    const urb=PV&&it.pi!=null?PV[it.pi].urb:it.ur!=null?it.ur:bTer(it.b)!=='r';const pb=it.L.pb||{},pp=(it.P&&it.P.pb)||{};const gg={};RES_ORDER.forEach(k=>{const d=(pb[k]||0)-(pp[k]||0);if(d){const v=d*(PV&&it.pi!=null?((PV[it.pi].prod||{})[k]||0):(urb?avgU[k]:avgR[k]));bon[k]+=v;if(v)gg[k]=v}});
+    {const mo=it.b.key==='propaganda_office'?(((it.L.f||{})['5']||0)-(((it.P&&it.P.f)||{})['5']||0)):0;bgl.push({t,lab:bN(it.b)+' '+it.L.lvl,where:PV&&it.pi!=null?PV[it.pi].n:null,key:it.b.key,g:gg,mor:mo,cost:Object.values(it.L.c||{}).reduce((a,v)=>a+v,0)})}
+    if(it.b.key==='propaganda_office'&&(PV&&it.pi!=null||urb)){const v=((it.L.f||{})['5']||0)-(((it.P&&it.P.f)||{})['5']||0);prop+=PV&&it.pi!=null?v*pTot(PV[it.pi])/allTot:v/nU}};
   let t=0,finish=null,mSum=0,mN=0;const snaps=[];const snap=()=>snaps.push({d:Math.round(t),pb:Object.fromEntries(RES_ORDER.map(k=>[k,base[k]*m/100])),pbon:Object.fromEntries(RES_ORDER.map(k=>[k,bon[k]*m/100])),pupk:{...upk},stock:{...stock},prod:Object.fromEntries(RES_ORDER.map(k=>[k,(base[k]+bon[k])*m/100-upk[k]])),m,nu:events.filter(e=>e.k==='u').length,nb:events.filter(e=>e.k==='b').length,nr:events.filter(e=>e.k==='r').length,wb,fac:Object.fromEntries(Object.entries(facs).map(([k,v])=>[k,v.map(f=>f.lvl)]))});
   snap();
   for(;t<=MAXD+1e-9;t+=STEP){
     // changement de jour : le moral évolue
     if(t>0&&Math.abs(t-Math.round(t))<1e-6){m=Math.min(100,m+(mT-m)*mR+prop);morS.push([t,m]);snap()}
-    rS.forEach((s,i)=>{if(s&&s.end<=t+1e-9){done.add(s.id);events.push({t:s.end,k:'r',lab:rN(s.r)+(s.r.utier?' '+s.r.utier:''),s:s.start,wb:s.wb});rS[i]=null}});
-    for(let i=uRun.length-1;i>=0;i--){const s=uRun[i];if(s.end<=t+1e-9){sum(upk,s.l.dc);events.push({t:s.end,k:'u',lab:unitName(s.u,s.l),s:s.start,f:s.f.lvl,wb:s.wb,gi:s.gi,uk:s.u.key,l:s.l});s.f.busy=null;uRun.splice(i,1)}}
-    bS.forEach((s,i)=>{if(s&&s.end<=t+1e-9){finishB(s);events.push({t:s.end,k:'b',lab:bN(s.b)+' '+s.L.lvl,s:s.start,wb:s.wb,gi:s.gi});bS[i]=null}});
+    rS.forEach((s,i)=>{if(s&&s.end<=t+1e-9){done.add(s.id);events.push({t:s.end,k:'r',lab:rN(s.r)+(s.r.utier?' '+s.r.utier:''),rid:s.id,s:s.start,wb:s.wb});rS[i]=null}});
+    for(let i=uRun.length-1;i>=0;i--){const s=uRun[i];if(s.end<=t+1e-9){sum(upk,s.l.dc);events.push({t:s.end,k:'u',lab:unitName(s.u,s.l),s:s.start,f:s.f.lvl,fk:s.fk,where:PV&&s.f.p!=null&&PV[s.f.p]?PV[s.f.p].n:null,wb:s.wb,gi:s.gi,uk:s.u.key,l:s.l});s.f.busy=null;uRun.splice(i,1)}}
+    bS.forEach((s,i)=>{if(s&&s.end<=t+1e-9){finishB(s);events.push({t:s.end,k:'b',lab:bN(s.b)+' '+s.L.lvl,bk:s.b.key,lv:s.L.lvl,up:!!s.P,where:PV&&s.pi!=null?PV[s.pi].n:null,urb:PV&&s.pi!=null?PV[s.pi].urb:null,s:s.start,wb:s.wb,gi:s.gi});bS[i]=null}});
     if(E.prio!=='s')rS.forEach((s,i)=>{if(s||!rq.length)return;const qi=rq.findIndex(n=>t+1e-9>=(n.r.day-1)&&n.r.req.every(x=>!B.res.includes(x)||done.has(x)));if(qi<0)return;const n=rq[qi];if(!can(n.r.c)){noteWait('r'+n.id,rN(n.r),n.r.c,t);return}pay(n.r.c);rq.splice(qi,1);const d=n.r.bt;const rc=rush('r',d);rS[i]={id:n.id,r:n.r,start:t,end:rc?t:t+d/86400,wb:rc}});
     // éligibilité / lancement, communs aux trois modes de priorité
     const fBusy=new Set(),rrM=new Map();
@@ -1622,12 +1693,16 @@ function simHourly(B,ctx){
       if(fk&&!list.length){if(!wait['nf'+fk])wait['nf'+fk]={lab:unitName(n.u,n.l),res:[],need:bN(fb),f:1,t};fBusy.add(fk);return null}
       let free=null;for(const f of list)if(!f.busy&&(!free||f.lvl>free.lvl))free=f;if(!free){if(fk)fBusy.add(fk);return null}
       let ok=rrM.get(n.l.id);if(ok===undefined){ok=n.l.rr.every(x=>!resSet.has(x)||done.has(x));rrM.set(n.l.id,ok)}return ok?free:null};
-    const uGo=(i,free)=>{const n=uq[i];pay(n.l.c);uq.splice(i,1);const ud=pTime(n.l,free.lvl)/mUnit();const rc=rush('u',ud);const run={u:n.u,l:n.l,f:free,start:t,end:rc?t:t+ud/86400,wb:rc,gi:n.gi};free.busy=run;uRun.push(run)};
-    const bOk=n=>{if(t+1e-9<(n.L.day||1)-1)return false;const ter=bTer(n.b);
+    const uGo=(i,free)=>{const n=uq[i];pay(n.l.c);uq.splice(i,1);const ud=pTime(n.l,free.lvl)/mUnit();const rc=rush('u',ud);const run={u:n.u,l:n.l,f:free,fk:n.fb&&n.fb.key,start:t,end:rc?t:t+ud/86400,wb:rc,gi:n.gi};free.busy=run;uRun.push(run)};
+    const bOk=n=>{if(t+1e-9<(n.L.day||1)-1)return false;
+        if(PV){let bi=-1,bv=-Infinity,any=false;for(let i=0;i<PV.length;i++){if(!pFit(n.b,i))continue;const lv=PL[i][n.b.key]||0;if(lv!==(n.P?n.P.lvl:0))continue;any=true;if(pBusy[i])continue;const v=pScore(n.b,n.L,n.P,i);if(v>bv){bv=v;bi=i}}
+          if(bi<0){const key=(n.P?'nb':'np')+n.L.id;if(!wait[key]&&!(n.P&&bq.some(y=>y!==n&&y.b.key===n.b.key&&y.L.lvl===n.P.lvl))&&!bS.some(x=>x&&x.b.key===n.b.key))wait[key]={lab:bN(n.b)+' '+n.L.lvl,res:[],need:any?T('une province libre','a free province'):n.P?bN(n.b)+' '+n.P.lvl:T('une province libre','a free province'),t};return false}
+          n.pi=bi;return true}
+        const ter=bTer(n.b);
         if(n.P){if(bk(built,n.b.key,n.P.lvl)-bk(resv,n.b.key,n.P.lvl)<=0){if(!bS.some(Boolean)&&!bq.some(y=>y!==n&&y.b.key===n.b.key&&y.L.lvl===n.P.lvl)&&!wait['nb'+n.L.id])wait['nb'+n.L.id]={lab:bN(n.b)+' '+n.L.lvl,res:[],need:bN(n.b)+' '+n.P.lvl,t};return false}}
         else if(bTot(n.b.key)>=(ter==='u'?nU:ter==='r'?Math.max(1,nR):nU+nR)){if(!wait['np'+n.b.key])wait['np'+n.b.key]={lab:bN(n.b),res:[],need:T('une province libre','a free province'),t};return false}
         return true};
-    const bGo=(qi,i)=>{const n=bq[qi];pay(n.L.c);bq.splice(qi,1);{const ter=bTer(n.b);if(ter==='a'){const o=onU[n.b.key]=onU[n.b.key]||{};const tu=Object.values(o).reduce((a,v)=>a+v,0);if(n.P){n.ur=(o[n.P.lvl]||0)>0;if(n.ur){o[n.P.lvl]--;o[n.L.lvl]=(o[n.L.lvl]||0)+1}}else{n.ur=tu<nU;if(n.ur)o[1]=(o[1]||0)+1}}}if(n.P)badd(resv,n.b.key,n.P.lvl,1);else badd(resv,'new'+n.b.key,1,1);const bd=n.L.bt/mBld();const rc=rush('b',bd);bS[i]={b:n.b,L:n.L,P:n.P,ur:n.ur,start:t,end:rc?t:t+bd/86400,wb:rc,gi:n.gi}};
+    const bGo=(qi,i)=>{const n=bq[qi];pay(n.L.c);bq.splice(qi,1);{const ter=bTer(n.b);if(ter==='a'){const o=onU[n.b.key]=onU[n.b.key]||{};const tu=Object.values(o).reduce((a,v)=>a+v,0);if(n.P){n.ur=(o[n.P.lvl]||0)>0;if(n.ur){o[n.P.lvl]--;o[n.L.lvl]=(o[n.L.lvl]||0)+1}}else{n.ur=tu<nU;if(n.ur)o[1]=(o[1]||0)+1}}}if(n.P)badd(resv,n.b.key,n.P.lvl,1);else badd(resv,'new'+n.b.key,1,1);if(PV&&n.pi!=null)pBusy[n.pi]=true;const bd=n.L.bt/mBld();const rc=rush('b',bd);bS[i]={b:n.b,L:n.L,P:n.P,ur:n.ur,pi:n.pi,start:t,end:rc?t:t+bd/86400,wb:rc,gi:n.gi}};
     const doU=()=>{for(let i=0;i<uq.length;i++){const n=uq[i];const free=uFree(n);if(!free)continue;if(!can(n.l.c)){noteWait('u'+n.l.id,unitName(n.u,n.l),n.l.c,t);break}uGo(i,free);i--}};
     const doB=()=>{bS.forEach((s,i)=>{if(s||!bq.length)return;let qi=-1;for(let x=0;x<bq.length;x++){if(bOk(bq[x])){qi=x;break}}
       if(qi<0)return;const n=bq[qi];if(!can(n.L.c)){noteWait('b'+n.L.id,bN(n.b)+' '+n.L.lvl,n.L.c,t);return}bGo(qi,i)})};
@@ -1692,7 +1767,8 @@ async function autoBuild(B,ctx,opt,onProg,stopped){
     return {score:-sc+1e-4*end/G+1e-5*nB(P),v,n:ev.length,units,h}};
   // comptes de bâtiments
   const have=k=>OPT_FAC.includes(k)&&E.haveFac!==false?1:0;
-  const cap=k=>{if(k==='propaganda_office')return nU;const t=bTer(BY(k));return t==='u'?nU:t==='r'?nR:nU+nR};
+  const PVc=ctx.provs&&ctx.provs.length?ctx.provs:null;const fitP=(b,p)=>{const t=bTer(b);if(t==='u'&&!p.urb||t==='r'&&p.urb)return false;if((b.key==='harbour'||b.key==='local_port')&&!p.coast)return false;return true};
+  const cap=k=>{if(PVc)return PVc.filter(p=>fitP(BY(k),p)).length;if(k==='propaganda_office')return nU;const t=bTer(BY(k));return t==='u'?nU:t==='r'?nR:nU+nR};
   const lvlC=(P,k)=>{const c={1:have(k)};P.blds.forEach(([kk,l,q])=>{if(kk!==k)return;c[l]=(c[l]||0)+q;if(l>1)c[l-1]=(c[l-1]||0)-q});return c};
   const tot=(P,k)=>have(k)+P.blds.filter(x=>x[0]===k&&x[1]===1).reduce((a,x)=>a+x[2],0);
   const uniq=a=>[...new Set(a)].filter(x=>x>0);
@@ -1756,9 +1832,9 @@ function optDesc(R,x,fmtT){if(!x)return '—';const G=R.G;
   return `${x.n} ${T('unités prêtes à J','units ready by D')}${G}${mt}`}
 function optPanel(B,hasEco,hs,fmtT){
   const O=optState();const E=B.eco||{};const G=Math.max(1,E.goal||5);const R=st.optRes;const BY=k=>D.buildings.find(b=>b.key===k);
-  const head=`<div class="bxh"><b>🤖 ${T('Optimiseur automatique','Automatic optimiser')}</b><small>${T('il simule des milliers de plans complets, heure par heure, et garde le meilleur','it simulates thousands of complete plans, hour by hour, and keeps the best')}</small></div>`;
-  if(!hasEco)return `<section class="panel bxai">${head}<div class="tip">💡 ${T('Choisis ton pays en haut : l’optimiseur a besoin de sa production, de ses villes et de ses provinces.','Pick your country at the top: the optimiser needs its production, cities and provinces.')}</div></section>`;
-  if(!B.units.some(x=>x[2]>0))return `<section class="panel bxai">${head}<div class="tip">💡 ${T('Ajoute au moins un type d’unité depuis le catalogue : l’optimiseur part de ton armée (ses types et ses proportions) et construit tout le reste.','Add at least one unit type from the catalogue: the optimiser starts from your army (its types and proportions) and builds everything else.')}</div></section>`;
+  const head=`<div class="bch"><span class="bn">3</span><div><b>🤖 ${T('Le meilleur plan','The best plan')}</b><small>${T('l’optimiseur simule des milliers de plans complets, heure par heure, et garde le meilleur','the optimiser simulates thousands of complete plans, hour by hour, and keeps the best')}</small></div></div>`;
+  if(!hasEco)return `<section class="panel bcard bxai" id="bs3">${head}<div class="tip">💡 ${T('Choisis ton pays en haut : l’optimiseur a besoin de sa production, de ses villes et de ses provinces.','Pick your country at the top: the optimiser needs its production, cities and provinces.')}</div></section>`;
+  if(!B.units.some(x=>x[2]>0))return `<section class="panel bcard bxai" id="bs3">${head}<div class="tip">💡 ${T('Ajoute au moins un type d’unité depuis le catalogue : l’optimiseur part de ton armée (ses types et ses proportions) et construit tout le reste.','Add at least one unit type from the catalogue: the optimiser starts from your army (its types and proportions) and builds everything else.')}</div></section>`;
   const seg=(id,cur,opts)=>`<div class="seg overt" id="${id}">${opts.map(([v,a,b])=>`<button data-v="${v}" class="${cur===v?'on':''}"><b>${a}</b>${b?`<small>${b}</small>`:''}</button>`).join('')}</div>`;
   const fk=[...new Set(B.units.map(([k,t])=>{const u=UK[k];const l=u&&(u.levels.find(x=>x.tier===t)||u.levels[0]);const fb=l&&facB(l);return fb&&fb.key}).filter(Boolean))];
   const allow=[...OPT_ECO.map(k=>[k,'🏗 '+bN(BY(k))]),['fac','🏭 '+T('Usines de mes unités','My units’ factories')+(fk.length?' ('+fk.map(k=>bN(BY(k))).join(', ')+')':'')]];
@@ -1778,7 +1854,7 @@ function optPanel(B,hasEco,hs,fmtT){
       <div class="ofoot"><small>${fmt(R.sims)} ${T('plans simulés','plans simulated')} · ${R.rounds} ${T('passes','passes')} · ${(R.ms/1000).toFixed(1)} s${R.stopped?' · '+T('arrêté avant la fin','stopped early'):''}</small>
       ${R.applied&&!stale?`<span class="ok">✓ ${T('Plan appliqué : il est maintenant dans « Mon plan » (Ctrl+Z pour revenir).','Plan applied: it is now in “My plan” (Ctrl+Z to go back).')}</span>`:R.applied?'':`<span class="brow"><button class="btn pri" id="oapply">✓ ${T('Appliquer ce plan','Apply this plan')}</button><button class="btn" id="oclose">${T('Ignorer','Dismiss')}</button></span>`}</div></div>`}
   else if(R&&stale)res=`<div class="tip" style="margin-top:10px">⚠ ${T('Ton plan a changé depuis le dernier calcul : relance l’optimisation.','Your plan changed since the last run: run the optimiser again.')}</div>`;
-  return `<section class="panel bxai">${head}
+  return `<section class="panel bcard bxai" id="bs3">${head}
     <div class="oai"><div class="ocol"><span class="lbl">${T('Objectif','Goal')} · ${O.obj==='fast'?T('sans limite de jour','no day limit'):T('d’ici la fin du J','by the end of D')+G}</span>
       ${seg('oobj',O.obj,[['ratio','📈 '+T('Le plus d’unités possible','As many units as possible'),T('en gardant les proportions de mon armée','keeping my army’s proportions')],['libre','⚔ '+T('La plus grosse armée','The biggest army'),T('le mélange de mes types qui rapporte le plus','the mix of my types that yields the most')],['fast','⏱ '+T('Mon armée au plus vite','My army as fast as possible'),T('exactement mon armée, prête le plus tôt','exactly my army, ready as early as possible')]])}
       ${O.obj!=='fast'?`<span class="lbl" style="margin-top:10px">${T('Mesurer l’armée par','Measure the army by')}</span><div class="seg" id="omet">${[['n',T('Nombre','Count')],['hp',T('PV','HP')],['pow',T('Puissance','Power')]].map(([v,n])=>`<button data-v="${v}" class="${O.met===v?'on':''}">${n}</button>`).join('')}</div><small class="oh">${T('Puissance = PV × (attaque + défense) / 2 de chaque unité.','Power = HP × (attack + defence) / 2 of each unit.')}</small>`:''}
@@ -1811,9 +1887,13 @@ function optBind(B2,CTX,snapNow){
     setTimeout(()=>autoBuild(B,CTX,{obj:O.obj,met:O.met,allow:O.allow,keep:O.keep,budget:O.bud},pr,()=>st.optStop).then(R=>{st.optRun=false;st.optStop=false;st.optProg='';
       if(R){R.snap=optSig(B);st.optRes=R}if(location.hash.startsWith('#/build'))viewBuild()}).catch(e=>{console.error(e);st.optRun=false;st.optProg='';viewBuild()}),30)};
 }
-function bldGain(b,L,ctxC){
-  // gain d'UN bâtiment pour le(s) pays choisi(s) : ressources / jour (à 100 % de moral) et moral
-  const C=ctxC||[];if(!C.length)return null;const nU=Math.max(1,C.reduce((a,c)=>a+c.urban,0)),nR=C.reduce((a,c)=>a+c.n-c.urban,0);
+function bldGain(b,L,ctxC,provs){
+  // gain d'UN bâtiment pour le(s) pays choisi(s) : ressources / jour (à 100 % de moral) et moral ; avec les provinces de la carte, dans la meilleure province possible
+  const C=ctxC||[];if(!C.length)return null;
+  if(provs&&provs.length){const P=b.levels.find(x=>x.lvl===L.lvl-1);const t=bTer(b);let best=null;
+    provs.forEach(p=>{if(t==='u'&&!p.urb||t==='r'&&p.urb)return;if((b.key==='harbour'||b.key==='local_port')&&!p.coast)return;const g={};let tot=0;RES_ORDER.forEach(k=>{const d=((L.pb||{})[k]||0)-(((P&&P.pb)||{})[k]||0);const v=d*((p.prod||{})[k]||0);if(v){g[k]=v;tot+=v}});if(!best||tot>best.tot)best={g,tot,where:p.n}});
+    const mor=b.key==='propaganda_office'?((L.f||{})['5']||0)-(((P&&P.f)||{})['5']||0):0;const cost=Object.values(L.c||{}).reduce((a,v)=>a+v,0);
+    if(!best)return {g:{},mor,tot:0,pay:null,none:true};return {g:best.g,mor,tot:best.tot,pay:best.tot>0?cost/best.tot:null,where:best.where}}const nU=Math.max(1,C.reduce((a,c)=>a+c.urban,0)),nR=C.reduce((a,c)=>a+c.n-c.urban,0);
   const P=b.levels.find(x=>x.lvl===L.lvl-1);const urb=bTer(b)!=='r';const g={};
   RES_ORDER.forEach(k=>{const u=C.reduce((a,c)=>a+((c.prod||{})[k]||0),0),t=C.reduce((a,c)=>a+((c.pot||c.prod||{})[k]||0),0);const avg=urb?u/nU:(nR?(t-u)/nR:0);const d=((L.pb||{})[k]||0)-(((P&&P.pb)||{})[k]||0);if(d&&avg)g[k]=d*avg});
   const mor=b.key==='propaganda_office'?((L.f||{})['5']||0)-(((P&&P.f)||{})['5']||0):0;
@@ -2231,7 +2311,7 @@ function mapRun(s,m,C,ms){
       ${c.units&&c.units.length?`<div class="lbl" style="margin:12px 0 6px">${T('Unités de départ','Starting units')} <small style="text-transform:none;letter-spacing:0;color:var(--dim)">${c.units.reduce((a,u)=>a+u[1],0)}</small></div>${startUnits(c)}`:''}
       <div class="lbl" style="margin:12px 0 6px">${T('Terrain','Terrain')}</div><div class="sh-t">${terr.map(([t,n])=>`<i style="width:${n/tn*100}%;background:${TER_COL[t]||'#777'}" title="${TER(+t)} : ${n}"></i>`).join('')}</div><div class="sh-tl">${terr.map(([t,n])=>`<span><i style="background:${TER_COL[t]||'#777'}"></i>${TER(+t)} ${n}</span>`).join('')}</div>
       ${cities.length?`<div class="lbl" style="margin:12px 0 6px">${T('Villes','Cities')}</div><div class="sh-c">${cities.slice(0,12).map(p=>`<button data-cp="${p.i}">${esc(p.n)}${p.vp?` <small>⭐${p.vp}</small>`:''}</button>`).join('')}${cities.length>12?`<small style="color:var(--dim)">+${cities.length-12}</small>`:''}</div>`:''}
-      <div class="sh-b"><button class="btn" id="mxctr">⌖ ${T('Centrer','Center')}</button><button class="btn" id="mxfiche">${T('Fiche pays','Country sheet')}</button>${c.play?`<button class="btn pri" id="mxbuild">🧮 ${T('Planifier un build','Plan a build')}</button>`:''}</div>`;
+      <div class="sh-b"><button class="btn" id="mxctr">⌖ ${T('Centrer','Center')}</button><button class="btn" id="mxfiche">${T('Fiche pays','Country sheet')}</button></div>`;
     side.classList.add('on');
     $('#mxsx').onclick=()=>selectC(null);$('#mxctr').onclick=()=>centerOn(o);$('#mxfiche').onclick=()=>openCountry(s.id,o);
     const bb=$('#mxbuild');if(bb)bb.onclick=()=>{const B=BUILD.get();B.eco=Object.assign(B.eco||{},{sc:s.id,cs:[o],cd:{}});BUILD.save();location.hash='#/build'};
@@ -2290,7 +2370,7 @@ function openCountry(sid,cid){
   const terr=Object.entries(c.ter).sort((a,b)=>b[1]-a[1]);const tot=terr.reduce((a,b)=>a+b[1],0)||1;
   openModal(`<div class="mb" style="padding-top:28px">
     <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap"><img class="flag big" src="${img('flags/'+sc.map+'/big_'+c.id+'.png')}" onerror="this.style.visibility='hidden'"><div><div class="eyebrow">${esc(sc.name)}</div><h2 class="fh" style="margin:4px 0;font-size:40px;font-style:italic;text-transform:uppercase;line-height:1">${esc(cN(c))}</h2><div style="display:flex;gap:7px;flex-wrap:wrap;margin-top:8px">${c.play?`<span class="pill ok">${T('Jouable','Playable')}</span>`:`<span class="pill no">${T('Non jouable (IA)','Not playable (AI)')}</span>`}<span class="armor"><i style="background:${DOC_C[c.doc]}"></i>${T('Doctrine','Doctrine')} ${DOC(c.doc)}</span>${c.cap?`<span class="pill">★ ${T('Capitale','Capital')} : ${esc(c.cap)}</span>`:''}</div></div></div>
-    <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap">${c.play?`<button class="btn pri" id="cbld">🧮 ${T('Planifier un build avec ce pays','Plan a build with this country')}</button>`:''}</div>
+    <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap"></div>
     <div class="sec"><h4>${T('Situation de départ','Starting position')} <span style="font:500 12px Inter;color:var(--dim);text-transform:none;letter-spacing:0">${T('jour 0','day 0')}</span></h4><div class="stats">
       <div class="stat"><div class="t">Provinces</div><div class="v">${c.n}</div></div><div class="stat"><div class="t">${T('Villes (urbaines)','Cities (urban)')}</div><div class="v">${c.urban}</div></div><div class="stat"><div class="t">${T('Points de victoire','Victory points')}</div><div class="v">${fmt(c.vp)}</div></div><div class="stat"><div class="t">Population</div><div class="v">${fmt(c.pop)}</div></div><div class="stat"><div class="t">${T('Provinces côtières','Coastal provinces')}</div><div class="v">${c.coast}</div></div></div>${c.units&&c.units.length?`<h4 style="margin-top:14px">${T('Unités de départ','Starting units')} <span style="font:500 12px Inter;color:var(--dim);text-transform:none;letter-spacing:0">${c.units.reduce((a,u)=>a+u[1],0)}</span></h4>${startUnits(c)}`:''}</div>
     <div class="sec two"><div><h4>${T('Production des villes / jour','City production / day')}</h4><div class="cost">${costs(Object.fromEntries(Object.entries(c.prod).filter(([k])=>k!=='22')))}</div>${Object.keys(c.rur||{}).length?`<div style="margin-top:12px"><span class="lbl">${T('Potentiel des provinces rurales / jour','Rural province potential / day')}</span><div class="cost" style="margin-top:6px;opacity:.75">${costs(c.rur)}</div><div style="color:var(--dim);font-size:11.5px;margin-top:4px">${T('Débloqué par l\u2019Industrie locale (ressources) et le Poste de recrutement (main-d\u2019œuvre) : 35 %, 65 %, 100 % selon le niveau.','Unlocked by Local Industry (resources) and Recruiting Station (manpower): 35%, 65%, 100% by level.')}</div></div>`:''}</div>
