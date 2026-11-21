@@ -777,7 +777,11 @@ const BID={}; D.buildings.forEach(b=>b.levels.forEach(l=>BID[l.id]={b,l}));
 const S=D.scenarios.filter(s=>s.dtg); const LIVE=S.filter(s=>s.live);
 // Call of War 1.5 : seules les villes produisent ; les provinces rurales ne produisent qu'avec Industrie locale / Poste de recrutement (35 %, 65 %, 100 % de leur potentiel)
 S.forEach(s=>s.data&&s.data.countries.forEach(c=>{c.pot=c.prod||{};c.prod=c.uprod||{};c.rur={};Object.keys(c.pot).forEach(k=>{const v=(c.pot[k]||0)-(c.prod[k]||0);if(v>0)c.rur[k]=v})}));
-const NC={};LIVE.forEach(s=>NC[s.name]=(NC[s.name]||0)+1);LIVE.forEach(s=>{if(NC[s.name]>1)s.name+=' · #'+s.id});
+const NC={};LIVE.forEach(s=>(NC[s.name]=NC[s.name]||[]).push(s));
+// cartes homonymes : on les distingue par ce qui change vraiment (version Premium, vitesse, nombre de joueurs), pas par leur numéro
+Object.values(NC).forEach(G=>{if(G.length<2)return;G.forEach(s=>{const base=s.name;const sp=(s.opt&&s.opt.speed)||1;const prem=/premium/i.test(s.desc||'');
+  const tag=()=>prem&&!G.every(x=>/premium/i.test(x.desc||''))?'Premium':G.some(x=>((x.opt&&x.opt.speed)||1)!==sp)?(sp>1?T('vitesse','speed')+' ×'+sp:T('vitesse normale','normal speed')):G.some(x=>x.max!==s.max)?s.max+' '+T('joueurs','players'):'';
+  Object.defineProperty(s,'name',{get:()=>{const t=tag();return t?base+' · '+t:base},configurable:true})})});
 const lv=(u,i)=>u.levels[Math.max(0,Math.min(i??0,u.levels.length-1))];
 const stat=(l,k)=>{const m=l[k]||{};return m[l.dom]??m['0']??m['1']??m['2']??0};
 const MISS=new Set(['flying_bomb','rocket']),NUKE=new Set(['rocket_atomic','bomber_atomic']);
