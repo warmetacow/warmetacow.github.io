@@ -263,11 +263,21 @@ table.vs td.n.up{color:#86b26a;font-weight:700}
 
 .splash{background:radial-gradient(60% 90% at 0% 0%,rgba(31,95,209,.22),transparent 60%),radial-gradient(55% 80% at 100% 100%,rgba(239,65,53,.18),transparent 60%),linear-gradient(160deg,#121a17,#0b0f0d)!important}
 .splash>*:not(.sart){position:relative;z-index:2}
-.sart{position:absolute;inset:0;z-index:0;pointer-events:none}.sart .topo{position:absolute;inset:0;width:100%;height:100%}
-.sart img{position:absolute;filter:drop-shadow(0 18px 24px rgba(0,0,0,.6))}
-.sart img{-webkit-mask-image:linear-gradient(to bottom,#000 64%,transparent 79%);mask-image:linear-gradient(to bottom,#000 64%,transparent 79%)}.sart .u1{right:3%;bottom:-6%;width:min(46%,560px)}.sart .u2{right:24%;top:4%;width:min(26%,310px);transform:rotate(-5deg);opacity:.9}
-.sart::after{content:'';position:absolute;inset:0;background:linear-gradient(100deg,rgba(11,15,13,.97) 30%,rgba(11,15,13,.45) 50%,rgba(11,15,13,0) 66%)}
-@media (max-width:860px){.sart img{opacity:.25}}
+.sart{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}.smap{position:absolute;inset:0}
+.sgrid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:48px 48px;-webkit-mask-image:linear-gradient(90deg,transparent 25%,#000 60%);mask-image:linear-gradient(90deg,transparent 25%,#000 60%)}
+.sradar{position:absolute;width:380px;height:380px;margin:-190px 0 0 -190px;border-radius:50%;border:1px solid rgba(242,169,0,.12);box-shadow:inset 0 0 0 90px rgba(0,0,0,0),0 0 0 1px rgba(242,169,0,.04)}
+.sradar::before{content:'';position:absolute;inset:25%;border-radius:50%;border:1px dashed rgba(242,169,0,.12)}
+.sradar i{position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,rgba(242,169,0,.16),rgba(242,169,0,.04) 35deg,transparent 60deg);animation:sweep 7s linear infinite}
+@keyframes sweep{to{transform:rotate(360deg)}}
+.spin{position:absolute;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;background:var(--pc);box-shadow:0 0 10px var(--pc)}
+.spin::after{content:'';position:absolute;inset:-4px;border-radius:50%;border:1.5px solid var(--pc);animation:ping 3.2s ease-out infinite;animation-delay:inherit;opacity:0}
+.spin b{position:absolute;left:12px;top:-6px;font:700 10px Inter;letter-spacing:.08em;text-transform:uppercase;color:rgba(232,236,230,.55);white-space:nowrap}
+@keyframes ping{0%{transform:scale(.6);opacity:.9}100%{transform:scale(4.2);opacity:0}}
+.sscan{position:absolute;inset:0;background:linear-gradient(180deg,transparent,rgba(242,169,0,.05) 50%,transparent);height:30%;animation:scan 9s ease-in-out infinite}
+@keyframes scan{0%{transform:translateY(-100%)}100%{transform:translateY(400%)}}
+.sart::after{content:'';position:absolute;inset:0;background:linear-gradient(100deg,rgba(11,15,13,.96) 24%,rgba(11,15,13,.55) 44%,rgba(11,15,13,.05) 70%),radial-gradient(120% 90% at 70% 50%,transparent 55%,rgba(11,15,13,.7))}
+@media (prefers-reduced-motion:reduce){.sradar i,.spin::after,.sscan{animation:none}}
+@media (max-width:860px){.sart::after{background:linear-gradient(180deg,rgba(11,15,13,.82),rgba(11,15,13,.7))}.spin b{display:none}.sradar{width:340px;height:340px;margin:-170px 0 0 -170px}}
 .ytmain{position:relative;aspect-ratio:16/9;max-width:1100px;border-radius:14px;overflow:hidden;border:1px solid var(--line,#26302b);background:#000;margin:6px 0 10px}.ytmain iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .ytgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
 .ytc{display:flex;flex-direction:column;gap:6px;text-align:left;background:#121916;border:1px solid var(--line,#26302b);border-radius:12px;padding:0 0 12px;color:var(--txt);cursor:pointer;overflow:hidden;transition:.15s}
@@ -317,6 +327,24 @@ table.vs td.n.up{color:#86b26a;font-weight:700}
 .bside .stk{grid-template-columns:repeat(3,1fr)}
 #cmpbar{display:none!important}
 
+.cbbar{display:flex;flex-wrap:wrap;gap:12px 22px;align-items:flex-end;padding:14px 16px}.cbbf{display:flex;flex-direction:column;gap:6px}.cbbf small{font-size:11.5px}.cbbtn{flex-direction:row;margin-left:auto;gap:8px}
+.cbside{border-top:3px solid var(--c);padding:14px}.cbsh{display:flex;align-items:center;gap:10px;margin-bottom:10px}.cbsh>b{font:800 17px Inter;color:var(--c)}.cbsh>small{color:var(--dim)}
+.cbdoc{margin-left:auto;display:flex;align-items:center;gap:6px}.cbdoc i{width:10px;height:10px;border-radius:50%}.cbdoc .inp{padding:6px 8px}
+.cbset{display:grid;grid-template-columns:1.2fr 1.2fr 90px auto;gap:8px 10px;align-items:end}.cbset label{display:flex;flex-direction:column;gap:4px;min-width:0}.cbset label.chip{flex-direction:row;align-self:end;white-space:nowrap}.cbset .inp{width:100%;min-width:0}
+.cbmor{display:flex;align-items:center;gap:4px}.cbmor .inp{width:100%}.cbmh{display:block;color:var(--dim);font-size:11.5px;margin:6px 0 10px}.warnc{color:#e5933d;font-weight:700}
+.cbl{display:flex;flex-direction:column;gap:6px}.cbrow{display:grid;grid-template-columns:40px 1fr auto;gap:10px;align-items:center;padding:7px 8px;border:1px solid var(--line,#26302b);border-radius:10px;background:#0f1513}.cbrow img{width:40px;height:40px;object-fit:cover;border-radius:6px}.cbrow .nm{min-width:0}.cbrow .nm b{display:block;font:700 13.5px Inter}.cbrow .nm small{color:var(--dim);font-size:11.5px}.cbrow .ctl{display:flex;align-items:center;gap:6px}
+.cbempty{padding:18px;text-align:center;color:var(--dim);border:1px dashed var(--line,#26302b);border-radius:10px;font-size:13px}
+.cbaddb{width:100%;margin-top:10px;border-style:dashed;border-color:var(--c);color:var(--c)}
+.cbpk h3{margin:0 0 10px;color:var(--c)}.cbpk h3 small{color:var(--dim);font-weight:600;margin-left:6px}.cbpk #cbq{width:100%;margin-bottom:10px}.cbpk .chips{margin-bottom:10px}
+.cbpt{grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:8px;max-height:58vh;overflow:auto;padding:2px}.cbpf{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:12px;color:var(--mut);font-size:13px}
+.cbres3{padding:16px;margin:14px 0}.cbtop{display:grid;grid-template-columns:1.3fr 1fr;gap:16px;align-items:center;margin-bottom:14px}
+.cbv2 h2{font:900 italic clamp(24px,3vw,34px)/1.05 Archivo,sans-serif;color:var(--c);margin:0 0 4px}.cbv2 p{margin:0;color:var(--mut);font:600 13.5px Inter}
+.cbodds .cbo-l{display:flex;justify-content:space-between;gap:8px;font:800 15px Inter;margin-bottom:6px}.cbodds small{color:var(--dim);font-size:11.5px}
+.cbr{border:1px solid var(--line,#26302b);border-top:3px solid var(--c);border-radius:12px;padding:12px;background:#0f1513}.cbr-h{display:flex;align-items:baseline;justify-content:space-between}.cbr-h b{font:900 italic 24px Archivo,sans-serif;color:var(--c)}
+.cbr-m{display:flex;flex-wrap:wrap;gap:6px 14px;font:600 12px Inter;color:var(--mut);margin-bottom:10px}
+.cbact{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-start;margin-top:12px}.cbact .cbdet{flex:1;min-width:260px}.cbact .cbdet summary{cursor:pointer;color:var(--mut);font:700 13px Inter;padding:7px 0}
+.cbhow{margin-top:14px}.cbhow div{color:var(--mut);font-size:13.5px;line-height:1.6}.cbhow ul{padding-left:18px}
+@media(max-width:860px){.cbtop{grid-template-columns:1fr}.cbset{grid-template-columns:1fr 1fr}.cbbtn{margin-left:0}.cbrow{grid-template-columns:36px 1fr}.cbrow .ctl{grid-column:1/-1;justify-content:flex-end}}
 .cbgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}@media (max-width:980px){.cbgrid{grid-template-columns:1fr}}
 .cbs .btiles{grid-template-columns:repeat(auto-fill,minmax(118px,1fr))}
 .hint{color:var(--dim);font-size:13px;margin-top:10px}
@@ -821,6 +849,9 @@ const hero=(eb,html,p)=>`<div class="hero"><div><div class="eyebrow">${eb}</div>
 const AX=()=>[['hp',T('PV','HP')],['st',T('ATT','ATK')],['de',T('DÉF','DEF')],['sp',T('VIT','SPD')],['vw',T('VUE','VIS')],['cost',T('ÉCO','ECO')]];
 const rawV=(l,k)=>k==='cost'?fmt(Object.values(l.c).reduce((a,b)=>a+b,0)):k==='sp'?fmt(stat(l,k)*KMH)+' km/h':k==='vw'?fmt(stat(l,k)*KM)+' km':fmt(stat(l,k),k==='hp'?0:1);
 function rating(l){const d=l._g,m=(MAXT[d]&&MAXT[d][l.tier])||MAX[d];const r={};['hp','st','de','sp','vw'].forEach(k=>{const v=stat(l,k);r[k]=v?Math.max(1,Math.min(99,Math.round(99*v/(m[k]||1)))):0});const c=Object.values(l.c).reduce((a,b)=>a+b,0)||1;r.cost=Math.max(1,Math.min(99,Math.round(99*m.mincost/c)));r.ovr=Math.round((r.hp+r.st+r.de+r.sp+r.vw+r.cost)/6);return r}
+// note sur une échelle commune (toutes les doctrines et tous les niveaux des unités montrées) : monter de niveau agrandit toujours la forme
+function scaleOf(levels){const m={mincost:1e12};levels.forEach(l=>{['hp','st','de','sp','vw'].forEach(k=>{m[k]=Math.max(m[k]||0,stat(l,k))});const c=Object.values(l.c).reduce((a,b)=>a+b,0);if(c)m.mincost=Math.min(m.mincost,c)});return m}
+function ratingS(l,m){const r={};['hp','st','de','sp','vw'].forEach(k=>{const v=stat(l,k);r[k]=v?Math.max(1,Math.min(99,Math.round(99*v/(m[k]||1)))):0});const c=Object.values(l.c).reduce((a,b)=>a+b,0)||1;r.cost=Math.max(1,Math.min(99,Math.round(99*m.mincost/c)));r.ovr=Math.round((r.hp+r.st+r.de+r.sp+r.vw+r.cost)/6);return r}
 function radarSVG(series,size,axes){
   const ax=axes||AX(),N=ax.length,R=size*.36,cx=size/2,cy=size/2+4;
   const pt=(i,v)=>{const a=-Math.PI/2+i*2*Math.PI/N;return [cx+Math.cos(a)*R*v,cy+Math.sin(a)*R*v]};
@@ -836,7 +867,7 @@ function fifaBlock(){
   const idents=[...new Set(U.filter(u=>u.prod&&u.doc===1).sort((a,b)=>SET_ORDER[a.set]-SET_ORDER[b.set]||a.levels[0].id-b.levels[0].id).map(u=>u.ident))];
   const docs=[1,2,3,4].map(d=>UK[f.ident+'-'+d]).filter(Boolean);
   const maxL=Math.max(...docs.map(u=>u.levels.length));
-  const series=docs.map(u=>{const l=lv(u,f.lvl);return {u,l,r:rating(l),c:DOC_C[u.doc]}});
+  const SC=scaleOf(docs.flatMap(u=>u.levels));const series=docs.map(u=>{const l=lv(u,f.lvl);return {u,l,r:ratingS(l,SC),c:DOC_C[u.doc]}});
   const best=Math.max(...series.map(s=>s.r.ovr));
   return `<div class="bar"><span class="lbl">${T('Type d\'unité','Unit type')}</span><select class="inp" id="fid">${idents.map(i=>{const u=UK[i+'-1'];return `<option value="${i}" ${i===f.ident?'selected':''}>${SET_ICON[u.set]||''} ${esc(uN(u))}</option>`}).join('')}</select>
     <span class="lbl">${T('Niveau','Level')}</span><div class="lvls" id="flv">${Array.from({length:maxL},(_,i)=>`<button data-i="${i}" class="${i===f.lvl?'on':''}">${i+1}</button>`).join('')}</div></div>
@@ -845,10 +876,9 @@ function fifaBlock(){
     const K=[['hp',T('PV','HP'),l=>stat(l,'hp'),v=>fmt(v)],['st',T('ATT','ATK'),l=>stat(l,'st'),v=>fmt(v,1)],['de',T('DÉF','DEF'),l=>stat(l,'de'),v=>fmt(v,1)],['sp',T('VIT','SPD'),l=>stat(l,'sp')*KMH,v=>fmt(v)],['vw',T('VUE','VIS'),l=>stat(l,'vw')*KM,v=>fmt(v)+'<small class="u"> km</small>'],['cost',T('COÛT','COST'),l=>Object.values(l.c).reduce((a,b)=>a+b,0),v=>fmt(v)]];
     const bestV={};K.forEach(([k,,f])=>{const vals=series.map(x=>f(x.l));bestV[k]=k==='cost'?Math.min(...vals):Math.max(...vals)});
     const wins=series.map(x=>K.filter(([k,,f])=>series.length>1&&f(x.l)===bestV[k]&&series.filter(y=>f(y.l)===bestV[k]).length<series.length).length);
-    const mw=Math.max(...wins);const metaIdx=mw>0&&wins.filter(w=>w===mw).length===1?wins.indexOf(mw):-1;
-    return series.map((s,idx)=>`<div class="fcard" style="--c:${s.c}" data-u="${esc(s.u.key)}" role="button" tabindex="0"><div class="in"><div class="top"><div><div class="pos" style="font:900 italic 20px var(--fh);letter-spacing:.02em;color:var(--c);text-transform:uppercase">${DOC(s.u.doc)}</div><div style="font:600 11px Inter;color:var(--dim)">${wins[idx]} ${T('stat(s) en tête','stat(s) on top')}</div></div>${idx===metaIdx?'<span class="badge">★ Meta</span>':''}</div><img src="${uPor(s.u,s.l)}" alt=""><div class="nm">${esc(unitName(s.u,s.l))}</div><div class="lv">${T('Niveau','Level')} ${s.l.tier} · ⏱ ${dur(pTime(s.l,'auto'))}</div><div class="at">${K.map(([k,n,f,fm])=>{const v=f(s.l);const top=series.length>1&&v===bestV[k]&&series.filter(y=>f(y.l)===bestV[k]).length<series.length;return `<div><span>${n}</span><b class="${top?'hi':''}">${fm(v)}</b></div>`}).join('')}</div></div></div>`).join('')})()}</div></div>
+        return series.map((s,idx)=>`<div class="fcard" style="--c:${s.c}" data-u="${esc(s.u.key)}" role="button" tabindex="0"><div class="in"><div class="top"><div><div class="pos" style="font:900 italic 20px var(--fh);letter-spacing:.02em;color:var(--c);text-transform:uppercase">${DOC(s.u.doc)}</div><div style="font:600 11px Inter;color:var(--dim)">${wins[idx]} ${T('stat(s) en tête','stat(s) on top')}</div></div></div><img src="${uPor(s.u,s.l)}" alt=""><div class="nm">${esc(unitName(s.u,s.l))}</div><div class="lv">${T('Niveau','Level')} ${s.l.tier} · ⏱ ${dur(pTime(s.l,'auto'))}</div><div class="at">${K.map(([k,n,f,fm])=>{const v=f(s.l);const top=series.length>1&&v===bestV[k]&&series.filter(y=>f(y.l)===bestV[k]).length<series.length;return `<div><span>${n}</span><b class="${top?'hi':''}">${fm(v)}</b></div>`}).join('')}</div></div></div>`).join('')})()}</div></div>
 
-  <p style="color:var(--dim);font-size:12px;margin-top:8px">${T('Valeurs du jeu : points de vie, attaque et défense de base, vitesse, vue en km et coût total en ressources. En couleur : la meilleure valeur de la stat (le coût le plus bas pour COÛT). ★ Meta : l\'unité en tête sur le plus de stats, sans moyenne ni pondération ; pas de Meta en cas d\'égalité.','In-game values: hit points, base attack and defence, speed, view in km and total cost in resources. Coloured: the best value of each stat (lowest for COST). ★ Meta: the unit on top in the most stats, with no average or weighting; no Meta on a tie.')}</p>`;
+  <p style="color:var(--dim);font-size:12px;margin-top:8px">${T('Valeurs du jeu : points de vie, attaque et défense de base, vitesse, vue en km et coût total en ressources. En couleur : la meilleure valeur de la stat (le coût le plus bas pour COÛT). Radar : chaque stat est notée sur 99 par rapport à la meilleure valeur de ce type d\'unité, toutes doctrines et tous niveaux confondus, donc la forme grandit quand le niveau monte (ÉCO baisse, car un niveau plus haut coûte plus cher).','In-game values: hit points, base attack and defence, speed, view in km and total cost in resources. Coloured: the best value of each stat (lowest for COST). Radar: each stat is scored out of 99 against the best value of this unit type, all doctrines and levels together, so the shape grows as the level rises (ECO drops, since a higher level costs more).')}</p>`;
 }
 function bindFifa(){
   $('#fid').onchange=e=>{st.fifa.ident=e.target.value;st.fifa.lvl=0;$('#fifa').innerHTML=fifaBlock();bindFifa();bindCards()};
@@ -890,8 +920,6 @@ function viewHome(){
     <div class="row"><a class="btn pri" href="#/units">${T('Explorer les unités','Explore units')}</a><a class="btn" href="#/countries">${T('Pays par carte','Countries by map')}</a><a class="btn disc-btn" href="https://discord.com/invite/call-of-war-france-1035227552647745536" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.3 4.4A19.6 19.6 0 0 0 15.4 3l-.6 1.3a18 18 0 0 0-5.5 0L8.7 3a19.5 19.5 0 0 0-4.9 1.5C.7 9.1-.2 13.6.3 18.1a19.7 19.7 0 0 0 6 3l1.3-2.1a12.7 12.7 0 0 1-2-.9l.5-.4a14 14 0 0 0 12 0l.5.4c-.6.4-1.3.7-2 .9l1.3 2.1a19.6 19.6 0 0 0 6-3c.5-5.2-.9-9.7-3.6-13.7ZM8.7 15.3c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Zm6.6 0c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4Z"/></svg> ${T('Rejoindre le Discord','Join the Discord')}</a></div>
     <div class="frc" style="margin-top:16px">${T('Propulsé par la communauté française de Call of War','Powered by the French Call of War community')}</div>
   </section>
-  <h2 class="sh">${T('Outils compétitifs','Competitive tools')}</h2>
-  <div class="tools">${[['#/combat','⚔️',T('Simulateur de combat','Combat simulator'),T('Clique tes unités, choisis le terrain : chances de victoire sur 300 combats.','Two armies, terrain, bunkers, morale: win chances over 300 runs.')],['#/research','🔬',T('Arbre de recherche','Research tree'),T('Chaque unité sur sa ligne, jour par jour, avec les flèches de prérequis.','Every unit on its own row, day by day, with prerequisite arrows.')],['#/generals','⭐',T('Généraux','Generals'),T('Les 12 généraux en cartes, leurs compétences rang par rang et leurs délais.','The 12 generals as cards, their skills rank by rank and their cooldowns.')]].map(([h,i,n,d])=>`<a class="tool" href="${h}"><span class="ic">${i}</span><b>${n}</b><small>${d}</small></a>`).join('')}</div>
   <h2 class="sh">${T('Dernières vidéos de la communauté','Latest community videos')} <a href="#/videos" style="font:600 13px Inter;color:var(--acc);text-decoration:none;margin-left:10px;text-transform:none;letter-spacing:0">${T('Toutes les vidéos →','All videos →')}</a></h2>
   <div id="hvid"><div class="empty">${T('Chargement…','Loading…')}</div></div>
   <h2 class="sh">${T('Profil général des doctrines','Overall doctrine profile')}</h2>
@@ -900,6 +928,7 @@ function viewHome(){
   <div id="fifa">${fifaBlock()}</div>
 `;
   bindFifa();bindDocov();bindCards();homeVideos();
+  requestAnimationFrame(splashMap);if(!window.__splR){window.__splR=1;let tm;addEventListener('resize',()=>{clearTimeout(tm);tm=setTimeout(()=>{if($('.splash .smap'))splashMap()},150)})}
 }
 
 /* ---------- units ---------- */
@@ -977,7 +1006,7 @@ function openUnit(key,tier){
     const hasTerr=l.sp&&l.sp[10]!=null;
     const terrRows=hasTerr?[10,11,12,13,14].map(t=>`<tr><td>${TER_IC[t]} ${TER(t)}</td><td class="n"><b>${fmt(spd*l.sp[t]*KMH)} km/h</b></td><td class="n">${fmt(spd*l.sp[t]*(l.ffs||1)*KMH)} km/h</td>${pct(l.st[t])}${pct(l.de[t])}${pct(l.vw&&l.vw[t])}</tr>`).join(''):'';
     const prog=u.levels.map((x,i)=>`<tr class="${i===li?'hl':''}" data-i="${i}" style="cursor:pointer"><td><b>${T('Niv.','Lvl')} ${x.tier}</b></td><td>${esc(unitName(u,x,fac))}</td><td class="n">${fmt(stat(x,'hp'))}</td><td class="n">${fmt(stat(x,'st'),2)}</td><td class="n">${fmt(stat(x,'de'),2)}</td><td class="n">${fmt(stat(x,'sp')*KMH)}</td><td class="n">${fmt(stat(x,'vw')*KM)}</td><td class="n">${fmt(stat(x,'rg'))}</td><td>${costs(x.c,1)}</td><td class="n">${dur(x.bt)}</td><td class="n">${x.rr.map(id=>RID[id]?T('J','D')+RID[id].day:'').join(' ')}</td></tr>`).join('');
-    const r=rating(l);
+    const r=ratingS(l,scaleOf([0,1,2,3,4,5].map(d=>UK[u.ident+'-'+d]).filter(Boolean).flatMap(x=>x.levels).concat(u.levels)));
     openModal(`
     <div class="mh"><div class="art"><img class="main" src="${uPor(u,l,fac)}" alt="">${u.doc?'':`<div class="fac"><div class="seg">${[1,2,3,4].map(f=>`<button data-f="${f}" class="${f===fac?'on':''}">${DOC(f)}</button>`).join('')}</div></div>`}</div>
       <div class="info">
@@ -1037,7 +1066,7 @@ function drawCmpBar(){
 function viewCompare(){
   const c=st.cmp.filter(x=>UK[x[0]]);
   const opts=U.filter(u=>u.prod).sort((a,b)=>a.doc-b.doc||uN(a).localeCompare(uN(b))).map(u=>`<option value="${esc(u.key)}">${esc(uN(u))} — ${DOC(u.doc)}</option>`).join('');
-  const rows=c.map(([k,t])=>{const u=UK[k];const l=u.levels.find(x=>x.tier===t)||lv(u);return {u,l,r:rating(l)}});
+  const SCc=scaleOf(c.flatMap(([k])=>UK[k]?UK[k].levels:[]));const rows=c.map(([k,t])=>{const u=UK[k];const l=u.levels.find(x=>x.tier===t)||lv(u);return {u,l,r:ratingS(l,SCc)}});
   const COLORS=['#f2a900','#6aa6e0','#e5533d','#86b26a'];
   const line=(lab,f,best)=>{const vals=rows.map(r=>f(r));const nums=vals.filter(v=>typeof v==='number');const b=best&&nums.length?Math[best](...nums):null;return `<tr><td>${lab}</td>${vals.map(v=>`<td class="n" style="${b!=null&&v===b&&rows.length>1?'color:var(--acc);font-weight:700':''}">${typeof v==='number'?fmt(v,2):v}</td>`).join('')}</tr>`};
   const tot=r=>Object.values(r.l.c).reduce((a,b)=>a+b,0)||1;
@@ -1396,150 +1425,192 @@ const RMIN=(()=>{const v=S.map(x=>x.opt&&x.opt.interval).filter(Boolean);return 
 const rH=r=>{const m=r*RMIN;return m%60?`${Math.floor(m/60)} h ${String(m%60).padStart(2,'0')}`:`${m/60} h`};
 const lerpCfg=(cfg,x)=>{const e=(cfg&&cfg.entries)||[];if(!e.length)return 1;if(x<=e[0].x)return e[0].y;for(let i=1;i<e.length;i++){if(x<=e[i].x){const a=e[i-1],b=e[i];return a.y+(b.y-a.y)*(x-a.x)/(b.x-a.x)}}return e[e.length-1].y};
 const FORT_F=k=>{const b=D.buildings.find(x=>x.key===k);return b?b.levels.map(l=>(l.f&&l.f['0'])||0):[]};
-const cbDef={ter:10,bunk:0,fort:0,max:72,A:{doc:1,cur:0,stacks:[{st:[],mor:100,core:false,mode:'m',ter:0}]},D:{doc:1,cur:0,stacks:[{st:[],mor:100,core:false,mode:'m',ter:0}]}};
+const cbDef={ter:10,bunk:0,fort:0,max:200,A:{doc:1,cur:0,stacks:[{st:[],mor:100,core:false,mode:'m',ter:0}]},D:{doc:1,cur:0,stacks:[{st:[],mor:100,core:false,mode:'m',ter:0}]}};
 const cbStack=()=>({st:[],mor:100,core:false,mode:'m',ter:0});
-function cbNorm(c){['A','D'].forEach(k=>{const s=c[k]=c[k]||{doc:1};if(!Array.isArray(s.stacks)||!s.stacks.length){s.stacks=[{st:s.st||[],mor:s.mor||100,core:k==='A'?!!c.coreA:!!c.core,mode:c.ranged&&k==='A'?'r':'m',ter:0}]}delete s.st;delete s.mor;s.stacks.forEach(x=>{x.st=x.st||[];x.mor=x.mor||100;x.mode=x.mode==='r'?'r':'m';x.ter=+x.ter||0});s.cur=Math.min(Math.max(0,s.cur||0),s.stacks.length-1)});delete c.ranged;delete c.core;delete c.coreA;return c}
+function cbNorm(c){['A','D'].forEach(k=>{const s=c[k]=c[k]||{doc:1};if(!Array.isArray(s.stacks)||!s.stacks.length){s.stacks=[{st:s.st||[],mor:s.mor||100,core:k==='A'?!!c.coreA:!!c.core,mode:c.ranged&&k==='A'?'r':'m',ter:0}]}delete s.st;delete s.mor;s.stacks.forEach(x=>{x.st=x.st||[];x.mor=x.mor||100;x.mode=['r','p'].includes(x.mode)?x.mode:'m';x.mor=Math.max(1,Math.min(100,+x.mor||100));x.ter=+x.ter||0});s.cur=Math.min(Math.max(0,s.cur||0),s.stacks.length-1)});delete c.ranged;delete c.core;delete c.coreA;if(![1,2,3,6,12,24,200].includes(+c.max))c.max=200;return c}
 st.cb=cbNorm(Object.assign(JSON.parse(JSON.stringify(cbDef)),store.get('combat',{})));
 const cbSave=()=>store.set('combat',st.cb);
 const terMul=(l,k,ter)=>l.dom===0?((l[k]&&l[k][ter])||1):1;
 function cbExpand(side){const out=[];side.st.forEach(([k,t,q])=>{const u=UK[k];if(!u)return;const l=u.levels.find(x=>x.tier===t)||u.levels[0];for(let i=0;i<q;i++)out.push({u,l,cls:l.armor,max:stat(l,'hp'),hp:stat(l,'hp')})});return out}
 const gauss=()=>{let u=0,v=0;while(!u)u=Math.random();while(!v)v=Math.random();return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v)};
-const cbHasR=x=>Object.values(x.l.rg||{}).some(v=>v>0);
+const cbHasR=x=>x.l.dom!==1&&Object.values(x.l.rg||{}).some(v=>v>0); // les avions ne sont pas des unités à portée : leur « portée » est leur rayon d'action
 function cbRun(cfg,rnd){
-  // Plusieurs piles par camp. Une pile « au contact » combat dans la province disputée ; une pile « à distance » tire depuis une province voisine avec ses seules unités à portée.
+  // Moteur revu d'après les mécaniques documentées (wiki Bytro, guide « detailed combat mechanics », aide de dxcalc) :
+  // – l'attaquant (camp A) frappe en premier, puis le défenseur riposte avec ce qu'il lui reste ;
+  // – contre chaque classe de blindage, seules les 10 unités qui font le plus de dégâts à cette classe tirent ;
+  // – les dégâts vers une classe sont pondérés par la part de cette classe dans la pile visée, puis partagés à parts égales ;
+  // – une unité abîmée tire moins fort (courbe du jeu, 100 % → 20 %) ; le moral d'une unité, c'est ses PV ;
+  // – piles à distance : ne tirent qu'avec leurs unités à portée, ne sont touchées que par des unités à portée ;
+  // – patrouille aérienne : 2 passages par tour à demi-dégâts, la cible riposte à demi-défense.
   const urban=+cfg.ter===14,fl=urban?FORT_F('fortress')[cfg.bunk-1]:FORT_F('fortifications')[cfg.fort-1];
   const red=1/(1+(fl||0));
   const cf=(CB.core||15)/100;
   const sd=(CB.edd&&CB.edd.xFactor&&CB.edd.xFactor.stdDev)||.1,lim=(CB.edd&&CB.edd.xFactor&&CB.edd.xFactor.limit)||.2;
   const jit=()=>rnd?1+Math.max(-lim,Math.min(lim,gauss()*sd)):1;
-  const mk=k=>cfg[k].stacks.map((s,si)=>{const S_={k,si,mode:s.mode==='r'?'r':'m',ter:+s.ter||+cfg.ter,mult:(s.core?1+cf:1)*(CB.cas||1),take:(k==='D'&&s.mode!=='r'?red:1)};S_.units=cbExpand(s).map(x=>Object.assign(x,{S:S_,hp:x.max*Math.max(1,Math.min(100,s.mor||100))/100}));return S_}).filter(x=>x.units.length);
+  const mk=k=>cfg[k].stacks.map((s,si)=>{const mode=['r','p'].includes(s.mode)?s.mode:'m';const S_={k,si,mode,ter:+s.ter||+cfg.ter,mult:(s.core?1+cf:1)*(CB.cas||1),take:(k==='D'&&mode==='m')?red:1};
+    S_.units=cbExpand(s).filter(x=>mode!=='p'||x.l.dom===1).map(x=>Object.assign(x,{S:S_,hp:x.max*Math.max(1,Math.min(100,+s.mor||100))/100}));return S_}).filter(x=>x.units.length);
   const SA=mk('A'),SD=mk('D');const AU=SA.flatMap(s=>s.units),DU=SD.flatMap(s=>s.units);
   const hpOf=a=>a.reduce((s,x)=>s+Math.max(0,x.hp),0);
   const A0=hpOf(AU),D0=hpOf(DU),AM=AU.reduce((a,x)=>a+x.max,0),DM=DU.reduce((a,x)=>a+x.max,0);const hist=[[0,AM?A0/AM*100:0,DM?D0/DM*100:0]];
   const pool=(SS,m)=>SS.filter(s=>s.mode===m).flatMap(s=>s.units);
   const alive=a=>a.some(x=>x.hp>0);
-  const fire=(S_,targets,key,onlyRanged)=>{
-    // répartition entre classes de blindage au prorata du NOMBRE d'unités ; seules les 10 unités les plus fortes de la pile tirent ; une unité abîmée tire moins fort (100 % → 20 %)
+  const fire=(shooters,ter,mult,targets,key,onlyRanged,fac)=>{
     const al=targets.filter(x=>x.hp>0);if(!al.length)return null;const share={};al.forEach(x=>share[x.cls]=(share[x.cls]||0)+1/al.length);
-    const contrib=S_.units.filter(s=>s.hp>0&&(!onlyRanged||cbHasR(s))).map(s=>{const base=stat(s.l,key)*terMul(s.l,key,S_.ter)*S_.mult*lerpCfg(CB.mdf,Math.max(0,s.hp)/(s.max||1));const d={};let t=0;Object.entries(share).forEach(([c,w])=>{const v=base*((s.l.dmg&&s.l.dmg[c])||0)*w;d[c]=v;t+=v});return {d,t}}).sort((a,b)=>b.t-a.t).slice(0,10);
-    const j=jit();const dmg={};let tot=0;contrib.forEach(x=>Object.entries(x.d).forEach(([c,v])=>{dmg[c]=(dmg[c]||0)+v*j;tot+=v*j}));return {targets,dmg,tot}};
+    const sh=shooters.filter(s=>s.hp>0&&(!onlyRanged||cbHasR(s)));if(!sh.length)return null;
+    const base=sh.map(s=>stat(s.l,key)*terMul(s.l,key,ter)*mult*lerpCfg(CB.mdf,Math.max(0,s.hp)/(s.max||1)));
+    const j=jit()*(fac||1);const dmg={};let tot=0;
+    Object.entries(share).forEach(([c,w])=>{const v=sh.map((s,i)=>base[i]*((s.l.dmg&&s.l.dmg[c])||0)).sort((a,b)=>b-a).slice(0,10).reduce((a,b)=>a+b,0)*w*j;if(v>0){dmg[c]=v;tot+=v}});
+    return tot>0?{targets,dmg,tot}:null};
   const DT=(CB.edd&&CB.edd.deathThreshold)??.5;
-  const apply=sh=>{if(!sh)return;Object.entries(sh.dmg).forEach(([c,v])=>{const g=sh.targets.filter(x=>x.hp>0&&x.cls==c);if(!g.length)return;const each=v/g.length;g.forEach(x=>{x.hp-=each*x.S.take;if(x.hp<DT)x.hp=0})})};
-  const plan=(mine,theirs,isA)=>{const Em=pool(theirs,'m'),Er=pool(theirs,'r');return mine.map(S_=>{
-    if(S_.mode==='m'){if(alive(Em))return fire(S_,Em,isA?'st':'de',false);if(alive(Er))return fire(S_,Er,'st',true);return null}
-    if(alive(Em))return fire(S_,Em,'st',true);if(alive(Er))return fire(S_,Er,'st',true);return null})};
-  let r=0,nodmg=false,stall=false;
+  const apply=sh=>{if(!sh)return 0;Object.entries(sh.dmg).forEach(([c,v])=>{const g=sh.targets.filter(x=>x.hp>0&&x.cls==c);if(!g.length)return;const each=v/g.length;g.forEach(x=>{x.hp-=each*x.S.take;if(x.hp<DT)x.hp=0})});return sh.tot};
+  // une phase : un camp tire avec toutes ses piles ; les piles visées par une patrouille ripostent aussitôt à demi-défense
+  const phase=(mine,theirs,isA)=>{const Em=pool(theirs,'m'),Er=pool(theirs,'r'),Ep=pool(theirs,'p');let tot=0;const shots=[];
+    mine.forEach(S_=>{const U_=S_.units;
+      if(S_.mode==='m'){if(alive(Em))shots.push(fire(U_,S_.ter,S_.mult,Em,isA?'st':'de',false));else if(alive(Er))shots.push(fire(U_,S_.ter,S_.mult,Er,'st',true))}
+      else if(S_.mode==='r'){if(alive(Em))shots.push(fire(U_,S_.ter,S_.mult,Em,'st',true));else if(alive(Er))shots.push(fire(U_,S_.ter,S_.mult,Er,'st',true))}});
+    shots.forEach(s=>tot+=apply(s));
+    mine.filter(S_=>S_.mode==='p').forEach(S_=>{for(let k=0;k<2;k++){const tgt=alive(Em)?Em:alive(Er)?Er:null;if(!tgt||!alive(S_.units))break;tot+=apply(fire(S_.units,S_.ter,S_.mult,tgt,'st',false,.5));
+      theirs.filter(T_=>T_.mode!=='p'&&tgt.includes(T_.units[0])).forEach(T_=>{tot+=apply(fire(T_.units,T_.ter,T_.mult,S_.units,'de',false,.5))})}});
+    return tot};
+  let r=0,nodmg=false,stall=false;const log=[];
   for(r=1;r<=cfg.max;r++){
-    const shots=[...plan(SA,SD,true),...plan(SD,SA,false)];const tot=shots.reduce((a,s)=>a+(s?s.tot:0),0);
-    shots.forEach(apply);
-    const a=hpOf(AU),d=hpOf(DU);hist.push([r,AM?a/AM*100:0,DM?d/DM*100:0]);
+    const ta=phase(SA,SD,true);const tb=alive(AU)&&alive(DU)?phase(SD,SA,false):0;
+    const a=hpOf(AU),d=hpOf(DU);hist.push([r,AM?a/AM*100:0,DM?d/DM*100:0]);log.push([r,ta,tb,a,d]);
     if(a<=0||d<=0)break;
-    if(tot<=1e-9){if(r===1)nodmg=true;else stall=true;break}
+    if(ta+tb<=1e-9){if(r===1)nodmg=true;else stall=true;break}
   }
-  const surv=arr=>{const m={};arr.forEach(x=>{const k=x.u.key+'|'+x.l.tier+'|'+x.S.si;m[k]=m[k]||{u:x.u,l:x.l,si:x.S.si,n:0,a:0,hp:0,max:0};m[k].n++;if(x.hp>0){m[k].a++;m[k].hp+=x.hp}m[k].max+=x.max});return Object.values(m)};
+  const surv=arr=>{const m={};arr.forEach(x=>{const k=x.u.key+'|'+x.l.tier+'|'+x.S.si;m[k]=m[k]||{u:x.u,l:x.l,si:x.S.si,n:0,a:0,hp:0,max:0,hp0:0};m[k].n++;m[k].hp0+=x.max;if(x.hp>0){m[k].a++;m[k].hp+=x.hp}m[k].max+=x.max});return Object.values(m)};
   const stk=SS=>SS.map(S_=>({si:S_.si,mode:S_.mode,ter:S_.ter,hp:hpOf(S_.units),max:S_.units.reduce((a,x)=>a+x.max,0),n:S_.units.length,a:S_.units.filter(x=>x.hp>0).length,rng:S_.units.some(cbHasR)}));
   const a=hpOf(AU),d=hpOf(DU);
-  return {AM,DM,rounds:Math.min(r,cfg.max),win:nodmg?'0':d<=0&&a>0?'A':a<=0&&d>0?'D':a<=0&&d<=0?'=':'-',nodmg,stall,hist,sA:surv(AU),sD:surv(DU),kA:stk(SA),kD:stk(SD),A0,D0,a,d,red,multi:SA.length+SD.length>2,anyR:SA.concat(SD).some(s=>s.mode==='r')};
+  return {AM,DM,rounds:Math.min(r,cfg.max),win:nodmg?'0':d<=0&&a>0?'A':a<=0&&d>0?'D':a<=0&&d<=0?'=':'-',nodmg,stall,hist,log,sA:surv(AU),sD:surv(DU),kA:stk(SA),kD:stk(SD),A0,D0,a,d,red,multi:SA.length+SD.length>2,anyR:SA.concat(SD).some(s=>s.mode==='r'),anyP:SA.concat(SD).some(s=>s.mode==='p')};
+}
+const cbCost=l=>Object.values(l.c||{}).reduce((a,b)=>a+b,0);
+function cbPicker(k){
+  const c=st.cb;const s=c[k];const sk=s.stacks[s.cur];const col=k==='A'?'#f2a900':'#6aa6e0';const ck='cbcat'+k;const cat=st[ck]??(st[ck]=0);const q=(st.cbq||'').toLowerCase();
+  const units=U.filter(u=>u.prod&&u.doc===s.doc&&(!cat||u.set===cat)&&(!q||(uN(u)+' '+u.levels.map(l=>unitName(u,l)).join(' ')).toLowerCase().includes(q))).sort((a,b)=>SET_ORDER[a.set]-SET_ORDER[b.set]||a.levels[0].id-b.levels[0].id);
+  const cnt=u=>sk.st.filter(x=>UK[x[0]]&&UK[x[0]].ident===u.ident).reduce((a,x)=>a+x[2],0);
+  return `<div class="cbpk" style="--c:${col}"><h3>${k==='A'?'⚔ '+T('Attaquant','Attacker'):'🛡 '+T('Défenseur','Defender')} · ${T('pile','stack')} ${s.cur+1} <small>${DOC(s.doc)}</small></h3>
+    <input class="inp" id="cbq" type="search" placeholder="${T('Chercher une unité…','Search a unit…')}" value="${esc(st.cbq||'')}" autocomplete="off">
+    <div class="chips" id="cbpcat">${[0,1,2,7,3,4,5].map(x=>`<span class="chip ${cat===x?'on':''}" data-v="${x}">${x?SET_ICON[x]+' '+SETS(x):T('Toutes','All')}</span>`).join('')}</div>
+    <div class="btiles cbpt">${units.map(u=>{const l=u.levels[0];const n=cnt(u);const rg=cbHasR({l});return `<button class="btile${n?' on':''}" data-padd="${esc(u.key)}"><img loading="lazy" src="${uPor(u,l)}" alt=""><b>${esc(uN(u))}${rg?' 🎯':''}</b><small>${ARMOR_N(l.armor)}</small>${n?`<i class="cnt">×${n}</i>`:''}</button>`}).join('')||`<div class="empty">${T('Aucune unité','No unit')}</div>`}</div>
+    <div class="cbpf"><span>${sk.st.reduce((a,x)=>a+x[2],0)} ${T('unités dans la pile','units in the stack')}</span><button class="btn pri" id="cbpok">✓ ${T('Terminé','Done')}</button></div></div>`;
+}
+function openCbPicker(k){
+  const draw=()=>{openModal(cbPicker(k));const inp=$('#cbq');
+    inp.oninput=()=>{st.cbq=inp.value;const p=inp.selectionStart;draw();const i2=$('#cbq');i2.focus();i2.setSelectionRange(p,p)};
+    $('#cbpcat').onclick=e=>{const x=e.target.closest('.chip');if(x){st['cbcat'+k]=+x.dataset.v;draw()}};
+    $$('[data-padd]').forEach(b=>b.onclick=()=>{const u=UK[b.dataset.padd];const t=u.levels[0].tier;const sk=st.cb[k].stacks[st.cb[k].cur];const ex=sk.st.find(x=>x[0]===u.key&&x[1]===t);if(ex)ex[2]++;else sk.st.push([u.key,t,1]);cbSave();viewCombat();const y=$('.cbpt')?$('.cbpt').scrollTop:0;draw();if($('.cbpt'))$('.cbpt').scrollTop=y});
+    $('#cbpok').onclick=()=>closeModal()};
+  draw();setTimeout(()=>{const i=$('#cbq');if(i&&matchMedia('(pointer:fine)').matches)i.focus()},30);
 }
 function viewCombat(){
-  const c=cbNorm(st.cb);
-  const cats=[1,2,7,3,4,5];
+  const c=cbNorm(st.cb);const sd0=(CB.edd&&CB.edd.xFactor&&CB.edd.xFactor.stdDev)||.1,lim0=(CB.edd&&CB.edd.xFactor&&CB.edd.xFactor.limit)||.2;
   const urban=+c.ter===14,fb=FORT_F('fortress'),ff=FORT_F('fortifications');
   const defLvl=urban?c.bunk:c.fort,defMax=urban?fb.length:ff.length,defArr=urban?fb:ff;
   const nUnits=x=>x.st.reduce((a,y)=>a+y[2],0);
-  const modeN=(k,m)=>m==='r'?(k==='A'?T('Bombardement à distance','Ranged bombardment'):T('Bombardement à distance','Ranged bombardment')):(k==='A'?T('Assaut au contact','Close assault'):T('Dans la province','In the province'));
-  const side=(k)=>{const s=c[k];const col=k==='A'?'#f2a900':'#6aa6e0';const ck='cbcat'+k;const cat=st[ck]??(st[ck]=1);const sk=s.stacks[s.cur];
-    const units=U.filter(u=>u.prod&&u.doc===s.doc&&u.set===cat).sort((a,b)=>a.levels[0].id-b.levels[0].id);
-    const n=s.stacks.reduce((a,x)=>a+nUnits(x),0);
-    const rngIn=sk.st.some(([uk,t])=>{const u=UK[uk];const l=u&&(u.levels.find(x=>x.tier===t)||u.levels[0]);return l&&Object.values(l.rg||{}).some(v=>v>0)});
-    return `<section class="bstep cbs" style="border-top:3px solid ${col}">
-      <h3 style="color:${col}">${k==='A'?'⚔ '+T('Attaquant','Attacker'):'🛡 '+T('Défenseur','Defender')} <small>${n} ${T('unités','units')} · ${s.stacks.length} ${s.stacks.length>1?T('piles','stacks'):T('pile','stack')}</small></h3>
-      <div class="seg" data-cdoc="${k}" style="margin-bottom:10px">${[1,2,3,4,0].map(d=>`<button data-v="${d}" class="${s.doc===d?'on':''}"><i style="background:${DOC_C[d]}"></i>${DOC(d)}</button>`).join('')}</div>
-      <div class="stabs" role="tablist">${s.stacks.map((x,i)=>`<button class="stab ${i===s.cur?'on':''}" data-cstk="${k}:${i}" role="tab" aria-selected="${i===s.cur}" style="--c:${col}"><span>${x.mode==='r'?'🎯':(k==='A'?'⚔':'🛡')}</span>${T('Pile','Stack')} ${i+1}<small>${nUnits(x)}</small>${s.stacks.length>1?`<i data-cstkdel="${k}:${i}" title="${T('Supprimer cette pile','Delete this stack')}">✕</i>`:''}</button>`).join('')}${s.stacks.length<6?`<button class="stab add" data-cstkadd="${k}" title="${T('Ajouter une pile','Add a stack')}">＋ ${T('Pile','Stack')}</button>`:''}</div>
-      <div class="stkset" style="--c:${col}">
-        <div class="seg" data-cmode="${k}">${['m','r'].map(m=>`<button data-v="${m}" class="${sk.mode===m?'on':''}">${m==='r'?'🎯':(k==='A'?'⚔':'🛡')} ${modeN(k,m)}</button>`).join('')}</div>
-        <label class="lbl">${T('Terrain de la pile','Stack terrain')}<select class="inp" data-cter="${k}"><option value="0" ${!sk.ter?'selected':''}>${T('Champ de bataille','Battlefield')} (${TER(+c.ter)})</option>${[10,11,12,13,14].map(t=>`<option value="${t}" ${sk.ter===t?'selected':''}>${TER_IC[t]} ${TER(t)}</option>`).join('')}</select></label>
-        <label class="lbl" title="${T('État des unités au début du combat (moral = PV dans le jeu). Une unité abîmée tire moins fort : de 100 % de ses dégâts à pleine santé jusqu\u2019à 20 %.','Unit condition at the start of the fight (morale = HP in the game). A damaged unit hits less hard: from 100% of its damage at full health down to 20%.')}">${T('Moral (PV)','Morale (HP)')}<select class="inp" data-cmor="${k}">${[100,90,80,70,60,50,40,30,20,10].map(v=>`<option value="${v}" ${v===sk.mor?'selected':''}>${v} %</option>`).join('')}</select></label>
-        <label class="chip ${sk.core?'on':''}" data-chome="${k}" title="${T('+'+(CB.core||15)+' % de dégâts infligés quand la pile combat dans une province d\u2019origine','+'+(CB.core||15)+'% damage dealt when the stack fights in a core province')}">🏠 ${T('Province d’origine','Core province')}</label>
-        ${sk.mode==='r'?`<div class="stkhint">${sk.st.length&&!rngIn?'⚠ '+T('Aucune unité à portée dans cette pile : elle ne pourra pas tirer.','No ranged unit in this stack: it will not be able to fire.'):'🎯 '+T('Ne tirent que les unités à portée (artillerie, navires, bombardiers…). Elles ne peuvent être touchées que par des unités à portée adverses.','Only ranged units fire (artillery, ships, bombers…). They can only be hit by enemy ranged units.')}</div>`:''}
+  const MODES=k=>[['m',k==='A'?'⚔':'🛡',k==='A'?T('Assaut','Assault'):T('Dans la province','In the province'),k==='A'?T('attaque la province au contact','attacks the province in close combat'):T('défend la province (fortifications)','defends the province (fortifications)')],['r','🎯',T('Bombardement à distance','Ranged bombardment'),T('artillerie, navires… depuis une province voisine','artillery, ships… from a neighbouring province')],['p','✈',T('Patrouille aérienne','Air patrol'),T('avions : 2 passages par tour à demi-dégâts','planes: 2 passes per round at half damage')]];
+  const side=k=>{const s=c[k];const col=k==='A'?'#f2a900':'#6aa6e0';const sk=s.stacks[s.cur];const n=s.stacks.reduce((a,x)=>a+nUnits(x),0);
+    const M=MODES(k).find(x=>x[0]===sk.mode)||MODES(k)[0];
+    const rngIn=sk.st.some(([uk,t])=>{const u=UK[uk];const l=u&&(u.levels.find(x=>x.tier===t)||u.levels[0]);return l&&cbHasR({l})});
+    const airIn=sk.st.some(([uk,t])=>{const u=UK[uk];const l=u&&(u.levels.find(x=>x.tier===t)||u.levels[0]);return l&&l.dom===1});
+    const warn=sk.mode==='r'&&sk.st.length&&!rngIn?T('Aucune unité à portée : cette pile ne pourra pas tirer.','No ranged unit: this stack cannot fire.'):sk.mode==='p'&&sk.st.length&&!airIn?T('Seuls les avions patrouillent : les autres unités de la pile sont ignorées.','Only planes patrol: the other units of the stack are ignored.'):'';
+    return `<section class="panel cbside" style="--c:${col}">
+      <div class="cbsh"><b>${k==='A'?'⚔ '+T('Attaquant','Attacker'):'🛡 '+T('Défenseur','Defender')}</b><small>${n} ${T('unités','units')}</small>
+        <label class="cbdoc"><i style="background:${DOC_C[s.doc]}"></i><select class="inp" data-cdoc="${k}" aria-label="${T('Doctrine','Doctrine')}">${[1,2,3,4,0].map(d=>`<option value="${d}" ${s.doc===d?'selected':''}>${DOC(d)}</option>`).join('')}</select></label></div>
+      <div class="stabs" role="tablist">${s.stacks.map((x,i)=>{const m=MODES(k).find(y=>y[0]===x.mode)||MODES(k)[0];return `<button class="stab ${i===s.cur?'on':''}" data-cstk="${k}:${i}" role="tab" aria-selected="${i===s.cur}"><span>${m[1]}</span>${T('Pile','Stack')} ${i+1}<small>${nUnits(x)}</small>${s.stacks.length>1?`<i data-cstkdel="${k}:${i}" title="${T('Supprimer cette pile','Delete this stack')}">✕</i>`:''}</button>`}).join('')}${s.stacks.length<6?`<button class="stab add" data-cstkadd="${k}" title="${T('Ajouter une pile','Add a stack')}">＋</button>`:''}</div>
+      <div class="cbset">
+        <label><span class="lbl">${T('Rôle','Role')}</span><select class="inp" data-cmode="${k}">${MODES(k).map(([v,i,nm])=>`<option value="${v}" ${sk.mode===v?'selected':''}>${i} ${nm}</option>`).join('')}</select></label>
+        <label><span class="lbl">${T('Terrain','Terrain')}</span><select class="inp" data-cter="${k}"><option value="0" ${!sk.ter?'selected':''}>${TER_IC[+c.ter]} ${TER(+c.ter)} (${T('province','province')})</option>${[10,11,12,13,14].map(t=>`<option value="${t}" ${sk.ter===t?'selected':''}>${TER_IC[t]} ${TER(t)}</option>`).join('')}</select></label>
+        <label title="${T('Moral = PV dans le jeu : état des unités au début du combat','Morale = HP in the game: unit condition at the start of the fight')}"><span class="lbl">${T('Moral (PV)','Morale (HP)')}</span><span class="cbmor"><input class="inp" type="number" min="1" max="100" step="1" value="${Math.round(sk.mor)}" data-cmor="${k}"><small>%</small></span></label>
+        <label class="chip ${sk.core?'on':''}" data-chome="${k}" title="${T('+'+(CB.core||15)+' % de dégâts infligés','+'+(CB.core||15)+'% damage dealt')}">🏠 ${T('Province d’origine','Core province')}</label>
       </div>
-      <div class="chips" data-ccat="${k}">${cats.map(x=>`<span class="chip ${cat===x?'on':''}" data-v="${x}">${SET_ICON[x]} ${SETS(x)}</span>`).join('')}</div>
-      <div class="btiles">${units.map(u=>{const l=u.levels[0];const cnt=sk.st.filter(x=>UK[x[0]]&&UK[x[0]].ident===u.ident).reduce((a,x)=>a+x[2],0);const rg=Object.values(l.rg||{}).some(v=>v>0);return `<button class="btile${cnt?' on':''}" data-cadd="${k}:${esc(u.key)}"><img loading="lazy" src="${uPor(u,l)}" alt=""><b>${esc(uN(u))}${rg?' <span title="'+T('Unité à portée','Ranged unit')+'">🎯</span>':''}</b><small>${T('ATT','ATK')} ${fmt(stat(l,'st'),1)} · ${T('DÉF','DEF')} ${fmt(stat(l,'de'),1)}</small>${cnt?`<i class="cnt">×${cnt}</i>`:''}</button>`}).join('')}</div>
-      ${sk.st.length?`<div class="sels" style="margin-top:12px"><div class="lbl" style="margin-bottom:6px">${T('Pile','Stack')} ${s.cur+1} · ${nUnits(sk)} ${T('unités','units')}</div>${sk.st.map(([uk,t,q],i)=>{const u=UK[uk];if(!u)return '';const l=u.levels.find(x=>x.tier===t)||u.levels[0];return `<div class="sel"><img src="${uPor(u,l)}" alt=""><div class="nm"><b>${esc(unitName(u,l))}</b><small>${ARMOR_N(l.armor)} · ${T('PV','HP')} ${fmt(stat(l,'hp'))} · ${T('ATT','ATK')} ${fmt(stat(l,'st'),1)} · ${T('DÉF','DEF')} ${fmt(stat(l,'de'),1)}${Object.values(l.rg||{}).some(v=>v>0)?' · 🎯':''}</small></div><div class="ctl"><span class="lbl">${T('Niv.','Lvl')}</span>${stepper('cl="'+k+':'+i+'" data-d',t,l.tier)}<span class="lbl">×</span>${stepper('cq="'+k+':'+i+'" data-d',q)}<button class="x" data-cdel="${k}:${i}" aria-label="✕">✕</button></div></div>`}).join('')}</div>`:`<div class="hint">${T('Clique sur une unité pour l’ajouter à la pile','Click a unit to add it to stack')} ${s.cur+1}.</div>`}
+      <small class="cbmh">${M[3]}${warn?` · <b class="warnc">⚠ ${warn}</b>`:''}</small>
+      <div class="cbl">${sk.st.length?sk.st.map(([uk,t,q],i)=>{const u=UK[uk];if(!u)return '';const l=u.levels.find(x=>x.tier===t)||u.levels[0];return `<div class="cbrow"><img src="${uPor(u,l)}" alt=""><div class="nm"><b>${esc(unitName(u,l))}</b><small>${ARMOR_N(l.armor)} · ${fmt(stat(l,'hp'))} ${T('PV','HP')} · ${T('ATT','ATK')} ${fmt(stat(l,'st'),1)} · ${T('DÉF','DEF')} ${fmt(stat(l,'de'),1)}${cbHasR({l})?' · 🎯':''}</small></div><div class="ctl"><span class="lbl">${T('Niv.','Lvl')}</span>${stepper('cl="'+k+':'+i+'" data-d',t,l.tier)}<span class="lbl">×</span>${stepper('cq="'+k+':'+i+'" data-d',q)}<button class="x" data-cdel="${k}:${i}" aria-label="✕">✕</button></div></div>`}).join(''):`<div class="cbempty">${T('Pile vide','Empty stack')}</div>`}</div>
+      <button class="btn cbaddb" data-cpick="${k}">＋ ${T('Ajouter des unités','Add units')}</button>
     </section>`};
   const ready=c.A.stacks.some(x=>x.st.length)&&c.D.stacks.some(x=>x.st.length);
   let res='';
   if(ready){
     const det=cbRun(c,false);const N=300;let wa=0,wd=0;const rs=[];for(let i=0;i<N;i++){const r=cbRun(c,true);if(r.win==='A')wa++;else if(r.win==='D')wd++;rs.push(r.rounds)}
     rs.sort((a,b)=>a-b);const med=rs[N>>1];const pa=Math.round(wa/N*100),pd=Math.round(wd/N*100),po=100-pa-pd;
-    const wtxt={A:T('Victoire de l’attaquant','Attacker victory'),D:T('Victoire du défenseur','Defender victory'),'=':T('Les deux armées sont détruites','Both armies destroyed'),'-':T('Combat non terminé','Fight not finished'),'0':T('Aucun dégât possible','No damage possible')}[det.win];
-    const wl=det.win==='A'?[det.a,det.AM]:det.win==='D'?[det.d,det.DM]:null;
+    const wtxt={A:T('Victoire de l’attaquant','Attacker victory'),D:T('Victoire du défenseur','Defender victory'),'=':T('Les deux armées sont détruites','Both armies destroyed'),'-':c.max<200?T('Combat en cours','Fight still going'):T('Combat non terminé','Fight not finished'),'0':T('Aucun dégât possible','No damage possible')}[det.win];
     const wcol={A:'#f2a900',D:'#6aa6e0'}[det.win]||'var(--txt)';
     const pct=(a,b)=>b?Math.round(a/b*100):0;
-    const loss=(arr,col)=>{const tl=arr.reduce((a,x)=>a+Math.max(0,x.hp),0),tm=arr.reduce((a,x)=>a+x.max,0);return `<div class="lrow lh"><span>${T('Unité','Unit')}</span><span>${T('Survivants','Survivors')}</span><span>${T('Points de vie','Hit points')}</span></div>`+arr.map(x=>{const hp=Math.max(0,x.hp);return `<div class="lrow"><span class="nm">${esc(unitName(x.u,x.l))} <small>${T('niv.','lvl')} ${x.l.tier}</small></span><span class="v ${x.a?'':'dead'}">${x.a?`${x.a} ${T('sur','of')} ${x.n}`:T('détruit','destroyed')}</span><span class="hpc"><span class="rbar"><i style="width:${x.max?hp/x.max*100:0}%;background:${col}"></i></span><small><b>${fmt(hp,1)}</b> ${T('sur','of')} ${fmt(x.max)} · ${pct(hp,x.max)} %${x.a>1?' · '+fmt(hp/x.a,1)+' '+T('par unité','per unit'):''}</small></span></div>`}).join('')+`<div class="lrow tot"><span>${T('Total','Total')}</span><span>${arr.reduce((a,x)=>a+x.a,0)} ${T('sur','of')} ${arr.reduce((a,x)=>a+x.n,0)}</span><span>${fmt(tl,1)} ${T('sur','of')} ${fmt(tm)} ${T('PV','HP')}</span></div>`};
-    const sideT=(nm,hp,h0)=>hp<=0?`${nm} · ${T('armée détruite','army destroyed')}`:`${nm} · ${T('garde','keeps')} ${pct(hp,h0)} % ${T('de ses PV','of its HP')}`;
-    const rngTxt=det.anyR?' '+T('Les piles à distance ne tirent qu\u2019avec leurs unités à portée et ne peuvent être touchées que par des unités à portée adverses.','Ranged stacks only fire with their ranged units and can only be hit by enemy ranged units.'):'';
-    const sent0={A:T(`L’attaquant l’emporte en ${rH(det.rounds)}. Il lui reste ${fmt(det.a,1)} PV sur ${fmt(det.AM)} (${pct(det.a,det.AM)} %).`,`The attacker wins in ${rH(det.rounds)}. It has ${fmt(det.a,1)} of ${fmt(det.AM)} HP left (${pct(det.a,det.AM)}%).`),
-      D:T(`Le défenseur tient bon : l’attaquant est détruit en ${rH(det.rounds)}. Il reste au défenseur ${fmt(det.d,1)} PV sur ${fmt(det.DM)} (${pct(det.d,det.DM)} %).`,`The defender holds: the attacker is destroyed in ${rH(det.rounds)}. The defender has ${fmt(det.d,1)} of ${fmt(det.DM)} HP left (${pct(det.d,det.DM)}%).`),
-      '=':T(`Les deux armées se détruisent en ${rH(det.rounds)}.`,`Both armies destroy each other in ${rH(det.rounds)}.`),
-      '0':det.anyR?T('Aucun tir possible : les piles à distance n\u2019ont pas d\u2019unité à portée, ou la cible n\u2019est atteignable que par des unités à portée. Passe une pile en assaut au contact, ou ajoute une unité à portée.','No shot possible: the ranged stacks have no ranged unit, or the target can only be reached by ranged units. Switch a stack to close assault, or add a ranged unit.'):T('Aucune unité ne peut infliger de dégâts à l’autre armée (attaque nulle contre ce type de cible).','No unit can damage the other army (zero attack against this kind of target).'),
-      '-':det.stall?T(`Après ${rH(det.rounds)}, plus aucune unité ne peut toucher l\u2019autre camp : l’attaquant garde ${pct(det.a,det.AM)} % de ses PV, le défenseur ${pct(det.d,det.DM)} %.`,`After ${rH(det.rounds)}, no unit can hit the other side any more: the attacker keeps ${pct(det.a,det.AM)}% of its HP, the defender ${pct(det.d,det.DM)}%.`):T(`Après ${rH(det.rounds)}, aucune armée n’est détruite : l’attaquant garde ${pct(det.a,det.AM)} % de ses PV, le défenseur ${pct(det.d,det.DM)} %.`,`After ${rH(det.rounds)}, neither army is destroyed: the attacker keeps ${pct(det.a,det.AM)}% of its HP, the defender ${pct(det.d,det.DM)}%.`)}[det.win];
-    const sent=sent0+(det.win!=='0'?rngTxt:'');
-    const sideCard=(k)=>{const A=k==='A';const arr=A?det.sA:det.sD;const hp=Math.max(0,A?det.a:det.d),h0=A?det.AM:det.DM;const col=A?'#f2a900':'#6aa6e0';const p=pct(hp,h0);
-      const n=arr.reduce((a,x)=>a+x.n,0),al=arr.reduce((a,x)=>a+x.a,0);
-      return `<div class="cbsc" style="--c:${col}"><div class="cbsc-h"><span class="ic">${A?'⚔':'🛡'}</span><div><span class="lbl">${A?T('Attaquant','Attacker'):T('Défenseur','Defender')}</span><b>${hp<=0?T('Armée détruite','Army destroyed'):p+' % '+T('des PV restants','of HP left')}</b></div>
-        <div class="cbsc-n"><b>${fmt(hp,1)}</b><small>/ ${fmt(h0)} ${T('PV','HP')}</small></div></div>
+    const sub={A:T(`en ${rH(det.rounds)} · il lui reste ${pct(det.a,det.AM)} % de ses PV`,`in ${rH(det.rounds)} · ${pct(det.a,det.AM)}% of its HP left`),D:T(`l’attaquant est détruit en ${rH(det.rounds)} · il reste ${pct(det.d,det.DM)} % des PV au défenseur`,`the attacker is destroyed in ${rH(det.rounds)} · the defender keeps ${pct(det.d,det.DM)}% of its HP`),'=':T(`en ${rH(det.rounds)}`,`in ${rH(det.rounds)}`),
+      '0':det.anyR?T('les piles à distance n’ont pas d’unité à portée, ou la cible n’est atteignable que par des unités à portée','the ranged stacks have no ranged unit, or the target can only be reached by ranged units'):T('aucune unité n’a d’attaque contre ce type de cible','no unit has any attack against this kind of target'),
+      '-':det.stall?T(`plus personne ne peut toucher l’autre camp après ${rH(det.rounds)}`,`nobody can hit the other side after ${rH(det.rounds)}`):T(`après ${rH(det.rounds)} : attaquant ${pct(det.a,det.AM)} % · défenseur ${pct(det.d,det.DM)} %`,`after ${rH(det.rounds)}: attacker ${pct(det.a,det.AM)}% · defender ${pct(det.d,det.DM)}%`)}[det.win];
+    const sideRes=k=>{const A=k==='A';const arr=A?det.sA:det.sD;const hp=Math.max(0,A?det.a:det.d),h0=A?det.AM:det.DM;const col=A?'#f2a900':'#6aa6e0';const p=pct(hp,h0);
+      const dead=arr.reduce((a,x)=>a+(x.n-x.a),0),n=arr.reduce((a,x)=>a+x.n,0);const lostC=arr.reduce((a,x)=>a+(x.n-x.a)*cbCost(x.l),0);const lostT=arr.reduce((a,x)=>a+(x.n-x.a)*(x.l.bt||0),0);
+      const KS=A?det.kA:det.kD;
+      return `<div class="cbr" style="--c:${col}"><div class="cbr-h"><span class="lbl">${A?'⚔ '+T('Attaquant','Attacker'):'🛡 '+T('Défenseur','Defender')}</span><b>${hp<=0?T('détruit','destroyed'):p+' %'}</b></div>
         <div class="cbsc-bar"><i style="width:${p}%"></i></div>
-        <div class="cbsc-meta"><span>🎖 ${al} / ${n} ${T('unités survivantes','units surviving')}</span><span>💥 ${fmt(h0-hp,1)} ${T('PV perdus','HP lost')}</span></div>
-        ${(A?det.kA:det.kD).length>1?`<div class="cbstk">${(A?det.kA:det.kD).map(x=>`<span class="${x.hp<=0?'dead':''}"><b>${x.mode==='r'?'🎯':(A?'⚔':'🛡')} ${T('Pile','Stack')} ${x.si+1}</b> ${TER_IC[x.ter]||''} ${x.hp<=0?T('détruite','destroyed'):pct(x.hp,x.max)+' %'} <small>${x.a}/${x.n}</small></span>`).join('')}</div>`:''}
-        <div class="cbsc-u">${arr.map(x=>{const h=Math.max(0,x.hp);const q=x.max?h/x.max*100:0;return `<div class="cbu ${x.a?'':'dead'}"><img src="${uPor(x.u,x.l)}" alt=""><div class="cbu-t"><b>${esc(unitName(x.u,x.l))}</b><small>${(A?det.kA:det.kD).length>1?T('pile','stack')+' '+(x.si+1)+' · ':''}${T('niv.','lvl')} ${x.l.tier} · ${x.a?`${x.a}/${x.n} ${T('en vie','alive')}`:T('détruite','destroyed')}${x.a>1?` · ${fmt(h/x.a,1)} ${T('PV chacune','HP each')}`:''}</small><span class="cbu-bar"><i style="width:${q}%"></i></span></div><div class="cbu-hp"><b>${fmt(h,1)}</b><small>/ ${fmt(x.max)}</small></div></div>`}).join('')}</div></div>`};
-    res=`<section class="cbres2">
-      <div class="cbv" style="--c:${wcol}"><span class="lbl">${T('Résultat','Result')}</span><h2>${wtxt}</h2><p>${sent}</p>
-        ${det.nodmg?'':`<div class="cbchips"><span>⏱ ${rH(det.rounds)}</span><span>🔁 ${det.rounds} ${T('tours de','rounds of')} ${RMIN} min</span><span>🎯 ${T('dégâts moyens, sans hasard','average damage, no randomness')}</span></div>`}</div>
-      <div class="cbo"><span class="lbl">${T('Avec le hasard du jeu','With game randomness')}</span>
-        ${det.nodmg?`<div class="cbo-n"><div style="color:var(--mut)"><b>—</b><small>${T('aucun vainqueur possible','no possible winner')}</small></div></div>`:`<div class="cbo-n"><div style="color:#f2a900"><b>${pa}%</b><small>⚔ ${T('attaquant','attacker')}</small></div>${po?`<div style="color:var(--mut)"><b>${po}%</b><small>${T('aucun vainqueur','no winner')}</small></div>`:''}<div style="color:#6aa6e0"><b>${pd}%</b><small>🛡 ${T('défenseur','defender')}</small></div></div>
-        <div class="obar"><i style="width:${pa}%;background:#f2a900"></i><i style="width:${po}%;background:#55605a"></i><i style="width:${pd}%;background:#6aa6e0"></i></div>`}
-        ${det.nodmg?'':`<small class="cbo-f">${T('sur 300 combats simulés · durée la plus fréquente','over 300 simulated fights · most common length')} ${rH(med)}</small>`}</div>
-      <div class="cbsides">${sideCard('A')}${sideCard('D')}</div>
-      <details class="cbdet"><summary>📈 ${T('Évolution tour par tour','Round by round')}</summary>${lineChart([{n:T('Attaquant','Attacker'),c:'#f2a900',pts:det.hist.map(h=>[h[0],h[1]])},{n:T('Défenseur','Defender'),c:'#6aa6e0',pts:det.hist.map(h=>[h[0],h[2]])}],{h:200,ymax:100,yl:v=>Math.round(v)+'%',xl:v=>rH(Math.round(v))})}</details>
-      <p class="cbnote">${T('Les dégâts reçus par une classe de blindage sont partagés également entre ses unités : les survivants d’un même type ont donc les mêmes PV.','Damage taken by an armor class is shared equally among its units, so survivors of the same type have the same HP.')}</p>
+        <div class="cbr-m"><span>❤ ${fmt(hp,1)} / ${fmt(h0)} ${T('PV','HP')}</span><span>☠ ${dead} / ${n} ${T('unités perdues','units lost')}</span>${dead?`<span title="${T('Coût en ressources et temps de production (usine niv. 1) des unités détruites','Resource cost and production time (level-1 factory) of the destroyed units')}">💸 ${fmt(lostC)} ${T('res.','res.')} · ⏱ ${dur(lostT)}</span>`:''}</div>
+        ${KS.length>1?`<div class="cbstk">${KS.map(x=>`<span class="${x.hp<=0?'dead':''}">${x.mode==='r'?'🎯':x.mode==='p'?'✈':(A?'⚔':'🛡')} ${T('Pile','Stack')} ${x.si+1} · ${x.hp<=0?T('détruite','destroyed'):pct(x.hp,x.max)+' %'}</span>`).join('')}</div>`:''}
+        <div class="cbsc-u">${arr.map(x=>{const h=Math.max(0,x.hp);const q=x.max?h/x.max*100:0;return `<div class="cbu ${x.a?'':'dead'}"><img src="${uPor(x.u,x.l)}" alt=""><div class="cbu-t"><b>${esc(unitName(x.u,x.l))} <small>${T('niv.','lvl')} ${x.l.tier}</small></b><small>${KS.length>1?T('pile','stack')+' '+(x.si+1)+' · ':''}${x.a?`${x.a}/${x.n} ${T('en vie','alive')}`:T('détruite','destroyed')}${x.a?` · ${fmt(h/x.a,1)} ${T('PV chacune','HP each')}`:''}</small><span class="cbu-bar"><i style="width:${q}%"></i></span></div><div class="cbu-hp"><b>${fmt(h,1)}</b><small>/ ${fmt(x.max)}</small></div></div>`}).join('')}</div></div>`};
+    res=`<section class="panel cbres3">
+      <div class="cbtop"><div class="cbv2" style="--c:${wcol}"><h2>${wtxt}</h2><p>${sub}</p></div>
+        <div class="cbodds">${det.nodmg?'':`<div class="cbo-l"><span style="color:#f2a900">⚔ ${pa} %</span>${po?`<span style="color:var(--mut)">${T('aucun vainqueur','no winner')} ${po} %</span>`:''}<span style="color:#6aa6e0">🛡 ${pd} %</span></div><div class="obar"><i style="width:${pa}%;background:#f2a900"></i><i style="width:${po}%;background:#55605a"></i><i style="width:${pd}%;background:#6aa6e0"></i></div><small>${T('chances sur 300 combats avec le hasard du jeu · durée la plus fréquente','odds over 300 fights with game randomness · most common length')} ${rH(med)}</small>`}</div></div>
+      <div class="cbsides">${sideRes('A')}${sideRes('D')}</div>
+      <div class="cbact"><button class="btn" id="cbcont" title="${T('Remplace les piles par les survivants et leurs PV, pour enchaîner le combat suivant','Replace the stacks with the survivors and their HP, to chain the next fight')}">↻ ${T('Garder les survivants','Keep the survivors')}</button>
+        <details class="cbdet"><summary>📈 ${T('Tour par tour','Round by round')}</summary>${lineChart([{n:T('Attaquant','Attacker'),c:'#f2a900',pts:det.hist.map(h=>[h[0],h[1]])},{n:T('Défenseur','Defender'),c:'#6aa6e0',pts:det.hist.map(h=>[h[0],h[2]])}],{h:190,ymax:100,yl:v=>Math.round(v)+'%',xl:v=>rH(Math.round(v))})}
+          <div class="tbw" style="max-height:260px"><table class="t"><thead><tr><th>${T('Tour','Round')}</th><th>${T('Heure','Time')}</th><th class="n">⚔ ${T('dégâts infligés','damage dealt')}</th><th class="n">🛡 ${T('dégâts infligés','damage dealt')}</th><th class="n">⚔ ${T('PV','HP')}</th><th class="n">🛡 ${T('PV','HP')}</th></tr></thead><tbody>${det.log.map(([r,ta,tb,a,d])=>`<tr><td>${r}</td><td>${rH(r)}</td><td class="n">${fmt(ta,1)}</td><td class="n">${fmt(tb,1)}</td><td class="n">${fmt(a,1)}</td><td class="n">${fmt(d,1)}</td></tr>`).join('')}</tbody></table></div></details></div>
     </section>`;
+    st.cbLast=det;
   }
-  app.innerHTML=hero(T('Compétitif','Competitive'),T('Simulateur de <em>combat</em>','Combat <em>simulator</em>'),T('Compose les deux armées en cliquant sur les unités, choisis le terrain : le résultat s’affiche aussitôt.','Build both armies by clicking units, pick the terrain: the result shows right away.'))+`
-  <section class="bstep cbfield"><h3><span class="n">⛰</span>${T('Champ de bataille','Battlefield')} <small>${T('la province disputée ; chaque pile peut avoir son propre terrain','the contested province; each stack can have its own terrain')}</small></h3>
-    <div class="brow"><div class="seg" id="cter">${[10,11,12,13,14].map(t=>`<button data-v="${t}" class="${+c.ter===t?'on':''}">${TER_IC[t]} ${TER(t)}</button>`).join('')}</div></div>
-    <div class="brow" style="margin-top:10px">
-      <span class="lbl">${urban?T('Bunkers du défenseur','Defender bunkers'):T('Fortifications du défenseur','Defender fortifications')}</span>
-      <span class="stp"><button data-cdef="-1">−</button><b>${defLvl?T('niv.','lvl')+' '+defLvl:T('aucun','none')}</b><button data-cdef="1">+</button></span>
-      ${defLvl?`<span class="lbl" style="color:#6aa6e0">−${Math.round((1-1/(1+defArr[defLvl-1]))*100)} % ${T('de dégâts subis','damage taken')}</span>`:''}
-      <span class="sp"></span><button class="btn" id="cswap">⇄ ${T('Inverser les camps','Swap sides')}</button><button class="btn" id="creset">${T('Tout effacer','Clear all')}</button>
-    </div>
+  const maxOpts=[[1,'1 '+T('tour','round')],[2,'2 '+T('tours','rounds')],[3,'3'],[6,'6'],[12,'12'],[24,'24'],[200,T('jusqu’au bout','until the end')]];
+  app.innerHTML=hero(T('Compétitif','Competitive'),T('Simulateur de <em>combat</em>','Combat <em>simulator</em>'),T('Compose les deux camps, règle le terrain : le résultat se met à jour à chaque clic.','Build both sides, set the terrain: the result updates on every click.'))+`
+  <section class="panel cbbar">
+    <div class="cbbf"><span class="lbl">⛰ ${T('Province disputée','Contested province')}</span><div class="seg" id="cter">${[10,11,12,13,14].map(t=>`<button data-v="${t}" class="${+c.ter===t?'on':''}">${TER_IC[t]} ${TER(t)}</button>`).join('')}</div></div>
+    <div class="cbbf"><span class="lbl">${urban?'🏰 '+T('Bunkers','Bunkers'):'🧱 '+T('Fortifications','Fortifications')}</span><span class="stp"><button data-cdef="-1">−</button><b>${defLvl?T('niv.','lvl')+' '+defLvl:T('aucune','none')}</b><button data-cdef="1">+</button></span>${defLvl?`<small style="color:#6aa6e0">−${Math.round((1-1/(1+defArr[defLvl-1]))*100)} % ${T('de dégâts subis','damage taken')}</small>`:''}</div>
+    <div class="cbbf"><span class="lbl">⏱ ${T('Durée','Length')}</span><select class="inp" id="cmax">${maxOpts.map(([v,n])=>`<option value="${v}" ${c.max===v||(v===200&&c.max>24&&c.max!==200&&!maxOpts.some(o=>o[0]===c.max))?'selected':''}>${n}${v<200?' ('+rH(v)+')':''}</option>`).join('')}</select></div>
+    <div class="cbbf cbbtn"><button class="btn" id="cswap">⇄ ${T('Inverser','Swap')}</button><button class="btn" id="creset">${T('Tout effacer','Clear all')}</button></div>
   </section>
   ${res}
   <div class="cbgrid">${side('A')}${side('D')}</div>
-  ${ready?'':`<div class="empty">${T('Ajoute au moins une unité de chaque côté : le résultat apparaîtra en haut.','Add at least one unit on each side: the result will appear at the top.')}</div>`}
-  <details class="bstep"><summary class="lbl" style="cursor:pointer">ℹ ${T('Comment le combat est calculé','How the fight is computed')}</summary><div style="color:var(--mut);font-size:13.5px;line-height:1.6;margin-top:8px">${T(
-    `<p>Valeurs officielles du jeu (version ${D.meta.version}) : attaque et défense de chaque unité, multiplicateurs de terrain, facteur de dégâts contre chaque classe de blindage, points de vie, réduction des bunkers et fortifications, courbe moral → dégâts (le moral d\u2019une unité, c\u2019est son état de santé : le réglage « Moral (PV) » fixe ses PV au début du combat), aléa du jeu, tours de ${RMIN} min.</p><p>À chaque tour, l’attaquant tire avec son <b>attaque</b>, le défenseur riposte avec sa <b>défense</b>. Chaque camp peut avoir plusieurs piles : une pile au contact combat dans la province disputée, une pile à distance tire depuis une province voisine avec ses seules unités à portée et ne peut être touchée que par des unités à portée adverses. Seules les 10 unités les plus fortes de chaque pile tirent. Les dégâts se répartissent entre les classes de blindage au prorata du nombre d’unités, puis à parts égales dans chaque classe. Une unité abîmée tire moins fort (100 % → 20 % de ses dégâts). Une unité dont il reste moins de ${(CB.edd&&CB.edd.deathThreshold)??.5} PV est détruite. Dans une province d’origine, une pile inflige ${CB.core||15} % de dégâts en plus. Les bunkers et fortifications réduisent les dégâts subis par les piles du défenseur présentes dans la province. L’aléa du jeu tire, pour chaque pile et chaque tour, un facteur autour de 1 (écart-type ${Math.round(((CB.edd&&CB.edd.xFactor&&CB.edd.xFactor.stdDev)||.1)*100)} %, limité à ±${Math.round(((CB.edd&&CB.edd.xFactor&&CB.edd.xFactor.limit)||.2)*100)} %) ; le résultat principal est calculé sans aléa, la répartition des issues sur 300 combats avec aléa.</p>`,
-    `<p>Official game values (version ${D.meta.version}): each unit’s attack and defence, terrain multipliers, damage factor against each armor class, hit points, bunker and fortification reduction, morale → damage curve (a unit’s morale is its health: the “Morale (HP)” setting sets its HP at the start of the fight), game randomness, ${RMIN}-minute rounds.</p><p>Each round the attacker fires with its <b>attack</b>, the defender returns fire with its <b>defence</b>. Each side can have several stacks: a close stack fights in the contested province, a ranged stack fires from a neighbouring province with its ranged units only and can only be hit by enemy ranged units. Only the 10 strongest units of each stack fire. Damage is split across armor classes in proportion to the number of units, then equally within each class. A damaged unit hits less hard (100% → 20% of its damage). A unit left with less than ${(CB.edd&&CB.edd.deathThreshold)??.5} HP is destroyed. In a core province a stack deals ${CB.core||15}% more damage. Bunkers and fortifications reduce damage taken by the defender’s stacks inside the province. Game randomness draws, for each stack and round, a factor around 1 (standard deviation ${Math.round(((CB.edd&&CB.edd.xFactor&&CB.edd.xFactor.stdDev)||.1)*100)}%, capped at ±${Math.round(((CB.edd&&CB.edd.xFactor&&CB.edd.xFactor.limit)||.2)*100)}%); the main result is computed without randomness, the outcome split over 300 randomised fights.</p>`)}</div></details>`;
+  ${ready?'':`<div class="empty">${T('Ajoute au moins une unité de chaque côté avec « Ajouter des unités » : le résultat apparaîtra ici.','Add at least one unit on each side with “Add units”: the result will appear here.')}</div>`}
+  <details class="panel cbhow"><summary class="lbl" style="cursor:pointer">ℹ ${T('Comment le combat est calculé','How the fight is computed')}</summary><div>${T(
+    `<p>Valeurs officielles du jeu (version ${D.meta.version}) : attaque, défense, PV et classe de blindage de chaque unité, facteur de dégâts contre chaque classe, terrain, bunkers et fortifications, courbe PV → dégâts et aléa du jeu. Un tour dure ${RMIN} min.</p>
+     <ul><li><b>Ordre :</b> à chaque tour, l’attaquant frappe en premier avec son <b>attaque</b>, puis le défenseur riposte avec sa <b>défense</b> et ce qu’il lui reste.</li>
+     <li><b>Qui tire :</b> contre chaque classe de blindage visée, seules les <b>10 unités</b> de la pile qui font le plus de dégâts à cette classe tirent ; les autres ajoutent des PV.</li>
+     <li><b>Répartition :</b> les dégâts vers une classe sont multipliés par la part de cette classe dans la pile visée, puis partagés à parts égales entre ses unités.</li>
+     <li><b>Moral = PV :</b> une unité abîmée tire moins fort, de 100 % à pleine santé jusqu’à 20 %. Sous ${(CB.edd&&CB.edd.deathThreshold)??.5} PV, elle est détruite.</li>
+     <li><b>À distance :</b> une pile à distance ne tire qu’avec ses unités à portée et n’est touchée que par des unités à portée adverses.</li>
+     <li><b>Patrouille :</b> les avions en patrouille font 2 passages par tour à demi-dégâts ; la pile survolée riposte à demi-défense.</li>
+     <li><b>Province :</b> province d’origine = +${CB.core||15} % de dégâts infligés ; bunkers (villes) et fortifications réduisent les dégâts subis par les piles du défenseur dans la province.</li>
+     <li><b>Hasard :</b> chaque tir est multiplié par un facteur autour de 1 (écart-type ${Math.round(sd0*100)} %, limité à ±${Math.round(lim0*100)} %). Le résultat principal est le combat moyen, sans hasard ; les chances viennent de 300 combats tirés au hasard.</li></ul>
+     <p>Méthode recoupée avec les mécaniques publiées par Bytro et le calculateur de dxter (dxcalc.com/cow). Non simulés : généraux, dégâts aux bâtiments, distance exacte des tirs.</p>`,
+    `<p>Official game values (version ${D.meta.version}): each unit’s attack, defence, HP and armor class, damage factor against each class, terrain, bunkers and fortifications, HP → damage curve and game randomness. A round lasts ${RMIN} min.</p>
+     <ul><li><b>Order:</b> each round the attacker strikes first with its <b>attack</b>, then the defender returns fire with its <b>defence</b> and what it has left.</li>
+     <li><b>Who fires:</b> against each targeted armor class, only the <b>10 units</b> of the stack that deal the most damage to that class fire; the others add HP.</li>
+     <li><b>Split:</b> damage towards a class is multiplied by that class’s share of the targeted stack, then shared equally among its units.</li>
+     <li><b>Morale = HP:</b> a damaged unit hits less hard, from 100% at full health down to 20%. Below ${(CB.edd&&CB.edd.deathThreshold)??.5} HP it is destroyed.</li>
+     <li><b>Ranged:</b> a ranged stack only fires with its ranged units and is only hit by enemy ranged units.</li>
+     <li><b>Patrol:</b> patrolling planes make 2 passes per round at half damage; the stack below returns fire at half defence.</li>
+     <li><b>Province:</b> core province = +${CB.core||15}% damage dealt; bunkers (cities) and fortifications reduce damage taken by the defender’s stacks in the province.</li>
+     <li><b>Randomness:</b> each shot is multiplied by a factor around 1 (standard deviation ${Math.round(sd0*100)}%, capped at ±${Math.round(lim0*100)}%). The main result is the average fight, without randomness; the odds come from 300 random fights.</li></ul>
+     <p>Method cross-checked with the mechanics published by Bytro and dxter’s calculator (dxcalc.com/cow). Not simulated: generals, building damage, exact firing distance.</p>`)}</div></details>`;
   const rr=()=>{cbSave();viewCombat()};
   $('#cter').onclick=e=>{const b=e.target.closest('button');if(b){c.ter=+b.dataset.v;rr()}};
   $$('[data-cdef]').forEach(b=>b.onclick=()=>{const v=Math.max(0,Math.min(defMax,defLvl+(+b.dataset.cdef)));if(urban)c.bunk=v;else c.fort=v;rr()});
+  $('#cmax').onchange=e=>{c.max=+e.target.value;rr()};
   $('#cswap').onclick=()=>{const a=c.A;c.A=c.D;c.D=a;rr()};
   $('#creset').onclick=()=>{st.cb=JSON.parse(JSON.stringify(cbDef));cbSave();viewCombat()};
-  $$('[data-cdoc]').forEach(g=>g.onclick=e=>{const b=e.target.closest('button');if(!b)return;const s=c[g.dataset.cdoc],nd=+b.dataset.v;s.stacks.forEach(x=>{x.st=x.st.map(([k,t,q])=>{const u=UK[k];const v=u&&UK[u.ident+'-'+nd];return v?[v.key,t,q]:null}).filter(Boolean)});s.doc=nd;rr()});
+  $$('[data-cdoc]').forEach(g=>g.onchange=()=>{const s=c[g.dataset.cdoc],nd=+g.value;s.stacks.forEach(x=>{x.st=x.st.map(([k,t,q])=>{const u=UK[k];const v=u&&UK[u.ident+'-'+nd];return v?[v.key,t,q]:null}).filter(Boolean)});s.doc=nd;rr()});
   const SK=k=>c[k].stacks[c[k].cur];
   $$('[data-cstk]').forEach(b=>b.onclick=e=>{if(e.target.closest('[data-cstkdel]'))return;const [k,i]=b.dataset.cstk.split(':');c[k].cur=+i;rr()});
   $$('[data-cstkdel]').forEach(b=>b.onclick=e=>{e.stopPropagation();const [k,i]=b.dataset.cstkdel.split(':');const s=c[k];s.stacks.splice(+i,1);if(!s.stacks.length)s.stacks.push(cbStack());s.cur=Math.min(s.cur,s.stacks.length-1);rr()});
   $$('[data-cstkadd]').forEach(b=>b.onclick=()=>{const s=c[b.dataset.cstkadd];s.stacks.push(cbStack());s.cur=s.stacks.length-1;rr()});
-  $$('[data-cmode]').forEach(g=>g.onclick=e=>{const b=e.target.closest('button');if(b){SK(g.dataset.cmode).mode=b.dataset.v;rr()}});
+  $$('[data-cmode]').forEach(i=>i.onchange=()=>{SK(i.dataset.cmode).mode=i.value;rr()});
   $$('[data-cter]').forEach(i=>i.onchange=()=>{SK(i.dataset.cter).ter=+i.value;rr()});
-  $$('[data-ccat]').forEach(g=>g.onclick=e=>{const x=e.target.closest('.chip');if(x){st['cbcat'+g.dataset.ccat]=+x.dataset.v;viewCombat()}});
-  $$('[data-cadd]').forEach(b=>b.onclick=()=>{const [k,key]=b.dataset.cadd.split(':');const u=UK[key];const t=u.levels[0].tier;const s=SK(k);const ex=s.st.find(x=>x[0]===key&&x[1]===t);if(ex)ex[2]++;else s.st.push([key,t,1]);rr()});
+  $$('[data-cmor]').forEach(i=>i.onchange=()=>{SK(i.dataset.cmor).mor=Math.max(1,Math.min(100,+i.value||100));rr()});
+  $$('[data-cpick]').forEach(b=>b.onclick=()=>openCbPicker(b.dataset.cpick));
   $$('[data-cl]').forEach(b=>b.onclick=()=>{const [k,i]=b.dataset.cl.split(':');const it=SK(k).st[+i];const u=UK[it[0]];const tiers=u.levels.map(l=>l.tier);const j=tiers.indexOf(it[1])+(+b.dataset.d);if(j>=0&&j<tiers.length){it[1]=tiers[j];rr()}});
   $$('[data-cq]').forEach(b=>b.onclick=()=>{const [k,i]=b.dataset.cq.split(':');const S_=SK(k);const it=S_.st[+i];it[2]=Math.max(0,it[2]+(+b.dataset.d));if(!it[2])S_.st.splice(+i,1);rr()});
   $$('[data-cdel]').forEach(b=>b.onclick=()=>{const [k,i]=b.dataset.cdel.split(':');SK(k).st.splice(+i,1);rr()});
   $$('[data-chome]').forEach(b=>b.onclick=()=>{const S_=SK(b.dataset.chome);S_.core=!S_.core;rr()});
-  $$('[data-cmor]').forEach(i=>i.onchange=()=>{SK(i.dataset.cmor).mor=+i.value;rr()});
+  if($('#cbcont'))$('#cbcont').onclick=()=>{const det=st.cbLast;if(!det)return;['A','D'].forEach(k=>{const arr=k==='A'?det.sA:det.sD;c[k].stacks.forEach((S_,si)=>{const mine=arr.filter(x=>x.si===si);if(!mine.length)return;const al=mine.filter(x=>x.a>0);
+      const hp=al.reduce((a,x)=>a+x.hp,0),mx=al.reduce((a,x)=>a+x.max/x.n*x.a,0);S_.st=al.map(x=>[x.u.key,x.l.tier,x.a]);S_.mor=mx?Math.max(1,Math.round(hp/mx*100)):100});
+      c[k].stacks=c[k].stacks.filter(S_=>S_.st.length);if(!c[k].stacks.length)c[k].stacks=[cbStack()];c[k].cur=Math.min(c[k].cur,c[k].stacks.length-1)});rr()};
 }
 
 /* ---------- research tree with arrows ---------- */
@@ -1918,15 +1989,43 @@ function loadTemplate(tp){
 
 /* ---------- splash art ---------- */
 function splashArt(){
-  const p=(k,i)=>{const u=UK[k];return u?uPor(u,u.levels[Math.min(i,u.levels.length-1)]):''};
-  return `<div class="sart" aria-hidden="true">
-    <svg class="topo" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice"><defs><pattern id="sgrid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="rgba(255,255,255,.045)"/></pattern></defs><rect width="800" height="400" fill="url(#sgrid)"/>
-    ${Array.from({length:9},(_,i)=>`<path d="M${-50+i*12},${380-i*28} C${180+i*20},${300-i*40} ${360-i*10},${420-i*30} ${560+i*8},${250-i*22} S${780},${120-i*10} ${860},${150-i*18}" fill="none" stroke="rgba(242,169,0,${.05+i*.008})" stroke-width="1.2"/>`).join('')}
-    <circle cx="610" cy="200" r="120" fill="none" stroke="rgba(255,255,255,.07)"/><circle cx="610" cy="200" r="70" fill="none" stroke="rgba(255,255,255,.06)" stroke-dasharray="4 6"/><path d="M610 60V340M470 200H750" stroke="rgba(255,255,255,.06)"/></svg>
-    <img class="u1" src="${p('tank_heavy-1',3)}" alt=""><img class="u2" src="${p('fighter-2',6)}" alt="">
-  </div>`;
+  // fond de l'accueil : la vraie carte du monde 1942 du jeu, territoires teintés par doctrine, capitales qui pulsent, balayage radar
+  return `<div class="sart" aria-hidden="true"><canvas class="smap"></canvas><div class="sgrid"></div><div class="sradar"><i></i></div><div class="spins"></div><div class="sscan"></div></div>`;
 }
-
+let SPL=null;
+function splashMap(){
+  const host=$('.splash .sart');if(!host)return;const cv=$('.smap',host);const pins=$('.spins',host);
+  if(SPL===null&&!document.getElementById('md50512')){if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>splashMap(),{once:true});return}
+  if(SPL===null){SPL=false;try{const el=document.getElementById('md50512');if(el){const d=JSON.parse(el.textContent);if(d.R){
+    const sc=S.find(x=>x.id===50512);const docOf={};((sc&&sc.data&&sc.data.countries)||[]).forEach(c=>docOf[c.id]=c.doc);
+    const polys=d.R.map(rings=>rings.map(str=>{const a=str.split(',');let x=+a[0],y=+a[1];const pts=[x,y];for(let j=2;j<a.length;j+=2){x+=+a[j];y+=+a[j+1];pts.push(x,y)}return pts}));
+    const byN={};d.P.forEach((p,i)=>byN[p[1]]=i);
+    const ctr=i=>{const r=polys[i]&&polys[i][0];if(!r)return null;let sx=0,sy=0,n=r.length/2;for(let j=0;j<r.length;j+=2){sx+=r[j];sy+=r[j+1]}return [sx/n,sy/n]};
+    const box=['Lisbonne','Moscou','Oslo','Alger','Ankara','Stockholm','Le Caire'].map(n=>byN[n]!=null?ctr(byN[n]):null).filter(Boolean);
+    let x0=Math.min(...box.map(p=>p[0])),x1=Math.max(...box.map(p=>p[0])),y0=Math.min(...box.map(p=>p[1])),y1=Math.max(...box.map(p=>p[1]));
+    const caps=['Londres','Paris','Berlin','Rome','Moscou','Madrid','Varsovie','Ankara'].map(n=>byN[n]!=null?{n,c:ctr(byN[n]),doc:docOf[d.P[byN[n]][2]]}:null).filter(x=>x&&x.c);
+    SPL={polys,P:d.P,docOf,box:[x0,y0,x1,y1],caps}}}}catch(e){SPL=false}}
+  if(!SPL)return;
+  const W=host.clientWidth,H=host.clientHeight;if(!W||!H)return;const dpr=Math.min(2,window.devicePixelRatio||1);cv.width=W*dpr;cv.height=H*dpr;cv.style.width=W+'px';cv.style.height=H+'px';
+  const g=cv.getContext('2d');g.setTransform(dpr,0,0,dpr,0,0);
+  // cadrage : l'Europe occupe la partie droite du bandeau (le texte reste lisible à gauche)
+  const [x0,y0,x1,y1]=SPL.box;const bw=x1-x0,bh=y1-y0;const mob=W<700;const areaW=mob?W:W*.72,areaX=mob?0:W*.28;
+  const kc=Math.max(areaW/(bw*1.08),H/(bh*1.12)),kn=Math.min(areaW/(bw*1.08),H/(bh*1.12));const k=mob?kc:Math.sqrt(kc*kn)*1.05;const ox=areaX+areaW/2-(x0+bw/2)*k,oy=H/2-(y0+bh*.42)*k;
+  const tx=x=>ox+x*k,ty=y=>oy+y*k;
+  const DC={1:'150,158,170',2:'90,150,230',3:'225,80,70',4:'235,175,40',0:'110,120,115'};
+  const path=(rings)=>{g.beginPath();rings.forEach(r=>{g.moveTo(tx(r[0]),ty(r[1]));for(let j=2;j<r.length;j+=2)g.lineTo(tx(r[j]),ty(r[j+1]));g.closePath()})};
+  const vis=rings=>rings.some(r=>{for(let j=0;j<r.length;j+=8){const X=tx(r[j]),Y=ty(r[j+1]);if(X>-50&&X<W+50&&Y>-50&&Y<H+50)return true}return false});
+  // terres
+  SPL.polys.forEach((rings,i)=>{if(!rings.length||!vis(rings))return;const p=SPL.P[i];const dc=DC[SPL.docOf[p[2]]]||DC[0];path(rings);
+    g.fillStyle='rgba(30,42,36,.9)';g.fill();g.fillStyle=`rgba(${dc},${p[3]===14?.26:.16})`;g.fill();g.strokeStyle='rgba(255,255,255,.05)';g.lineWidth=.6;g.stroke()});
+  // frontières entre pays
+  g.lineWidth=1.1;SPL.polys.forEach((rings,i)=>{if(!rings.length||!vis(rings))return;const p=SPL.P[i];const dc=DC[SPL.docOf[p[2]]]||DC[0];path(rings);g.strokeStyle=`rgba(${dc},.16)`;g.stroke()});
+  // villes
+  SPL.P.forEach((p,i)=>{if(p[3]!==14||!SPL.polys[i]||!SPL.polys[i].length)return;const r=SPL.polys[i][0];let sx=0,sy=0,n=r.length/2;for(let j=0;j<r.length;j+=2){sx+=r[j];sy+=r[j+1]}const X=tx(sx/n),Y=ty(sy/n);if(X<0||X>W||Y<0||Y>H)return;g.fillStyle='rgba(242,169,0,.35)';g.beginPath();g.arc(X,Y,1.3,0,7);g.fill()});
+  // capitales qui pulsent
+  pins.innerHTML=SPL.caps.map((c,i)=>{const X=tx(c.c[0]),Y=ty(c.c[1]);if(X<0||X>W||Y<0||Y>H)return '';const col=DC[c.doc]||'242,169,0';return `<span class="spin" style="left:${X}px;top:${Y}px;--pc:rgb(${col});animation-delay:${(i*.45).toFixed(2)}s"><b>${esc(c.n)}</b></span>`}).join('');
+  const rd=$('.sradar',host);const cB=SPL.caps.find(c=>c.n==='Berlin');if(rd&&cB){rd.style.left=tx(cB.c[0])+'px';rd.style.top=ty(cB.c[1])+'px'}
+}
 /* ---------- videos ---------- */
 const YT={ch:'UC02AFUpEndmpQOJCWt3gDBA',handle:'@COWFR1942'};
 const YT_URL='https://www.youtube.com/'+YT.handle;
@@ -2242,7 +2341,7 @@ function mapRun(s,m,C,ms){
   function stackPop(i,q){const k=wb.stacks[i];const c=C[k.o];const ss=stackStats(k);const p=locP[k.loc];
     wbp.innerHTML=`<button class="x" data-wbx>✕</button><div class="wbh">⚔ ${T('Pile d\u2019unités','Unit stack')} · ${esc(p?p.n:'')}</div><div style="color:var(--mut);font-size:12px;margin-bottom:8px">${c?esc(cN(c)):''} · ${ss.n} ${T('unités','units')} · ${fmt(ss.hp)} ${T('PV','HP')}</div>
       <div class="wbu">${k.u.map(([uk,t,qq])=>{const u=UK[uk];if(!u)return '';const l=u.levels.find(x=>x.tier===t)||u.levels[0];return `<div><img src="${uPor(u,l)}" alt=""><span>${esc(unitName(u,l))} <small>${T('niv.','lvl')} ${t}</small></span><b>×${qq}</b></div>`}).join('')}</div>
-      <div style="color:var(--dim);font-size:11.5px;margin:6px 0">${T('Au combat, seules les 10 unités les plus fortes de chaque type tirent ; les autres ajoutent des PV.','In combat only the 10 strongest units of each type fire; the rest add HP.')}</div>
+      <div style="color:var(--dim);font-size:11.5px;margin:6px 0">${T('Au combat, contre chaque classe de blindage visée, seules les 10 unités qui lui font le plus de dégâts tirent ; les autres ajoutent des PV.','In combat, against each targeted armor class only the 10 units dealing the most damage to it fire; the rest add HP.')}</div>
       <div class="sh-b"><button class="btn" data-cbs="A">→ ${T('Attaquant','Attacker')}</button><button class="btn" data-cbs="D">→ ${T('Défenseur','Defender')}</button><button class="btn" data-sdel>🗑</button></div>`;
     wbp.classList.add('on');$('[data-wbx]',wbp).onclick=()=>{wbp.classList.remove('on');panel()};
     $$('[data-cbs]',wbp).forEach(b=>b.onclick=()=>{cbNorm(st.cb);const sd=st.cb[b.dataset.cbs];let cur=sd.stacks[sd.cur];if(cur.st.length){cur=cbStack();sd.stacks.push(cur);sd.cur=sd.stacks.length-1}cur.st=k.u.map(x=>[...x]);if(c)sd.doc=c.doc;cbSave();flash(T('Pile envoyée au simulateur de combat','Stack sent to the combat simulator'));setTimeout(()=>{location.hash='#/combat'},500)});
