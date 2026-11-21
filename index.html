@@ -327,6 +327,8 @@ table.vs td.n.up{color:#86b26a;font-weight:700}
 .bside .stk{grid-template-columns:repeat(3,1fr)}
 #cmpbar{display:none!important}
 
+.cbfort button{display:flex;flex-direction:column;align-items:center;gap:1px;padding:5px 11px;line-height:1.15}.cbfort button small{font-size:10.5px;color:var(--dim);font-weight:600}.cbfort button.on small{color:#1a1a1a}
+@media(max-width:520px){.cbfort{flex-wrap:nowrap}.cbfort button{padding:5px 6px;font-size:12px}}
 .cbbar{display:flex;flex-wrap:wrap;gap:12px 22px;align-items:flex-end;padding:14px 16px}.cbbf{display:flex;flex-direction:column;gap:6px}.cbbf small{font-size:11.5px}.cbbtn{flex-direction:row;margin-left:auto;gap:8px}
 .cbside{border-top:3px solid var(--c);padding:14px}.cbsh{display:flex;align-items:center;gap:10px;margin-bottom:10px}.cbsh>b{font:800 17px Inter;color:var(--c)}.cbsh>small{color:var(--dim)}
 .cbdoc{margin-left:auto;display:flex;align-items:center;gap:6px}.cbdoc i{width:10px;height:10px;border-radius:50%}.cbdoc .inp{padding:6px 8px}
@@ -1561,7 +1563,7 @@ function viewCombat(){
   app.innerHTML=hero(T('Compétitif','Competitive'),T('Simulateur de <em>combat</em>','Combat <em>simulator</em>'),T('Compose les deux camps, règle le terrain : le résultat se met à jour à chaque clic.','Build both sides, set the terrain: the result updates on every click.'))+`
   <section class="panel cbbar">
     <div class="cbbf"><span class="lbl">⛰ ${T('Province disputée','Contested province')}</span><div class="seg" id="cter">${[10,11,12,13,14].map(t=>`<button data-v="${t}" class="${+c.ter===t?'on':''}">${TER_IC[t]} ${TER(t)}</button>`).join('')}</div></div>
-    <div class="cbbf"><span class="lbl">${urban?'🏰 '+T('Bunkers','Bunkers'):'🧱 '+T('Fortifications','Fortifications')}</span><span class="stp"><button data-cdef="-1">−</button><b>${defLvl?T('niv.','lvl')+' '+defLvl:T('aucune','none')}</b><button data-cdef="1">+</button></span>${defLvl?`<small style="color:#6aa6e0">−${Math.round((1-1/(1+defArr[defLvl-1]))*100)} % ${T('de dégâts subis','damage taken')}</small>`:''}</div>
+    <div class="cbbf"><span class="lbl">${urban?'🏰 '+T('Bunkers du défenseur','Defender bunkers')+' · '+T('ville','city'):'🧱 '+T('Fortifications du défenseur','Defender fortifications')+' · '+T('campagne','countryside')}</span><div class="seg cbfort" id="cfort">${Array.from({length:defMax+1},(_,i)=>`<button data-v="${i}" class="${defLvl===i?'on':''}" title="${i?T('Dégâts subis par le défenseur','Damage taken by the defender')+' : −'+Math.round((1-1/(1+defArr[i-1]))*100)+' %':T('Aucune protection','No protection')}"><b>${i?T('Niv.','Lvl')+' '+i:T('Aucune','None')}</b><small>${i?'−'+Math.round((1-1/(1+defArr[i-1]))*100)+' %':'0 %'}</small></button>`).join('')}</div></div>
     <div class="cbbf"><span class="lbl">⏱ ${T('Durée','Length')}</span><select class="inp" id="cmax">${maxOpts.map(([v,n])=>`<option value="${v}" ${c.max===v||(v===200&&c.max>24&&c.max!==200&&!maxOpts.some(o=>o[0]===c.max))?'selected':''}>${n}${v<200?' ('+rH(v)+')':''}</option>`).join('')}</select></div>
     <div class="cbbf cbbtn"><button class="btn" id="cswap">⇄ ${T('Inverser','Swap')}</button><button class="btn" id="creset">${T('Tout effacer','Clear all')}</button></div>
   </section>
@@ -1591,7 +1593,7 @@ function viewCombat(){
      <p>Method cross-checked with the mechanics published by Bytro and dxter’s calculator (dxcalc.com/cow). Not simulated: generals, building damage, exact firing distance.</p>`)}</div></details>`;
   const rr=()=>{cbSave();viewCombat()};
   $('#cter').onclick=e=>{const b=e.target.closest('button');if(b){c.ter=+b.dataset.v;rr()}};
-  $$('[data-cdef]').forEach(b=>b.onclick=()=>{const v=Math.max(0,Math.min(defMax,defLvl+(+b.dataset.cdef)));if(urban)c.bunk=v;else c.fort=v;rr()});
+  $('#cfort').onclick=e=>{const b=e.target.closest('button');if(!b)return;const v=Math.max(0,Math.min(defMax,+b.dataset.v));if(urban)c.bunk=v;else c.fort=v;rr()};
   $('#cmax').onchange=e=>{c.max=+e.target.value;rr()};
   $('#cswap').onclick=()=>{const a=c.A;c.A=c.D;c.D=a;rr()};
   $('#creset').onclick=()=>{st.cb=JSON.parse(JSON.stringify(cbDef));cbSave();viewCombat()};
