@@ -327,7 +327,7 @@ table.vs td.n.up{color:#86b26a;font-weight:700}
 .bside .stk{grid-template-columns:repeat(3,1fr)}
 #cmpbar{display:none!important}
 
-.cbfort button{display:flex;flex-direction:column;align-items:center;gap:1px;padding:5px 11px;line-height:1.15}.cbfort button small{font-size:10.5px;color:var(--dim);font-weight:600}.cbfort button.on small{color:#1a1a1a}
+.stf{font-style:normal;font-size:11px;margin-left:2px}.cbprot{display:flex;flex-direction:column;gap:5px;margin-top:10px}.cbfort button{display:flex;flex-direction:column;align-items:center;gap:1px;padding:5px 11px;line-height:1.15}.cbfort button small{font-size:10.5px;color:var(--dim);font-weight:600}.cbfort button.on small{color:#1a1a1a}
 @media(max-width:520px){.cbfort{flex-wrap:nowrap}.cbfort button{padding:5px 6px;font-size:12px}}
 .cbbar{display:flex;flex-wrap:wrap;gap:12px 22px;align-items:flex-end;padding:14px 16px}.cbbf{display:flex;flex-direction:column;gap:6px}.cbbf small{font-size:11.5px}.cbbtn{flex-direction:row;margin-left:auto;gap:8px}
 .cbside{border-top:3px solid var(--c);padding:14px}.cbsh{display:flex;align-items:center;gap:10px;margin-bottom:10px}.cbsh>b{font:800 17px Inter;color:var(--c)}.cbsh>small{color:var(--dim)}
@@ -1427,9 +1427,9 @@ const RMIN=(()=>{const v=S.map(x=>x.opt&&x.opt.interval).filter(Boolean);return 
 const rH=r=>{const m=r*RMIN;return m%60?`${Math.floor(m/60)} h ${String(m%60).padStart(2,'0')}`:`${m/60} h`};
 const lerpCfg=(cfg,x)=>{const e=(cfg&&cfg.entries)||[];if(!e.length)return 1;if(x<=e[0].x)return e[0].y;for(let i=1;i<e.length;i++){if(x<=e[i].x){const a=e[i-1],b=e[i];return a.y+(b.y-a.y)*(x-a.x)/(b.x-a.x)}}return e[e.length-1].y};
 const FORT_F=k=>{const b=D.buildings.find(x=>x.key===k);return b?b.levels.map(l=>(l.f&&l.f['0'])||0):[]};
-const cbDef={ter:10,bunk:0,fort:0,max:200,A:{doc:1,cur:0,stacks:[{st:[],mor:100,core:false,mode:'m',ter:0}]},D:{doc:1,cur:0,stacks:[{st:[],mor:100,core:false,mode:'m',ter:0}]}};
-const cbStack=()=>({st:[],mor:100,core:false,mode:'m',ter:0});
-function cbNorm(c){['A','D'].forEach(k=>{const s=c[k]=c[k]||{doc:1};if(!Array.isArray(s.stacks)||!s.stacks.length){s.stacks=[{st:s.st||[],mor:s.mor||100,core:k==='A'?!!c.coreA:!!c.core,mode:c.ranged&&k==='A'?'r':'m',ter:0}]}delete s.st;delete s.mor;s.stacks.forEach(x=>{x.st=x.st||[];x.mor=x.mor||100;x.mode=['r','p'].includes(x.mode)?x.mode:'m';x.mor=Math.max(1,Math.min(100,+x.mor||100));x.ter=+x.ter||0});s.cur=Math.min(Math.max(0,s.cur||0),s.stacks.length-1)});delete c.ranged;delete c.core;delete c.coreA;if(![1,2,3,6,12,24,200].includes(+c.max))c.max=200;return c}
+const cbDef={ter:10,max:200,A:{doc:1,cur:0,stacks:[{st:[],mor:100,core:false,mode:'m',ter:0}]},D:{doc:1,cur:0,stacks:[{st:[],mor:100,core:false,mode:'m',ter:0}]}};
+const cbStack=()=>({st:[],mor:100,core:false,mode:'m',ter:0,fort:0});
+function cbNorm(c){['A','D'].forEach(k=>{const s=c[k]=c[k]||{doc:1};if(!Array.isArray(s.stacks)||!s.stacks.length){s.stacks=[{st:s.st||[],mor:s.mor||100,core:k==='A'?!!c.coreA:!!c.core,mode:c.ranged&&k==='A'?'r':'m',ter:0}]}delete s.st;delete s.mor;s.stacks.forEach(x=>{x.st=x.st||[];x.mor=x.mor||100;x.mode=['r','p'].includes(x.mode)?x.mode:'m';x.mor=Math.max(1,Math.min(100,+x.mor||100));x.ter=+x.ter||0});s.cur=Math.min(Math.max(0,s.cur||0),s.stacks.length-1)});['A','D'].forEach(k=>c[k].stacks.forEach(x=>{if(x.fort==null)x.fort=k==='D'?(+(+(x.ter||c.ter)===14?c.bunk:c.fort)||0):0;x.fort=Math.max(0,+x.fort||0)}));delete c.bunk;delete c.fort;delete c.ranged;delete c.core;delete c.coreA;if(![1,2,3,6,12,24,200].includes(+c.max))c.max=200;return c}
 st.cb=cbNorm(Object.assign(JSON.parse(JSON.stringify(cbDef)),store.get('combat',{})));
 const cbSave=()=>store.set('combat',st.cb);
 const terMul=(l,k,ter)=>l.dom===0?((l[k]&&l[k][ter])||1):1;
@@ -1444,12 +1444,11 @@ function cbRun(cfg,rnd){
   // – une unité abîmée tire moins fort (courbe du jeu, 100 % → 20 %) ; le moral d'une unité, c'est ses PV ;
   // – piles à distance : ne tirent qu'avec leurs unités à portée, ne sont touchées que par des unités à portée ;
   // – patrouille aérienne : 2 passages par tour à demi-dégâts, la cible riposte à demi-défense.
-  const urban=+cfg.ter===14,fl=urban?FORT_F('fortress')[cfg.bunk-1]:FORT_F('fortifications')[cfg.fort-1];
-  const red=1/(1+(fl||0));
+  const protOf=(s)=>{const t=+s.ter||+cfg.ter;const L=+s.fort||0;if(!L)return 1;const A_=t===14?FORT_F('fortress'):FORT_F('fortifications');const f=A_[Math.min(L,A_.length)-1]||0;return 1/(1+f)};
   const cf=(CB.core||15)/100;
   const sd=(CB.edd&&CB.edd.xFactor&&CB.edd.xFactor.stdDev)||.1,lim=(CB.edd&&CB.edd.xFactor&&CB.edd.xFactor.limit)||.2;
   const jit=()=>rnd?1+Math.max(-lim,Math.min(lim,gauss()*sd)):1;
-  const mk=k=>cfg[k].stacks.map((s,si)=>{const mode=['r','p'].includes(s.mode)?s.mode:'m';const S_={k,si,mode,ter:+s.ter||+cfg.ter,mult:(s.core?1+cf:1)*(CB.cas||1),take:(k==='D'&&mode==='m')?red:1};
+  const mk=k=>cfg[k].stacks.map((s,si)=>{const mode=['r','p'].includes(s.mode)?s.mode:'m';const S_={k,si,mode,ter:+s.ter||+cfg.ter,mult:(s.core?1+cf:1)*(CB.cas||1),take:(k==='D'&&mode==='m')?protOf(s):1};
     S_.units=cbExpand(s).filter(x=>mode!=='p'||x.l.dom===1).map(x=>Object.assign(x,{S:S_,hp:x.max*Math.max(1,Math.min(100,+s.mor||100))/100}));return S_}).filter(x=>x.units.length);
   const SA=mk('A'),SD=mk('D');const AU=SA.flatMap(s=>s.units),DU=SD.flatMap(s=>s.units);
   const hpOf=a=>a.reduce((s,x)=>s+Math.max(0,x.hp),0);
@@ -1484,7 +1483,7 @@ function cbRun(cfg,rnd){
   const surv=arr=>{const m={};arr.forEach(x=>{const k=x.u.key+'|'+x.l.tier+'|'+x.S.si;m[k]=m[k]||{u:x.u,l:x.l,si:x.S.si,n:0,a:0,hp:0,max:0,hp0:0};m[k].n++;m[k].hp0+=x.max;if(x.hp>0){m[k].a++;m[k].hp+=x.hp}m[k].max+=x.max});return Object.values(m)};
   const stk=SS=>SS.map(S_=>({si:S_.si,mode:S_.mode,ter:S_.ter,hp:hpOf(S_.units),max:S_.units.reduce((a,x)=>a+x.max,0),n:S_.units.length,a:S_.units.filter(x=>x.hp>0).length,rng:S_.units.some(cbHasR)}));
   const a=hpOf(AU),d=hpOf(DU);
-  return {AM,DM,rounds:Math.min(r,cfg.max),win:nodmg?'0':d<=0&&a>0?'A':a<=0&&d>0?'D':a<=0&&d<=0?'=':'-',nodmg,stall,hist,log,sA:surv(AU),sD:surv(DU),kA:stk(SA),kD:stk(SD),A0,D0,a,d,red,multi:SA.length+SD.length>2,anyR:SA.concat(SD).some(s=>s.mode==='r'),anyP:SA.concat(SD).some(s=>s.mode==='p')};
+  return {AM,DM,rounds:Math.min(r,cfg.max),win:nodmg?'0':d<=0&&a>0?'A':a<=0&&d>0?'D':a<=0&&d<=0?'=':'-',nodmg,stall,hist,log,sA:surv(AU),sD:surv(DU),kA:stk(SA),kD:stk(SD),A0,D0,a,d,multi:SA.length+SD.length>2,anyR:SA.concat(SD).some(s=>s.mode==='r'),anyP:SA.concat(SD).some(s=>s.mode==='p')};
 }
 const cbCost=l=>Object.values(l.c||{}).reduce((a,b)=>a+b,0);
 function cbPicker(k){
@@ -1508,7 +1507,6 @@ function openCbPicker(k){
 function viewCombat(){
   const c=cbNorm(st.cb);const sd0=(CB.edd&&CB.edd.xFactor&&CB.edd.xFactor.stdDev)||.1,lim0=(CB.edd&&CB.edd.xFactor&&CB.edd.xFactor.limit)||.2;
   const urban=+c.ter===14,fb=FORT_F('fortress'),ff=FORT_F('fortifications');
-  const defLvl=urban?c.bunk:c.fort,defMax=urban?fb.length:ff.length,defArr=urban?fb:ff;
   const nUnits=x=>x.st.reduce((a,y)=>a+y[2],0);
   const MODES=k=>[['m',k==='A'?'⚔':'🛡',k==='A'?T('Assaut','Assault'):T('Dans la province','In the province'),k==='A'?T('attaque la province au contact','attacks the province in close combat'):T('défend la province (fortifications)','defends the province (fortifications)')],['r','🎯',T('Bombardement à distance','Ranged bombardment'),T('artillerie, navires… depuis une province voisine','artillery, ships… from a neighbouring province')],['p','✈',T('Patrouille aérienne','Air patrol'),T('avions : 2 passages par tour à demi-dégâts','planes: 2 passes per round at half damage')]];
   const side=k=>{const s=c[k];const col=k==='A'?'#f2a900':'#6aa6e0';const sk=s.stacks[s.cur];const n=s.stacks.reduce((a,x)=>a+nUnits(x),0);
@@ -1519,13 +1517,14 @@ function viewCombat(){
     return `<section class="panel cbside" style="--c:${col}">
       <div class="cbsh"><b>${k==='A'?'⚔ '+T('Attaquant','Attacker'):'🛡 '+T('Défenseur','Defender')}</b><small>${n} ${T('unités','units')}</small>
         <label class="cbdoc"><i style="background:${DOC_C[s.doc]}"></i><select class="inp" data-cdoc="${k}" aria-label="${T('Doctrine','Doctrine')}">${[1,2,3,4,0].map(d=>`<option value="${d}" ${s.doc===d?'selected':''}>${DOC(d)}</option>`).join('')}</select></label></div>
-      <div class="stabs" role="tablist">${s.stacks.map((x,i)=>{const m=MODES(k).find(y=>y[0]===x.mode)||MODES(k)[0];return `<button class="stab ${i===s.cur?'on':''}" data-cstk="${k}:${i}" role="tab" aria-selected="${i===s.cur}"><span>${m[1]}</span>${T('Pile','Stack')} ${i+1}<small>${nUnits(x)}</small>${s.stacks.length>1?`<i data-cstkdel="${k}:${i}" title="${T('Supprimer cette pile','Delete this stack')}">✕</i>`:''}</button>`}).join('')}${s.stacks.length<6?`<button class="stab add" data-cstkadd="${k}" title="${T('Ajouter une pile','Add a stack')}">＋</button>`:''}</div>
+      <div class="stabs" role="tablist">${s.stacks.map((x,i)=>{const m=MODES(k).find(y=>y[0]===x.mode)||MODES(k)[0];return `<button class="stab ${i===s.cur?'on':''}" data-cstk="${k}:${i}" role="tab" aria-selected="${i===s.cur}"><span>${m[1]}</span>${T('Pile','Stack')} ${i+1}${k==='D'&&x.mode==='m'&&x.fort?`<em class="stf" title="${T('Protection','Protection')}">${(+x.ter||+c.ter)===14?'🏰':'🧱'}${Math.min(x.fort,(+x.ter||+c.ter)===14?5:3)}</em>`:''}<small>${nUnits(x)}</small>${s.stacks.length>1?`<i data-cstkdel="${k}:${i}" title="${T('Supprimer cette pile','Delete this stack')}">✕</i>`:''}</button>`}).join('')}${s.stacks.length<6?`<button class="stab add" data-cstkadd="${k}" title="${T('Ajouter une pile','Add a stack')}">＋</button>`:''}</div>
       <div class="cbset">
         <label><span class="lbl">${T('Rôle','Role')}</span><select class="inp" data-cmode="${k}">${MODES(k).map(([v,i,nm])=>`<option value="${v}" ${sk.mode===v?'selected':''}>${i} ${nm}</option>`).join('')}</select></label>
         <label><span class="lbl">${T('Terrain','Terrain')}</span><select class="inp" data-cter="${k}"><option value="0" ${!sk.ter?'selected':''}>${TER_IC[+c.ter]} ${TER(+c.ter)} (${T('province','province')})</option>${[10,11,12,13,14].map(t=>`<option value="${t}" ${sk.ter===t?'selected':''}>${TER_IC[t]} ${TER(t)}</option>`).join('')}</select></label>
         <label title="${T('Moral = PV dans le jeu : état des unités au début du combat','Morale = HP in the game: unit condition at the start of the fight')}"><span class="lbl">${T('Moral (PV)','Morale (HP)')}</span><span class="cbmor"><input class="inp" type="number" min="1" max="100" step="1" value="${Math.round(sk.mor)}" data-cmor="${k}"><small>%</small></span></label>
         <label class="chip ${sk.core?'on':''}" data-chome="${k}" title="${T('+'+(CB.core||15)+' % de dégâts infligés','+'+(CB.core||15)+'% damage dealt')}">🏠 ${T('Province d’origine','Core province')}</label>
       </div>
+      ${k==='D'&&sk.mode==='m'?(()=>{const tt=+sk.ter||+c.ter,urb=tt===14,arr=urb?fb:ff,L=Math.min(+sk.fort||0,arr.length);return `<div class="cbprot"><span class="lbl">${urb?'🏰 '+T('Bunkers de la pile','Stack bunkers')+' · '+T('ville','city'):'🧱 '+T('Fortifications de la pile','Stack fortifications')+' · '+T('campagne','countryside')}</span><div class="seg cbfort" data-cfort="D">${Array.from({length:arr.length+1},(_,i)=>`<button data-v="${i}" class="${L===i?'on':''}"><b>${i?T('Niv.','Lvl')+' '+i:T('Aucune','None')}</b><small>${i?'−'+Math.round((1-1/(1+arr[i-1]))*100)+' %':'0 %'}</small></button>`).join('')}</div></div>`})():''}
       <small class="cbmh">${M[3]}${warn?` · <b class="warnc">⚠ ${warn}</b>`:''}</small>
       <div class="cbl">${sk.st.length?sk.st.map(([uk,t,q],i)=>{const u=UK[uk];if(!u)return '';const l=u.levels.find(x=>x.tier===t)||u.levels[0];return `<div class="cbrow"><img src="${uPor(u,l)}" alt=""><div class="nm"><b>${esc(unitName(u,l))}</b><small>${ARMOR_N(l.armor)} · ${fmt(stat(l,'hp'))} ${T('PV','HP')} · ${T('ATT','ATK')} ${fmt(stat(l,'st'),1)} · ${T('DÉF','DEF')} ${fmt(stat(l,'de'),1)}${cbHasR({l})?' · 🎯':''}</small></div><div class="ctl"><span class="lbl">${T('Niv.','Lvl')}</span>${stepper('cl="'+k+':'+i+'" data-d',t,l.tier)}<span class="lbl">×</span>${stepper('cq="'+k+':'+i+'" data-d',q)}<button class="x" data-cdel="${k}:${i}" aria-label="✕">✕</button></div></div>`}).join(''):`<div class="cbempty">${T('Pile vide','Empty stack')}</div>`}</div>
       <button class="btn cbaddb" data-cpick="${k}">＋ ${T('Ajouter des unités','Add units')}</button>
@@ -1563,7 +1562,7 @@ function viewCombat(){
   app.innerHTML=hero(T('Compétitif','Competitive'),T('Simulateur de <em>combat</em>','Combat <em>simulator</em>'),T('Compose les deux camps, règle le terrain : le résultat se met à jour à chaque clic.','Build both sides, set the terrain: the result updates on every click.'))+`
   <section class="panel cbbar">
     <div class="cbbf"><span class="lbl">⛰ ${T('Province disputée','Contested province')}</span><div class="seg" id="cter">${[10,11,12,13,14].map(t=>`<button data-v="${t}" class="${+c.ter===t?'on':''}">${TER_IC[t]} ${TER(t)}</button>`).join('')}</div></div>
-    <div class="cbbf"><span class="lbl">${urban?'🏰 '+T('Bunkers du défenseur','Defender bunkers')+' · '+T('ville','city'):'🧱 '+T('Fortifications du défenseur','Defender fortifications')+' · '+T('campagne','countryside')}</span><div class="seg cbfort" id="cfort">${Array.from({length:defMax+1},(_,i)=>`<button data-v="${i}" class="${defLvl===i?'on':''}" title="${i?T('Dégâts subis par le défenseur','Damage taken by the defender')+' : −'+Math.round((1-1/(1+defArr[i-1]))*100)+' %':T('Aucune protection','No protection')}"><b>${i?T('Niv.','Lvl')+' '+i:T('Aucune','None')}</b><small>${i?'−'+Math.round((1-1/(1+defArr[i-1]))*100)+' %':'0 %'}</small></button>`).join('')}</div></div>
+    
     <div class="cbbf"><span class="lbl">⏱ ${T('Durée','Length')}</span><select class="inp" id="cmax">${maxOpts.map(([v,n])=>`<option value="${v}" ${c.max===v||(v===200&&c.max>24&&c.max!==200&&!maxOpts.some(o=>o[0]===c.max))?'selected':''}>${n}${v<200?' ('+rH(v)+')':''}</option>`).join('')}</select></div>
     <div class="cbbf cbbtn"><button class="btn" id="cswap">⇄ ${T('Inverser','Swap')}</button><button class="btn" id="creset">${T('Tout effacer','Clear all')}</button></div>
   </section>
@@ -1578,7 +1577,7 @@ function viewCombat(){
      <li><b>Moral = PV :</b> une unité abîmée tire moins fort, de 100 % à pleine santé jusqu’à 20 %. Sous ${(CB.edd&&CB.edd.deathThreshold)??.5} PV, elle est détruite.</li>
      <li><b>À distance :</b> une pile à distance ne tire qu’avec ses unités à portée et n’est touchée que par des unités à portée adverses.</li>
      <li><b>Patrouille :</b> les avions en patrouille font 2 passages par tour à demi-dégâts ; la pile survolée riposte à demi-défense.</li>
-     <li><b>Province :</b> province d’origine = +${CB.core||15} % de dégâts infligés ; bunkers (villes) et fortifications réduisent les dégâts subis par les piles du défenseur dans la province.</li>
+     <li><b>Province :</b> province d’origine = +${CB.core||15} % de dégâts infligés ; bunkers (villes, 5 niveaux) et fortifications (campagne, 3 niveaux) se règlent pile par pile : ils réduisent les dégâts subis par chaque pile du défenseur placée dans la province.</li>
      <li><b>Hasard :</b> chaque tir est multiplié par un facteur autour de 1 (écart-type ${Math.round(sd0*100)} %, limité à ±${Math.round(lim0*100)} %). Le résultat principal est le combat moyen, sans hasard ; les chances viennent de 300 combats tirés au hasard.</li></ul>
      <p>Méthode recoupée avec les mécaniques publiées par Bytro et le calculateur de dxter (dxcalc.com/cow). Non simulés : généraux, dégâts aux bâtiments, distance exacte des tirs.</p>`,
     `<p>Official game values (version ${D.meta.version}): each unit’s attack, defence, HP and armor class, damage factor against each class, terrain, bunkers and fortifications, HP → damage curve and game randomness. A round lasts ${RMIN} min.</p>
@@ -1588,12 +1587,12 @@ function viewCombat(){
      <li><b>Morale = HP:</b> a damaged unit hits less hard, from 100% at full health down to 20%. Below ${(CB.edd&&CB.edd.deathThreshold)??.5} HP it is destroyed.</li>
      <li><b>Ranged:</b> a ranged stack only fires with its ranged units and is only hit by enemy ranged units.</li>
      <li><b>Patrol:</b> patrolling planes make 2 passes per round at half damage; the stack below returns fire at half defence.</li>
-     <li><b>Province:</b> core province = +${CB.core||15}% damage dealt; bunkers (cities) and fortifications reduce damage taken by the defender’s stacks in the province.</li>
+     <li><b>Province:</b> core province = +${CB.core||15}% damage dealt; bunkers (cities, 5 levels) and fortifications (countryside, 3 levels) are set stack by stack: they reduce damage taken by each defender stack placed in the province.</li>
      <li><b>Randomness:</b> each shot is multiplied by a factor around 1 (standard deviation ${Math.round(sd0*100)}%, capped at ±${Math.round(lim0*100)}%). The main result is the average fight, without randomness; the odds come from 300 random fights.</li></ul>
      <p>Method cross-checked with the mechanics published by Bytro and dxter’s calculator (dxcalc.com/cow). Not simulated: generals, building damage, exact firing distance.</p>`)}</div></details>`;
   const rr=()=>{cbSave();viewCombat()};
   $('#cter').onclick=e=>{const b=e.target.closest('button');if(b){c.ter=+b.dataset.v;rr()}};
-  $('#cfort').onclick=e=>{const b=e.target.closest('button');if(!b)return;const v=Math.max(0,Math.min(defMax,+b.dataset.v));if(urban)c.bunk=v;else c.fort=v;rr()};
+  $$('[data-cfort]').forEach(g=>g.onclick=e=>{const b=e.target.closest('button');if(!b)return;SK('D').fort=+b.dataset.v;rr()});
   $('#cmax').onchange=e=>{c.max=+e.target.value;rr()};
   $('#cswap').onclick=()=>{const a=c.A;c.A=c.D;c.D=a;rr()};
   $('#creset').onclick=()=>{st.cb=JSON.parse(JSON.stringify(cbDef));cbSave();viewCombat()};
